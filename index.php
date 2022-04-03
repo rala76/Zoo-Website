@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <title>Zoo-Project (Team 8)</title>
+    <title>Zoo-Project</title>
 </head>
 <body>
-    <h1>Zoo-Project (Team 8)</h1>
+    <h1>Zoo-Project</h1>
     <?php
 
     echo "Connecting to SQL server..."."<br>"; 
