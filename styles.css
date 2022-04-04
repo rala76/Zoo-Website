@@ -1,0 +1,18 @@
+body {
+    background-color: #E5E5E5;
+    margin: 0;
+}
+
+.header {
+    background-color: #4B4646;
+    position: 'relative';
+    width: 100vw;
+    height: 7vh;
+}
+
+.sidebar {
+    background-color: #FFFFFF;
+    position: 'absolute';
+    width: 15vw;
+    height: 93vh;
+}
