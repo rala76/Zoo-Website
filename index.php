@@ -40,7 +40,15 @@
         <button type="submit" name="submit">Submit</button>
     </form> -->
 
-    <div class="header"></div>
+    <div class="header">
+        <div class=headerNav>Employees</div>
+        <div class=headerNav>Customers</div>
+        <div class=headerNav>Products</div>
+        <div class=headerNav>Stores</div>
+        <div class=headerNav>Events</div>
+        <div class=headerNav>Animals</div>
+        <div class=headerNav>Enclosures</div>
+    </div>
     <div class="sidebar"></div>
 
 </body>
