@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <title>Zoo-Project</title>
 </head>
 <body>
-    <h1>Zoo-Project</h1>
+    <!-- <h1>Zoo-Project</h1> -->
     <?php
 
-    echo "Connecting to Azure SQL server..."."<br>"; 
+    // echo "Connecting to Azure SQL server..."."<br>"; 
     
     // PHP Data Objects(PDO) Sample Code:
     try {
@@ -25,19 +26,22 @@
     $conn = sqlsrv_connect($serverName, $connectionInfo);
     
 
-    echo "Successfully connected to Azure SQL server!"."<br>";
-    echo "<br>";
+    // echo "Successfully connected to Azure SQL server!"."<br>";
+    // echo "<br>";
 
     ?>
 
-    <p>Welcome to the Zoo!</p>
+    <!-- <p>Welcome to the Zoo!</p>
     <p>Please enter your information<p>
     <form action="" method="">
         <label>First Name:</label><input type="text" name="Fname"><br>
         <label>Last Name:</label><input type="text" name="Lname"><br>
 
         <button type="submit" name="submit">Submit</button>
-    </form>
+    </form> -->
+
+    <div class="header"></div>
+    <div class="sidebar"></div>
 
 </body>
 </html>
