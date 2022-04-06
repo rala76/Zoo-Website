@@ -10,7 +10,24 @@ body {
     height: 7vh;
 }
 
-.headerNav {
+.sidebar {
+    background-color: #FFFFFF;
+    position: 'relative';
+    top: 7vh;
+    width: 15vw;
+    height: 93vh;
+}
+
+.sidebarLine {
+    color: #E5E5E5;
+    position: 'absolute';
+    width: 13vw;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    display: inline-block;
+}
+
+.navText {
     color: #FFFFFF;
     position: 'absolute';
     font-family: 'Calibri';
@@ -21,9 +38,10 @@ body {
     transform: translateY(42%);
 }
 
-.sidebar {
-    background-color: #FFFFFF;
-    position: 'absolute';
-    width: 15vw;
-    height: 93vh;
+.navText.sidebarText {
+    color: #2C2C2C;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    transform: translateY(8%);
 }
