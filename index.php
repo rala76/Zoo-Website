@@ -41,15 +41,30 @@
     </form> -->
 
     <div class="header">
-        <div class=headerNav>Employees</div>
-        <div class=headerNav>Customers</div>
-        <div class=headerNav>Products</div>
-        <div class=headerNav>Stores</div>
-        <div class=headerNav>Events</div>
-        <div class=headerNav>Animals</div>
-        <div class=headerNav>Enclosures</div>
+        <div class="navText">Employees</div>
+        <div class="navText">Customers</div>
+        <div class="navText">Products</div>
+        <div class="navText">Stores</div>
+        <div class="navText">Events</div>
+        <div class="navText">Animals</div>
+        <div class="navText">Enclosures</div>
     </div>
-    <div class="sidebar"></div>
+    <!-- This part is going to need to be refactored into a component to look way nicer -->
+    <div class="sidebar">
+        <div style="transform:translateY(50%)">
+            <hr class="sidebarLine"></hr>
+            <div class="navText sidebarText">Insert New Employee</div>
+            <hr class="sidebarLine"></hr>
+            <div class="navText sidebarText">Delete Employee</div>
+            <hr class="sidebarLine"></hr>
+            <div class="navText sidebarText">Update Employee</div>
+            <hr class="sidebarLine"></hr>
+            <div class="navText sidebarText">Get Employee Information</div>
+            <hr class="sidebarLine"></hr>
+            <div class="navText sidebarText">Search Employees</div>
+            <hr class="sidebarLine"></hr>
+        </div>
+    </div>
 
 </body>
 </html>
