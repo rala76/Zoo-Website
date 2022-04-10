@@ -1,0 +1,98 @@
+body {
+    background-color: #E5E5E5;
+    margin: 0;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #2C2C2C;
+    position: absolute;
+    width: 100vw;
+    height: 7vh;
+}
+
+.sidebar {
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 7vh;
+    width: 15vw;
+    height: 93vh;
+    display: flex;
+    align-items: center;
+}
+
+.sidebarLine {
+    color: #E5E5E5;
+    position: relative;
+    width: 13vw;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    display: inline-block;
+}
+
+.navText {
+    color: #FFFFFF;
+    position: relative;
+    font-family: 'Calibri';
+    font-size: 3vmin;
+    font-weight: lighter;
+    margin-left: 3vh;
+    display: inline-block;
+    transform: translateY(42%);
+}
+
+.navText.sidebarText {
+    color: #2C2C2C;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    transform: translateY(8%);
+}
+
+.form-base {
+    position: relative;
+    top: 10vh;
+    left: 17vw;
+    height: 87vh;
+    width: 81vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.form-control {
+    background: transparent;
+    position: relative;
+    width: 35vw;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    outline: none;
+    border-radius: 4px;
+    font-family: 'Calibri';
+    font-size: 2.5vmin;
+    font-weight: lighter;
+}
+
+.form-submit {
+    height: 4vh;
+    width: 10vw;
+    font-family: 'Calibri';
+    font-size: 2.5vmin;
+    font-weight: lighter;
+}
+
+.input-label, .required-input-label {
+    background: transparent;
+    position: relative;
+    left: 0.5%;
+    font-family: 'Calibri';
+    font-size: 2.5vmin;
+    font-weight: lighter;
+}
+
+.required-input-label::after {
+    content: "*";
+    color: red;
+}
