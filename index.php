@@ -4,13 +4,12 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <title>Zoo-Project</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="header">
         <!-- Hyperlink to the employee web page -->
         <div class="navText">
-            <a href="employee.php" style="text-decoration:none;color:inherit">Employee</a>
+            <a href="employee.php" style="text-decoration:none;color:inherit">Employees</a>
         </div>
         <div class="navText">Customers</div>
         <div class="navText">Products</div>

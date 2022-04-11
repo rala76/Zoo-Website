@@ -3,7 +3,7 @@
 <html>
 <head>
     <!-- Include default employee page -->
-    <?php include("employee.php") ?>
+    <?php include("../employee.php") ?>
 
     <title>Insert New Employee</title>
 </head>

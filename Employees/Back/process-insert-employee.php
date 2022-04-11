@@ -2,9 +2,10 @@
 <html>
 <head>
     <!-- Include default employee page -->
-    <?php include("employee.php"); ?>
+    <?php include("../employee.php") ?>
     <!-- Connect to Azure SQL Database -->
     <?php include("connect-sql.php"); ?>
+    <?php include("../../connect-sql.php") ?>
 
     <title>Insert New Employee</title>
 </head>

@@ -3,7 +3,7 @@
 <html>
 <head>
     <!-- Include header -->
-    <?php include("index.php") ?>
+    <?php include("../index.php") ?>
 
     <title>Employee</title>
 </head>
