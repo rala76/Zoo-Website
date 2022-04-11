@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <title>Zoo-Project</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
