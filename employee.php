@@ -1,3 +1,4 @@
+<!-- 'Employee' => 'Insert/Delete/Update/Get/Search' -->
 <!doctype html>
 <html>
 <head>
@@ -13,6 +14,7 @@
         <div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
+                <!-- Hyperlink to the employee web page -->
                 <a href="insert-employee.php" style="text-decoration:none;color:inherit">Insert New Employee</a>
             </div>
             <hr class="sidebarLine"></hr>

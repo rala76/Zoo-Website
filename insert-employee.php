@@ -1,3 +1,4 @@
+<!-- 'Insert Employee' => 'Process Insert Employee' -->
 <!doctype html>
 <html>
 <head>
@@ -16,6 +17,7 @@
             <label class="required-input-label">Date of Birth (YYYY-MM-DD)</label><br>
             <input name="employee-date-of-birth" type="text" class="form-control" required><br>
 
+            <!-- Should change to dropdown/select if possible -->
             <label class="required-input-label">Gender</label><br>
             <input name="employee-gender" type="text" class="form-control" required><br>
 
@@ -37,6 +39,7 @@
             <label class="input-label">Event ID</label><br>
             <input name="employee-event-id" type="number" class="form-control" placeholder="NULL"><br>
 
+            <!-- Should change to dropdown/select if possible -->
             <label class="required-input-label">'Hourly' or 'Salaried'</label><br>
             <input name="employee-hourly-or-salaried" type="text" class="form-control" required><br>
 

@@ -1,74 +1,80 @@
-<?php
-// Include default employee page
-include("employee.php");
-// Connect to Azure SQL Database
-include("connect-sql.php");
-
-if(isset($_POST["employee-submit"])) {
-    $Name = $_POST["employee-name"];
-    $Date_Of_Birth = $_POST["employee-date-of-birth"];
-    $Gender = $_POST["employee-gender"];
-    $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
-    $Supervisor_ID = !empty($_POST["employee-supervisor-id"]) ? $_POST["employee-supervisor-id"] : NULL;
-    $Department_Name = $_POST["employee-department-name"];
-    $Enclosure_ID = !empty($_POST["employee-enclosure-id"]) ? $_POST["employee-enclosure-id"] : NULL;
-    $Store_ID = !empty($_POST["employee-store-id"]) ? $_POST["employee-store-id"] : NULL;
-    $Event_ID = !empty($_POST["employee-event-id"]) ? $_POST["employee-event-id"] : NULL;
-    $Hourly_Or_Salaried = $_POST["employee-hourly-or-salaried"];
-    $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : NULL;
-    $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : NULL;
-    $Weekly_Hours_Worked = !empty($_POST["employee-weekly-hours-worked"]) ? $_POST["employee-weekly-hours-worked"] : "0";
-
-    $sql = "INSERT INTO [dbo].[Employee_Data] 
-        ([Name]
-        ,[Date_Of_Birth]
-        ,[Gender]
-        ,[Phone_Number]
-        ,[Supervisor_ID]
-        ,[Department_Name]
-        ,[Enclosure_ID]
-        ,[Store_ID]
-        ,[Event_ID]
-        ,[Hourly_Or_Salaried]
-        ,[Hourly_Wage]
-        ,[Weekly_Wage]
-        ,[Weekly_Hours_Worked])
-        VALUES 
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $params = array($Name
-        ,$Date_Of_Birth
-        ,$Gender
-        ,$Phone_Number
-        ,$Supervisor_ID
-        ,$Department_Name
-        ,$Enclosure_ID
-        ,$Store_ID
-        ,$Event_ID
-        ,$Hourly_Or_Salaried
-        ,$Hourly_Wage
-        ,$Weekly_Wage
-        ,$Weekly_Hours_Worked);
-    
-    $message = "Successfully Inserted New Employee";
-    $error_msg = NULL;
-
-    $stmt = sqlsrv_query($conn, $sql, $params);
-    if ($stmt == false) {
-        //die(print_r(sqlsrv_errors(), true));
-        $message = "Failed to Insert New Employee";
-        $error_msg = sqlsrv_errors();
-    }
-}
-?>
-
 <!doctype html>
 <html>
 <head>
+    <!-- Include default employee page -->
+    <?php include("employee.php"); ?>
+    <!-- Connect to Azure SQL Database -->
+    <?php include("connect-sql.php"); ?>
+
     <title>Insert New Employee</title>
 </head>
 <body>
+    <?php
+    // Get data from employee form once submit button is pressed
+    if(isset($_POST["employee-submit"])) {
+        $Name = $_POST["employee-name"];
+        $Date_Of_Birth = $_POST["employee-date-of-birth"];
+        $Gender = $_POST["employee-gender"];
+        $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
+        $Supervisor_ID = !empty($_POST["employee-supervisor-id"]) ? $_POST["employee-supervisor-id"] : NULL;
+        $Department_Name = $_POST["employee-department-name"];
+        $Enclosure_ID = !empty($_POST["employee-enclosure-id"]) ? $_POST["employee-enclosure-id"] : NULL;
+        $Store_ID = !empty($_POST["employee-store-id"]) ? $_POST["employee-store-id"] : NULL;
+        $Event_ID = !empty($_POST["employee-event-id"]) ? $_POST["employee-event-id"] : NULL;
+        $Hourly_Or_Salaried = $_POST["employee-hourly-or-salaried"];
+        $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : NULL;
+        $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : NULL;
+        $Weekly_Hours_Worked = !empty($_POST["employee-weekly-hours-worked"]) ? $_POST["employee-weekly-hours-worked"] : "0";
+
+        // Create insert statement
+        $sql = "INSERT INTO [dbo].[Employee_Data] 
+            ([Name]
+            ,[Date_Of_Birth]
+            ,[Gender]
+            ,[Phone_Number]
+            ,[Supervisor_ID]
+            ,[Department_Name]
+            ,[Enclosure_ID]
+            ,[Store_ID]
+            ,[Event_ID]
+            ,[Hourly_Or_Salaried]
+            ,[Hourly_Wage]
+            ,[Weekly_Wage]
+            ,[Weekly_Hours_Worked])
+            VALUES 
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        // Parameters of insert statement
+        $params = array($Name
+            ,$Date_Of_Birth
+            ,$Gender
+            ,$Phone_Number
+            ,$Supervisor_ID
+            ,$Department_Name
+            ,$Enclosure_ID
+            ,$Store_ID
+            ,$Event_ID
+            ,$Hourly_Or_Salaried
+            ,$Hourly_Wage
+            ,$Weekly_Wage
+            ,$Weekly_Hours_Worked);
+        
+        // Status and error message to output on web page
+        $message = "Successfully Inserted New Employee";
+        $error_msg = NULL;
+
+        $stmt = sqlsrv_query($conn, $sql, $params);
+        if ($stmt == false) {
+            //die(print_r(sqlsrv_errors(), true));
+            $message = "Failed to Insert New Employee";
+            $error_msg = sqlsrv_errors();
+        }
+    }
+    ?>
+
     <div class="form-base">
         <div>
+        <!-- Output result and errors of insertion into database -->
         <?php
         echo "<h2>$message</h2>";
         echo "<h3><u>Errors:</u></h3>";
@@ -82,6 +88,7 @@ if(isset($_POST["employee-submit"])) {
         }
         ?>
 
+        <!-- Output data from insert employee form -->
         <h3><u>Form Data</u></h3>
         <p><b>Name:</b> <?php echo $Name; ?></p>
         <p><b>Date of Birth:</b> <?php echo $Date_Of_Birth; ?></p>

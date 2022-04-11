@@ -1,3 +1,4 @@
+<!-- 'Index' as homepage -->
 <!doctype html>
 <html>
 <head>
@@ -6,6 +7,7 @@
 </head>
 <body>
     <div class="header">
+        <!-- Hyperlink to the employee web page -->
         <div class="navText">
             <a href="employee.php" style="text-decoration:none;color:inherit">Employee</a>
         </div>

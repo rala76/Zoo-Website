@@ -49,6 +49,8 @@ body {
     transform: translateY(8%);
 }
 
+/* Base area for form (under header & to the side of sidebar) */
+/* This area can expand vertically (scroll) and not effect the header/sidebar */
 .form-base {
     position: relative;
     top: 10vh;
@@ -62,6 +64,7 @@ body {
     gap: 25px;
 }
 
+/* For the input fields */
 .form-control {
     background: transparent;
     position: relative;
@@ -75,6 +78,7 @@ body {
     font-weight: lighter;
 }
 
+/* Submit button for form */
 .form-submit {
     height: 4vh;
     width: 10vw;
@@ -83,6 +87,7 @@ body {
     font-weight: lighter;
 }
 
+/* Label for input fields */
 .input-label, .required-input-label {
     background: transparent;
     position: relative;
@@ -92,6 +97,7 @@ body {
     font-weight: lighter;
 }
 
+/* Red asterisk after labels for required input fields */
 .required-input-label::after {
     content: "*";
     color: red;
