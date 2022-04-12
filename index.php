@@ -9,7 +9,7 @@
     <div class="header">
         <!-- Hyperlink to the employee web page -->
         <div class="navText">
-            <a href="employee.php" style="text-decoration:none;color:inherit">Employees</a>
+            <a href="/Employees/employee.php" style="text-decoration:none;color:inherit">Employees</a>
         </div>
         <div class="navText">Customers</div>
         <div class="navText">Products</div>
