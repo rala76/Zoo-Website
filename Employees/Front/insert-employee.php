@@ -3,13 +3,13 @@
 <html>
 <head>
     <!-- Include default employee page -->
-    <?php include("../employee.php") ?>
+    <?php include(__DIR__."/../employee.php"); ?>
 
     <title>Insert New Employee</title>
 </head>
 <body>
     <!-- Example form for Employee_Data -->
-    <form class="form-base" method="post" action="process-insert-employee.php">
+    <form class="form-base" method="post" action="/Employees/Back/process-insert-employee.php">
         <div>
             <label class="required-input-label">Name</label><br>
             <input name="employee-name" type="text" class="form-control" required><br>

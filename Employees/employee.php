@@ -2,8 +2,8 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Include header -->
-    <?php include("../index.php") ?>
+    <!-- Include index page (header) -->
+    <?php include_once(__DIR__."/../index.php") ?>
 
     <title>Employee</title>
 </head>
@@ -15,7 +15,7 @@
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
                 <!-- Hyperlink to the employee web page -->
-                <a href="insert-employee.php" style="text-decoration:none;color:inherit">Insert New Employee</a>
+                <a href="/Employees/Front/insert-employee.php" style="text-decoration:none;color:inherit">Insert New Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">Delete Employee</div>
