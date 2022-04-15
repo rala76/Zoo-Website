@@ -29,7 +29,7 @@
             <label class="required-input-label">Gender</label><br>
             <select name="employee-gender" class="dropdown-control" required>
                 <!-- Default option -->
-                <option value="<?php echo isset($_POST['employee-gender']) ? $_POST['employee-gender'] : '' ?>" selected disabled hidden>
+                <option value="<?php echo isset($_POST['employee-gender']) ? $_POST['employee-gender'] : '' ?>" hidden>
                     <?php echo isset($_POST['employee-gender']) ? $_POST['employee-gender'] : 'Select an Option' ?>
                 </option>
 
@@ -52,7 +52,7 @@
             <select name="employee-department-name" class="dropdown-control" required
             value="<?php echo isset($_POST['employee-department-name']) ? $_POST['employee-department-name'] : '' ?>">
                 <!-- Default option -->
-                <option value="<?php echo isset($_POST['employee-department-name']) ? $_POST['employee-department-name'] : '' ?>" selected disabled hidden>
+                <option value="<?php echo isset($_POST['employee-department-name']) ? $_POST['employee-department-name'] : '' ?>" hidden>
                     <?php echo isset($_POST['employee-department-name']) ? $_POST['employee-department-name'] : 'Select an Option' ?>
                 </option>
 
@@ -82,7 +82,7 @@
             <select name="employee-hourly-or-salaried" class="dropdown-control" required
             value="<?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : '' ?>">
                 <!-- Default option -->
-                <option value="<?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : '' ?>" selected disabled hidden>
+                <option value="<?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : '' ?>" hidden>
                     <?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : 'Select an Option' ?>
                 </option>
 
@@ -176,6 +176,7 @@
             }
             
             // Output status and error message
+            echo "<div>";
             echo "<h2>$message</h2>";
             echo "<details>";
             echo "<summary>Toggle Errors</summary>";
@@ -188,6 +189,7 @@
                     }
                 }
             echo "</details>";
+            echo "</div>";
         }
         ?>
     </div>

@@ -59,6 +59,9 @@ body {
     width: 81vw;
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
 /* For the input fields */
