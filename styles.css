@@ -59,9 +59,6 @@ body {
     width: 81vw;
     overflow-y: auto;
     overflow-x: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
 }
 
 /* For the input fields */
@@ -101,4 +98,28 @@ body {
 .required-input-label::after {
     content: "*";
     color: red;
+}
+
+/* Details toggle element */
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    width: 35vw;
+}
+
+/* Font of details toggle element */
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
 }
