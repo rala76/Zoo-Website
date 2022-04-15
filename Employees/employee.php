@@ -3,7 +3,7 @@
 <html>
 <head>
     <!-- Include index page (header) -->
-    <?php include_once(__DIR__."/../index.php") ?>
+    <?php include(__DIR__."/../index.php") ?>
 
     <title>Employee</title>
 </head>
