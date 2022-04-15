@@ -73,6 +73,8 @@ body {
     font-family: 'Calibri';
     font-size: 2.5vmin;
     font-weight: lighter;
+    border-width: 2px;
+    border-color: black;
 }
 
 /* Submit button for form */
@@ -105,7 +107,7 @@ details {
     border: 1px solid #aaa;
     border-radius: 4px;
     padding: .5em .5em 0;
-    width: 35vw;
+    width: 34vw;
 }
 
 /* Font of details toggle element */
@@ -122,4 +124,20 @@ details[open] {
 details[open] summary {
     border-bottom: 1px solid #aaa;
     margin-bottom: .5em;
+}
+
+/* Dropdown lists */
+.dropdown-control {
+    background: transparent;
+    position: relative;
+    width: 35.5vw;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    outline: none;
+    border-radius: 4px;
+    font-family: 'Calibri';
+    font-size: 2.5vmin;
+    font-weight: lighter;
+    border-width: 2px;
+    border-color: black;
 }

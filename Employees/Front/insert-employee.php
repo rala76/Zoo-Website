@@ -10,9 +10,14 @@
     <div class="form-base">
         <!-- Insert form for Employee_Data -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label class="required-input-label">Name</label><br>
-            <input name="employee-name" type="text" class="form-control" required
-            value="<?php echo isset($_POST['employee-name']) ? $_POST['employee-name'] : '' ?>">
+            <label class="required-input-label">First Name</label><br>
+            <input name="employee-Fname" type="text" class="form-control" required
+            value="<?php echo isset($_POST['employee-Fname']) ? $_POST['employee-Fname'] : '' ?>">
+            <br>
+
+            <label class="required-input-label"> Last Name</label><br>
+            <input name="employee-Lname" type="text" class="form-control" required
+            value="<?php echo isset($_POST['employee-Lname']) ? $_POST['employee-Lname'] : '' ?>">
             <br>
 
             <label class="required-input-label">Date of Birth (YYYY-MM-DD)</label><br>
@@ -20,11 +25,13 @@
             value="<?php echo isset($_POST['employee-date-of-birth']) ? $_POST['employee-date-of-birth'] : '' ?>">
             <br>
 
-            <!-- Should change to dropdown/select if possible -->
+            <!-- Dropdown list for Gender -->
             <label class="required-input-label">Gender</label><br>
-            <input name="employee-gender" type="text" class="form-control" required
+            <select name="employee-gender" class="dropdown-control" required
             value="<?php echo isset($_POST['employee-gender']) ? $_POST['employee-gender'] : '' ?>">
-            <br>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
 
             <label class="input-label">Phone Number (###-###-####)</label><br>
             <input name="employee-phone-number" type="text" class="form-control" placeholder="NULL"
@@ -36,19 +43,24 @@
             value="<?php echo isset($_POST['employee-supervisor-id']) ? $_POST['employee-supervisor-id'] : '' ?>">
             <br>
 
+            <!-- Dropdown list for Department_Name -->
             <label class="required-input-label">Department Name</label><br>
-            <input name="employee-department-name" type="text" class="form-control" required
-            value="<?php echo isset($_POST['employee-date-of-birth']) ? $_POST['employee-date-of-birth'] : '' ?>">
-            <br>HERE
+            <select name="employee-department-name" class="dropdown-control" required
+            value="<?php echo isset($_POST['employee-department-name']) ? $_POST['employee-department-name'] : '' ?>">
+                <option value="Animal Enclosure">Animal Enclosure</option>
+                <option value="Gift Shop">Gift Shop</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Ticket Booth">Ticket Booth</option>
+            </select><br>
             
             <label class="input-label">Enclosure ID</label><br>
             <input name="employee-enclosure-id" type="number" min="1" class="form-control" placeholder="NULL"
-            value="<?php echo isset($_POST['employee-date-of-birth']) ? $_POST['employee-date-of-birth'] : '' ?>">
+            value="<?php echo isset($_POST['employee-enclosure-id']) ? $_POST['employee-enclosure-id'] : '' ?>">
             <br>
 
             <label class="input-label">Store ID</label><br>
             <input name="employee-store-id" type="number" min="1" class="form-control" placeholder="NULL"
-            value="<?php echo isset($_POST['employee-date-of-birth']) ? $_POST['employee-date-of-birth'] : '' ?>">
+            value="<?php echo isset($_POST['employee-store-id']) ? $_POST['employee-store-id'] : '' ?>">
             <br>
 
             <label class="input-label">Event ID</label><br>
@@ -56,11 +68,13 @@
             value="<?php echo isset($_POST['employee-event-id']) ? $_POST['employee-event-id'] : '' ?>">
             <br>
 
-            <!-- Should change to dropdown/select if possible -->
+            <!-- Dropdown list for Hourly_Or_Salaried -->
             <label class="required-input-label">'Hourly' or 'Salaried'</label><br>
-            <input name="employee-hourly-or-salaried" type="text" class="form-control" required
+            <select name="employee-hourly-or-salaried" class="dropdown-control" required
             value="<?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : '' ?>">
-            <br>
+                <option value="Hourly">Hourly</option>
+                <option value="Salaried">Salaried</option>
+            </select><br>
 
             <label class="input-label">Hourly Wage</label><br>
             <input name="employee-hourly-wage" type="number" min="1" step="0.01" class="form-control" placeholder="NULL"
@@ -81,12 +95,13 @@
         </form>
     
         <?php
-        // Connect to Azure SQL Database
+        // Connect to Microsoft Azure SQL Database
         include(__DIR__."/../../connect-sql.php");
 
         // Get data from employee form once submit button is pressed
         if(isset($_POST["employee-submit"])) {
-            $Name = $_POST["employee-name"];
+            $Fname = $_POST["employee-Fname"];
+            $Lname = $_POST["employee-Lname"];
             $Date_Of_Birth = $_POST["employee-date-of-birth"];
             $Gender = $_POST["employee-gender"];
             $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
@@ -102,7 +117,8 @@
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Employee_Data] 
-                ([Name]
+                ([Fname]
+                ,[Lname]
                 ,[Date_Of_Birth]
                 ,[Gender]
                 ,[Phone_Number]
@@ -116,10 +132,11 @@
                 ,[Weekly_Wage]
                 ,[Weekly_Hours_Worked])
                 VALUES 
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             // Parameters of insert statement
-            $params = array($Name
+            $params = array($Fname
+                ,$Lname
                 ,$Date_Of_Birth
                 ,$Gender
                 ,$Phone_Number
@@ -144,6 +161,7 @@
                 $error_msg = sqlsrv_errors();
             }
             
+            // Output status and error message
             echo "<h2>$message</h2>";
             echo "<details>";
             echo "<summary>Toggle Errors</summary>";
