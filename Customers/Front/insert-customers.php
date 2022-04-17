@@ -51,7 +51,7 @@
                 ([Fname]
                 ,[Lname]
                 ,[Age]
-                ,[CustomerID])
+                ,[Customer_ID])
                 VALUES 
                 (?, ?, ?)";
             
