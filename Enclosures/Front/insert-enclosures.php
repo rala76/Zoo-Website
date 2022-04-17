@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Include default Enclosure page -->
-    <?php include(__DIR__."/../enclosure.php"); ?>
+    <?php include(__DIR__."/../Enclosure.php"); ?>
 
     <title>Insert New Enclosure</title>
 </head>

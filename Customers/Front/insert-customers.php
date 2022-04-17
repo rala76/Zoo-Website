@@ -25,12 +25,6 @@
             <input name="Customer-Age" type="number" class="form-control" required
             value="<?php echo isset($_POST['Customer-Age']) ? $_POST['Customer-Age'] : '' ?>">
             <br>
-
-            <label class="required-input-label">Customer ID</label><br>
-            <input name="Customer-CustomerID" type="number" class="form-control" required
-            value="<?php echo isset($_POST['Customer-CustomerID']) ? $_POST['Customer-CustomerID'] : '' ?>">
-            <br>
-
             
             <button name="Customer-submit" type="submit" class="form-submit">Submit</button>
         </form>
@@ -44,7 +38,6 @@
             $Fname = $_POST["Customer-Fname"];
             $Lname = $_POST["Customer-Lname"];
             $Age=!empty($_POST["Customer-Age"]) ? $_POST["Customer-Age"] : NULL;
-            $CustomerID = $_POST["Customer-CustomerID"];
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Customer_Data] 

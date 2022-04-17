@@ -7,20 +7,30 @@
 </head>
 <body>
     <div class="header">
-        <!-- Hyperlink to the employee web page -->
+        <!-- Hyperlink to the Employee web page -->
         <div class="navText">
-            <a href="/Employees/employee.php" style="text-decoration:none;color:inherit">Employees</a>
+            <a href="/Employees/Employee.php" style="text-decoration:none;color:inherit">Employees</a>
         </div>
-        <div class="navText">
-        <a href="/Customers/Customer.php" style="text-decoration:none;color:inherit">Customers</a>
 
-        </div>
-        <div class="navText">Products</div>
-        <div class="navText">Stores</div>
-        <div class="navText">Events</div>
-        <div class="navText">Animals</div>
+        <!-- Hyperlink to the Customer web page -->
         <div class="navText">
-            <a href="/Enclosures/enclosure.php" style="text-decoration:none;color:inherit">Enclosures</a>
+            <a href="/Customers/Customer.php" style="text-decoration:none;color:inherit">Customers</a>
+        </div>
+
+        <div class="navText">Products</div>
+
+        <div class="navText">Stores</div>
+
+        <div class="navText">Events</div>
+
+        <!-- Hyperlink to the Animals web page -->
+        <div class="navText">
+            <a href="/Animals/Animal.php" style="text-decoration:none;color:inherit">Animals</a>
+        </div>
+        
+        <!-- Hyperlink to the Enclosure web page -->
+        <div class="navText">
+            <a href="/Enclosures/Enclosure.php" style="text-decoration:none;color:inherit">Enclosures</a>
         </div>
     </div>
 </body>
