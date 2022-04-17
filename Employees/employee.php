@@ -8,8 +8,6 @@
     <title>Employee</title>
 </head>
 <body>
-    <!-- This part is going to need to be refactored into a component to look way nicer -->
-    <!-- Replaced style="transform:translateY(50%)" for display:flex and align-items:center in .sidebar css -->
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>

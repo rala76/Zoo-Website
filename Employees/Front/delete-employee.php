@@ -55,7 +55,7 @@
             $ID = $_POST["employee-id-1"];
 
             // Info of employee to be deleted
-            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Department_Name]
+            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Department_ID], [Department_Name]
                 FROM [dbo].[Employee_Data] 
                 WHERE [Employee_ID]='$ID'";
 
@@ -69,7 +69,7 @@
             $Lname = $_POST["employee-Lname"];
 
             // Info of employee to be deleted
-            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Department_Name]
+            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Department_ID], [Department_Name]
                 FROM [dbo].[Employee_Data]
                 WHERE [Employee_ID]='$ID' AND [Fname]='$Fname' AND [Lname]='$Lname'";
 
@@ -120,6 +120,7 @@
                     echo "<th>ID</th>";
                     echo "<th>First Name</th>";
                     echo "<th>Last Name</th>";
+                    echo "<th>Department ID</th>";
                     echo "<th>Department Name</th>";
                 echo "</tr>";
 
@@ -129,6 +130,7 @@
                     echo "<td>" . $row["Employee_ID"] . "</td>";
                     echo "<td>" . $row["Fname"] . "</td>";
                     echo "<td>" . $row["Lname"] . "</td>";
+                    echo "<td>" . $row["Department_ID"] . "</td>";
                     echo "<td>" . $row["Department_Name"] . "</td>";
                     echo "</tr>";
                 }
