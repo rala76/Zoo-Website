@@ -70,8 +70,8 @@
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Animal_Data] 
-                ([name]
-                ,[species]
+                ([Animal_Name]
+                ,[Species]
                 ,[Date_Of_Birth]
                 ,[Gender]
                 ,[Animal_ID]
