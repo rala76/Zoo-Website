@@ -36,20 +36,11 @@
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select><br>
-
-
-            <label class="input-label">Animal ID</label><br>
-            <input name="Animal-animal-id" type="number" min="1" class="form-control" 
-            value="<?php echo isset($_POST['Animal-animal-id']) ? $_POST['Animal-animal-id'] : '' ?>">
-            <br>
-
             
             <label class="input-label">Enclosure ID</label><br>
             <input name="Animal-enclosure-id" type="number" min="1" class="form-control" 
             value="<?php echo isset($_POST['Animal-enclosure-id']) ? $_POST['Animal-enclosure-id'] : '' ?>">
             <br>
-
-           
 
             <button name="Animal-submit" type="submit" class="form-submit">Submit</button>
         </form>
@@ -64,7 +55,6 @@
             $species = $_POST["Animal-species"];
             $Date_Of_Birth = $_POST["Animal-date-of-birth"];
             $Gender = $_POST["Animal-gender"];
-            $Animal_ID = $_POST["Animal-animal-id"] ;
             $Enclosure_ID =  $_POST["Animal-enclosure-id"] ;
            
 
@@ -74,17 +64,15 @@
                 ,[Species]
                 ,[Date_Of_Birth]
                 ,[Gender]
-                ,[Animal_ID]
                 ,[Enclosure_ID])
                 VALUES 
-                (?, ?, ?, ?, ?, ?)";
+                (?, ?, ?, ?, ?)";
             
             // Parameters of insert statement
             $params = array($name
                 ,$species
                 ,$Date_Of_Birth
                 ,$Gender
-                ,$Animal_ID
                 ,$Enclosure_ID);
             
             // Status and error message to output on web page

@@ -1,4 +1,4 @@
-<!-- 'Employee' => 'Insert/Delete/Update/Get/Search' -->
+<!-- 'Enclosure' => 'Insert/Delete/Update/Get/Search' -->
 <!doctype html>
 <html>
 <head>
@@ -8,13 +8,11 @@
     <title>Enclosure</title>
 </head>
 <body>
-    <!-- This part is going to need to be refactored into a component to look way nicer -->
-    <!-- Replaced style="transform:translateY(50%)" for display:flex and align-items:center in .sidebar css -->
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
-                <!-- Hyperlink to the employee web page -->
+                <!-- Hyperlink to the Enclosure Insert page -->
                 <a href="/Enclosures/Front/insert-enclosures.php" style="text-decoration:none;color:inherit">Insert New Enclosure</a>
             </div>
             <hr class="sidebarLine"></hr>

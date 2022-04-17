@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Include default employee page -->
+    <!-- Include default Employee page -->
     <?php include(__DIR__."/../Employee.php"); ?>
 
     <title>Delete Employee</title>

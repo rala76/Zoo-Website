@@ -12,20 +12,14 @@
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             
         <label class="required-input-label">Maintanence Fees</label><br>
-            <input name="enclosure-maintanenceFees" type="number" class="form-control" required
+            <input name="enclosure-maintanenceFees" type="number" min="1" step="0.1" class="form-control" required
             value="<?php echo isset($_POST['enclosure-maintanenceFees']) ? $_POST['enclosure-maintanenceFees'] : '' ?>">
             <br>
 
             <label class="required-input-label">Number of Animals</label><br>
-            <input name="enclosure-numAnimals" type="number" class="form-control" required
+            <input name="enclosure-numAnimals" type="number" min="0" class="form-control" placeholder="0" required
             value="<?php echo isset($_POST['enclosure-numAnimals']) ? $_POST['enclosure-numAnimals'] : '' ?>">
             <br>
-
-            <label class="required-input-label">Enclosure ID</label><br>
-            <input name="enclosure-enclosureID" type="number" class="form-control" required
-            value="<?php echo isset($_POST['enclosure-enclosureID']) ? $_POST['enclosure-enclosureID'] : '' ?>">
-            <br>
-
             
             <button name="enclosure-submit" type="submit" class="form-submit">Submit</button>
         </form>
@@ -38,21 +32,17 @@
         if(isset($_POST["enclosure-submit"])) {
             $maintanenceFees = $_POST["enclosure-maintanenceFees"];
             $numAnimals = !empty($_POST["enclosure-numAnimals"]) ? $_POST["enclosure-numAnimals"] : "0";
-            $enclosureID = $_POST["enclosure-enclosureID"];
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Enclosure_Data] 
                 ([Maintanence_Fees]
-                ,[Num_Animals]
-                ,[EnclosureID])
+                ,[Num_Animals])
                 VALUES 
-                (?, ?, ?)";
+                (?, ?)";
             
             // Parameters of insert statement
             $params = array($maintanenceFees
-                ,$numAnimals
-                ,$enclosureID
-                );
+                ,$numAnimals);
             
             // Status and error message to output on web page
             $message = "Successfully Inserted New Enclosure";

@@ -12,12 +12,12 @@
         <div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
-                <!-- Hyperlink to the insert employee web page -->
+                <!-- Hyperlink to the Employee Insert page -->
                 <a href="/Employees/Front/insert-employee.php" style="text-decoration:none;color:inherit">Insert New Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
-                <!-- Hyperlink to the delete employee web page -->
+                <!-- Hyperlink to the Employee Delete page -->
                 <a href="/Employees/Front/delete-employee.php" style="text-decoration:none;color:inherit">Delete Employee</a>
             </div>
             <hr class="sidebarLine"></hr>

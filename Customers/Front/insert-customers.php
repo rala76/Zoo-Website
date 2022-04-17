@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Include default employee page -->
+    <!-- Include default Customer page -->
     <?php include(__DIR__."/../Customer.php"); ?>
 
     <title>Insert New Customer</title>
@@ -22,7 +22,7 @@
             <br>
 
             <label class="input-label">Age</label><br>
-            <input name="Customer-Age" type="number" class="form-control" required
+            <input name="Customer-Age" type="number" min="1" class="form-control" required
             value="<?php echo isset($_POST['Customer-Age']) ? $_POST['Customer-Age'] : '' ?>">
             <br>
             
@@ -43,26 +43,23 @@
             $sql = "INSERT INTO [dbo].[Customer_Data] 
                 ([Fname]
                 ,[Lname]
-                ,[Age]
-                ,[Customer_ID])
+                ,[Age])
                 VALUES 
                 (?, ?, ?)";
             
             // Parameters of insert statement
             $params = array($Fname
                 ,$Lname
-                ,$Age
-                ,$CustomerID
-                );
+                ,$Age);
             
             // Status and error message to output on web page
-            $message = "Successfully Inserted New Employee";
+            $message = "Successfully Inserted New Customer";
             $error_msg = NULL;
 
             $stmt = sqlsrv_query($conn, $sql, $params);
             if ($stmt == false) {
                 //die(print_r(sqlsrv_errors(), true));
-                $message = "Failed to Insert New Employee";
+                $message = "Failed to Insert New Customer";
                 $error_msg = sqlsrv_errors();
             }
             
