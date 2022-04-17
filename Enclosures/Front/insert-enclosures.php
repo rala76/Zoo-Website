@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Include default employee page -->
+    <!-- Include default Enclosure page -->
     <?php include(__DIR__."/../enclosure.php"); ?>
 
     <title>Insert New Enclosure</title>
 </head>
 <body>
     <div class="form-base">
-        <!-- Insert form for Employee_Data -->
+        <!-- Insert form for Enclosure_Data -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             
         <label class="required-input-label">Maintanence Fees</label><br>
@@ -34,7 +34,7 @@
         // Connect to Microsoft Azure SQL Database
         include(__DIR__."/../../connect-sql.php");
 
-        // Get data from employee form once submit button is pressed
+        // Get data from Enclosure form once submit button is pressed
         if(isset($_POST["enclosure-submit"])) {
             $maintanenceFees = $_POST["enclosure-maintanenceFees"];
             $numAnimals = !empty($_POST["enclosure-numAnimals"]) ? $_POST["enclosure-numAnimals"] : "0";
@@ -42,9 +42,9 @@
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Enclosure_Data] 
-                ([maintanenceFees]
-                ,[numAnimals]
-                ,[enclosureID])
+                ([Maintanence_Fees]
+                ,[Num_Animals]
+                ,[EnclosureID])
                 VALUES 
                 (?, ?, ?)";
             
@@ -55,13 +55,13 @@
                 );
             
             // Status and error message to output on web page
-            $message = "Successfully Inserted New Employee";
+            $message = "Successfully Inserted New Enclosure";
             $error_msg = NULL;
 
             $stmt = sqlsrv_query($conn, $sql, $params);
             if ($stmt == false) {
                 //die(print_r(sqlsrv_errors(), true));
-                $message = "Failed to Insert New Employee";
+                $message = "Failed to Insert New Enclosure";
                 $error_msg = sqlsrv_errors();
             }
             
