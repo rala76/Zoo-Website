@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Include default employee page -->
-    <?php include(__DIR__."/../employee.php"); ?>
+    <?php include(__DIR__."/../Employee.php"); ?>
 
     <title>Insert New Employee</title>
 </head>
