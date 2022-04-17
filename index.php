@@ -11,12 +11,17 @@
         <div class="navText">
             <a href="/Employees/employee.php" style="text-decoration:none;color:inherit">Employees</a>
         </div>
-        <div class="navText">Customers</div>
+        <div class="navText">
+        <a href="/Customers/Customer.php" style="text-decoration:none;color:inherit">Customers</a>
+
+        </div>
         <div class="navText">Products</div>
         <div class="navText">Stores</div>
         <div class="navText">Events</div>
         <div class="navText">Animals</div>
-        <div class="navText">Enclosures</div>
+        <div class="navText">
+            <a href="/Enclosures/enclosure.php" style="text-decoration:none;color:inherit">Enclosures</a>
+        </div>
     </div>
 </body>
 </html>
