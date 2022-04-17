@@ -63,7 +63,7 @@
             $sql_2 = "DELETE FROM [dbo].[Employee_Data] 
                 WHERE [Employee_ID]='$ID'";
         }
-        elseif (isset($_POST["employee-delete-2"])) {
+        else if (isset($_POST["employee-delete-2"])) {
             $ID = $_POST["employee-id-2"];
             $Fname = $_POST["employee-Fname"];
             $Lname = $_POST["employee-Lname"];
