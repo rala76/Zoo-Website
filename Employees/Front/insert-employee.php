@@ -15,7 +15,7 @@
             value="<?php echo isset($_POST['employee-Fname']) ? $_POST['employee-Fname'] : '' ?>">
             <br>
 
-            <label class="required-input-label"> Last Name</label><br>
+            <label class="required-input-label">Last Name</label><br>
             <input name="employee-Lname" type="text" class="form-control" required
             value="<?php echo isset($_POST['employee-Lname']) ? $_POST['employee-Lname'] : '' ?>">
             <br>
@@ -57,38 +57,14 @@
                 </option>
 
                 <option value="Animal Enclosure">Animal Enclosure</option>
-                <option value="Gift Shop">Gift Shop</option>
-                <option value="Restaurant">Restaurant</option>
-                <option value="Ticket Booth">Ticket Booth</option>
+                <option value="Stores">Stores</option>
+                <option value="Ticket Office">Ticket Office</option>
             </select><br>
-            
-            <label class="input-label">Enclosure ID</label><br>
-            <input name="employee-enclosure-id" type="number" min="1" class="form-control" placeholder="NULL"
-            value="<?php echo isset($_POST['employee-enclosure-id']) ? $_POST['employee-enclosure-id'] : '' ?>">
+
+            <label class="required-input-label">Department ID</label><br>
+            <input name="employee-department-id" type="number" min="1" class="form-control" placeholder="NULL"
+            value="<?php echo isset($_POST['employee-department-id']) ? $_POST['employee-department-id'] : '' ?>">
             <br>
-
-            <label class="input-label">Store ID</label><br>
-            <input name="employee-store-id" type="number" min="1" class="form-control" placeholder="NULL"
-            value="<?php echo isset($_POST['employee-store-id']) ? $_POST['employee-store-id'] : '' ?>">
-            <br>
-
-            <label class="input-label">Event ID</label><br>
-            <input name="employee-event-id" type="number" class="form-control" placeholder="NULL"
-            value="<?php echo isset($_POST['employee-event-id']) ? $_POST['employee-event-id'] : '' ?>">
-            <br>
-
-            <!-- Dropdown list for Hourly_Or_Salaried -->
-            <label class="required-input-label">'Hourly' or 'Salaried'</label><br>
-            <select name="employee-hourly-or-salaried" class="dropdown-control" required
-            value="<?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : '' ?>">
-                <!-- Default option -->
-                <option value="<?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : '' ?>" hidden>
-                    <?php echo isset($_POST['employee-hourly-or-salaried']) ? $_POST['employee-hourly-or-salaried'] : 'Select an Option' ?>
-                </option>
-
-                <option value="Hourly">Hourly</option>
-                <option value="Salaried">Salaried</option>
-            </select><br>
 
             <label class="input-label">Hourly Wage</label><br>
             <input name="employee-hourly-wage" type="number" min="1" step="0.01" class="form-control" placeholder="NULL"
@@ -121,10 +97,7 @@
             $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
             $Supervisor_ID = !empty($_POST["employee-supervisor-id"]) ? $_POST["employee-supervisor-id"] : NULL;
             $Department_Name = $_POST["employee-department-name"];
-            $Enclosure_ID = !empty($_POST["employee-enclosure-id"]) ? $_POST["employee-enclosure-id"] : NULL;
-            $Store_ID = !empty($_POST["employee-store-id"]) ? $_POST["employee-store-id"] : NULL;
-            $Event_ID = !empty($_POST["employee-event-id"]) ? $_POST["employee-event-id"] : NULL;
-            $Hourly_Or_Salaried = $_POST["employee-hourly-or-salaried"];
+            $Department_ID = $_POST["employee-department-id"];
             $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : NULL;
             $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : NULL;
             $Weekly_Hours_Worked = !empty($_POST["employee-weekly-hours-worked"]) ? $_POST["employee-weekly-hours-worked"] : "0";
@@ -138,15 +111,12 @@
                 ,[Phone_Number]
                 ,[Supervisor_ID]
                 ,[Department_Name]
-                ,[Enclosure_ID]
-                ,[Store_ID]
-                ,[Event_ID]
-                ,[Hourly_Or_Salaried]
+                ,[Department_ID]
                 ,[Hourly_Wage]
                 ,[Weekly_Wage]
                 ,[Weekly_Hours_Worked])
                 VALUES 
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             // Parameters of insert statement
             $params = array($Fname
@@ -156,10 +126,7 @@
                 ,$Phone_Number
                 ,$Supervisor_ID
                 ,$Department_Name
-                ,$Enclosure_ID
-                ,$Store_ID
-                ,$Event_ID
-                ,$Hourly_Or_Salaried
+                ,$Department_ID
                 ,$Hourly_Wage
                 ,$Weekly_Wage
                 ,$Weekly_Hours_Worked);
