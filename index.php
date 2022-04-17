@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="header">
-        <!-- Hyperlink to the employee web page -->
+        <!-- Hyperlink to the Employee insert page -->
         <div class="navText">
             <a href="/Employees/employee.php" style="text-decoration:none;color:inherit">Employees</a>
         </div>
