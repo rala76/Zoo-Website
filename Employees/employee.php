@@ -14,11 +14,14 @@
         <div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
-                <!-- Hyperlink to the employee web page -->
+                <!-- Hyperlink to the insert employee web page -->
                 <a href="/Employees/Front/insert-employee.php" style="text-decoration:none;color:inherit">Insert New Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Delete Employee</div>
+            <div class="navText sidebarText">
+                <!-- Hyperlink to the delete employee web page -->
+                <a href="/Employees/Front/delete-employee.php" style="text-decoration:none;color:inherit">Delete Employee</a>
+            </div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">Update Employee</div>
             <hr class="sidebarLine"></hr>

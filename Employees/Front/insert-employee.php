@@ -15,7 +15,7 @@
             value="<?php echo isset($_POST['employee-Fname']) ? $_POST['employee-Fname'] : '' ?>">
             <br>
 
-            <label class="required-input-label"> Last Name</label><br>
+            <label class="required-input-label">Last Name</label><br>
             <input name="employee-Lname" type="text" class="form-control" required
             value="<?php echo isset($_POST['employee-Lname']) ? $_POST['employee-Lname'] : '' ?>">
             <br>
