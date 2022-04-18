@@ -61,12 +61,12 @@
             <br>
 
             <label class="input-label">Hourly Wage</label><br>
-            <input name="employee-hourly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="NULL"
+            <input name="employee-hourly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="0"
             value="<?php echo isset($_POST['employee-hourly-wage']) ? $_POST['employee-hourly-wage'] : '' ?>">
             <br>
 
             <label class="input-label">Weekly Wage</label><br>
-            <input name="employee-weekly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="NULL"
+            <input name="employee-weekly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="0"
             value="<?php echo isset($_POST['employee-weekly-wage']) ? $_POST['employee-weekly-wage'] : '' ?>">
             <br>
 
