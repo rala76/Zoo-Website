@@ -38,6 +38,7 @@ body {
     font-weight: lighter;
     margin-left: 3vh;
     display: inline-block;
+    text-decoration: none;
     transform: translateY(42%);
 }
 
