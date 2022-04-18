@@ -19,7 +19,9 @@
             <hr class="sidebarLine"></hr>
             <a href="/Stores/Front/get-store-information.php" class="navText sidebarText">Get Store Information</a>
             <hr class="sidebarLine"></hr>
-            <a href="/Stores/Front/search-stores.php" class="navText sidebarText">Search Store</a>
+            <a href="/Stores/Front/search-stores.php" class="navText sidebarText">Search Stores</a>
+            <hr class="sidebarLine"></hr>
+            <a href="/Stores/Front/view-store-table.php" class="navText sidebarText">View Store Table</a>
             <hr class="sidebarLine"></hr>
         </div>
     </div>
