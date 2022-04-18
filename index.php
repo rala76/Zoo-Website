@@ -2,11 +2,11 @@
 <html>
 <head>
     <link rel="stylesheet" href="/loginStyles.css">
-    <title>Login</title>
+    <title>Login to Zoo Database</title>
 </head>
 <body>
     <div class="login">
-        <h1>Login to Database</h1>
+        <h1>Login to Zoo Database</h1>
         <form action="authenticate.php" method="post">
             <label for="username"></label>
             <input type="text" name="username" placeholder="Username" id="username" required>
