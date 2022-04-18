@@ -41,12 +41,20 @@ body {
     transform: translateY(42%);
 }
 
+.navText:hover {
+    color: #C7C7C7;
+}
+
 .navText.sidebarText {
     color: #2C2C2C;
     width: 100%;
     margin-left: 0;
     text-align: center;
     transform: translateY(8%);
+}
+
+.navText.sidebarText:hover {
+    color: #777777;
 }
 
 /* Base area for form (under header & to the side of sidebar) */
