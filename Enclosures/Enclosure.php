@@ -11,18 +11,25 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Enclosure Insert page -->
-                <a href="/Enclosures/Front/insert-enclosures.php" style="text-decoration:none;color:inherit">Insert New Enclosure</a>
+            <div>
+                <a href="/Enclosures/Front/insert-enclosures.php" class="navText sidebarText">Insert New Enclosure</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Delete Enclosure</div>
+            <div>
+                <a href="/Enclosures/Front/delete-enclosures.php" class="navText sidebarText">Delete Enclosure</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Update Enclosure</div>
+            <div>
+                <a href="/Enclosures/Front/update-enclosures.php" class="navText sidebarText">Update Enclosure</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Get Enclosure Information</div>
+            <div>
+                <a href="/Enclosures/Front/get-enclosure-information.php" class="navText sidebarText">Get Enclosure Information</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Enclosure</div>
+            <div>
+                <a href="/Enclosures/Front/search-enclosure.php" class="navText sidebarText">Search Enclosure</a>
+            </div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>

@@ -11,18 +11,25 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Events Insert page -->
-                <a href="/Events/Front/insert-Event.php" style="text-decoration:none;color:inherit">Insert New Events</a>
+            <div>
+                <a href="/Events/Front/insert-events.php" class="navText sidebarText">Insert New Event</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Delete Events</div>
+            <div>
+                <a href="/Events/Front/delete-events.php" class="navText sidebarText">Delete Event</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Update Events</div>
+            <div>
+                <a href="/Events/Front/update-events.php" class="navText sidebarText">Update Event</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Get Event Information</div>
+            <div>
+                <a href="/Events/Front/get-event-information.php" class="navText sidebarText">Get Event Information</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Events</div>
+            <div>
+                <a href="/Events/Front/search-events.php" class="navText sidebarText">Search Event</a>
+            </div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>

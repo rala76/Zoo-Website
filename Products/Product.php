@@ -11,18 +11,25 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Products Insert page -->
-                <a href="/Products/Front/insert-product.php" style="text-decoration:none;color:inherit">Insert New Products</a>
+            <div>
+                <a href="/Products/Front/insert-products.php" class="navText sidebarText">Insert New Product</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Delete Products</div>
+            <div>
+                <a href="/Products/Front/delete-products.php" class="navText sidebarText">Delete Product</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Update Products</div>
+            <div>
+                <a href="/Products/Front/update-products.php" class="navText sidebarText">Update Product</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Get Product Information</div>
+            <div>
+                <a href="/Products/Front/get-product-information.php" class="navText sidebarText">Get Product Information</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Products</div>
+            <div>
+                <a href="/Products/Front/search-products.php" class="navText sidebarText">Search Product</a>
+            </div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>

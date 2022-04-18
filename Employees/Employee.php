@@ -11,24 +11,25 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Employee Insert page -->
-                <a href="/Employees/Front/insert-employee.php" style="text-decoration:none;color:inherit">Insert New Employee</a>
+            <div>
+                <a href="/Employees/Front/insert-employee.php" class="navText sidebarText">Insert New Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Employee Delete page -->
-                <a href="/Employees/Front/delete-employee.php" style="text-decoration:none;color:inherit">Delete Employee</a>
+            <div>
+                <a href="/Employees/Front/delete-employee.php" class="navText sidebarText">Delete Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Employee Update page -->
-                <a href="/Employees/Front/update-employee.php" style="text-decoration:none;color:inherit">Update Employee</a>
+            <div>
+                <a href="/Employees/Front/update-employee.php" class="navText sidebarText">Update Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Get Employee Information</div>
+            <div>
+                <a href="Employees/Front/get-employee-information.php" class="navText sidebarText">Get Employee Information</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Employees</div>
+            <div>
+                <a href="Employees/Front/search-employees.php" class="navText sidebarText">Search Employees</a>
+            </div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>

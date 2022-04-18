@@ -11,18 +11,25 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Customer Insert page -->
-                <a href="/Customers/Front/insert-customers.php" style="text-decoration:none;color:inherit">Insert New Customer</a>
+            <div>
+                <a href="/Customers/Front/insert-customers.php" class="navText sidebarText">Insert New Customer</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Delete Customer</div>
+            <div>
+                <a href="/Customers/Front/delete-customers.php" class="navText sidebarText">Delete Customer</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Update Customer</div>
+            <div>
+                <a href="/Customers/Front/update-customers.php" class="navText sidebarText">Update Customer</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Get Customer Information</div>
+            <div>
+                <a href="/Customers/Front/get-customer-information.php" class="navText sidebarText">Get Customer Information</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Customer</div>
+            <div>
+                <a href="/Customers/Front/search-customers.php" class="navText sidebarText">Search Customer</a>
+            </div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>

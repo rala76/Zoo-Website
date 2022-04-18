@@ -11,18 +11,25 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">
-                <!-- Hyperlink to the Stores Insert page -->
-                <a href="/Stores/Front/insert-store.php" style="text-decoration:none;color:inherit">Insert New Stores</a>
+            <div>
+                <a href="/Stores/Front/insert-stores.php" class="navText sidebarText">Insert New Store</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Delete Stores</div>
+            <div>
+                <a href="/Stores/Front/delete-stores.php" class="navText sidebarText">Delete Store</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Update Stores</div>
+            <div>
+                <a href="/Stores/Front/update-stores.php" class="navText sidebarText">Update Store</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Get Store Information</div>
+            <div>
+                <a href="/Stores/Front/get-store-information.php" class="navText sidebarText">Get Store Information</a>
+            </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Stores</div>
+            <div>
+                <a href="/Stores/Front/search-stores.php" class="navText sidebarText">Search Store</a>
+            </div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>
