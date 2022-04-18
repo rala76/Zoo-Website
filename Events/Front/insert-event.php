@@ -16,12 +16,12 @@
             <br>
 
             <label class="required-input-label">Number of Attendees</label><br>
-            <input name="Event-numAttendees" type="number" class="form-control" required
+            <input name="Event-numAttendees" type="number" min="0" class="form-control" required
             value="<?php echo isset($_POST['Event-numAttendees']) ? $_POST['Event-numAttendees'] : '' ?>">
             <br>
 
             <label class="required-input-label">Weekly Revenue</label><br>
-            <input name="Event-weeklyRevenue" type="number" class="form-control" required
+            <input name="Event-weeklyRevenue" type="number" step="0.1" class="form-control" required
             value="<?php echo isset($_POST['Event-weeklyRevenue']) ? $_POST['Event-weeklyRevenue'] : '' ?>">
             <br>
 
@@ -30,23 +30,15 @@
             value="<?php echo isset($_POST['Event-eventDate']) ? $_POST['Event-eventDate'] : '' ?>">
             <br>
 
-            <label class="required-input-label">Event Time (HH:MM))</label><br>
+            <label class="required-input-label">Event Time (HH:MM:SS)</label><br>
             <input name="Event-eventTime" type="text" class="form-control" required
             value="<?php echo isset($_POST['Event-eventTime']) ? $_POST['Event-eventTime'] : '' ?>">
             <br>
-
-            <label class="required-input-label">Event ID</label><br>
-            <input name="Event-Event-id" type="number" min="1" class="form-control" 
-            value="<?php echo isset($_POST['Event-Event-id']) ? $_POST['Event-Event-id'] : '' ?>">
-            <br>
-
             
-            <label class="required-input-label">Animal ID</label><br>
-            <input name="Event-animal-id" type="number" min="1" class="form-control" 
+            <label class="input-label">Animal ID</label><br>
+            <input name="Event-animal-id" type="number" min="1" class="form-control" placeholder="NULL"
             value="<?php echo isset($_POST['Event-animal-id']) ? $_POST['Event-animal-id'] : '' ?>">
             <br>
-
-           
 
             <button name="Event-submit" type="submit" class="form-submit">Submit</button>
         </form>
@@ -58,12 +50,11 @@
         // Get data from Event form once submit button is pressed
         if(isset($_POST["Event-submit"])) {
             $name = $_POST["Event-name"];
-            $numAttendees = !empty($_POST["Event-numAttendees"]) ? $_POST["Event-numAttendees"] : "0";;
-            $weeklyRevenue = !empty($_POST["Event-weeklyRevenue"]) ? $_POST["Event-weeklyRevenue"] : "0";;
+            $numAttendees = !empty($_POST["Event-numAttendees"]) ? $_POST["Event-numAttendees"] : "0";
+            $weeklyRevenue = !empty($_POST["Event-weeklyRevenue"]) ? $_POST["Event-weeklyRevenue"] : "0";
             $eventDate = $_POST["Event-eventDate"];
             $eventTime = $_POST["Event-eventTime"];
-            $Event_ID = $_POST["Event-Event-id"] ;
-            $Animal_ID =  $_POST["Event-animal-id"] ;
+            $Animal_ID = !empty($_POST["Event-animal-id"]) ? $_POST["Event-animal-id"] : NULL;
            
 
             // Create insert statement
@@ -73,7 +64,6 @@
                 ,[Weekly_Revenue]
                 ,[Event_Date]
                 ,[Event_Time]
-                ,[Event_ID]
                 ,[Animal_ID])
                 VALUES 
                 (?, ?, ?, ?, ?, ?)";
@@ -84,7 +74,6 @@
                 ,$weeklyRevenue
                 ,$eventDate
                 ,$eventTime
-                ,$Event_ID
                 ,$Animal_ID);
             
             // Status and error message to output on web page
@@ -93,9 +82,8 @@
 
             $stmt = sqlsrv_query($conn, $sql, $params);
             if ($stmt == false) {
-                //die(print_r(sqlsrv_errors(), true));
-                $message = "Failed to Insert New Event";
                 $error_msg = sqlsrv_errors();
+                $message = "Failed to Insert New Event";
             }
             
             // Output status and error message
