@@ -8,7 +8,7 @@
 <body>
     <div class="login">
         <h1>Login to Zoo Database</h1>
-        <form action="authenticate.php" method="post">
+        <form action="/Login/authenticate.php" method="post">
             <label for="Username"></label>
             <input type="text" name="Username" placeholder="Username" id="Username" required>
             <label for="Password"></label>
