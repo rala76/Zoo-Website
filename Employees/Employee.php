@@ -12,15 +12,15 @@
         <div>
             <hr class="sidebarLine"></hr>
             <div>
-                <a href="/Employees/Front/insert-employee.php" class="navText sidebarText">Insert New Employee</a>
+                <a href="/Employees/Front/insert-employees.php" class="navText sidebarText">Insert New Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
             <div>
-                <a href="/Employees/Front/delete-employee.php" class="navText sidebarText">Delete Employee</a>
+                <a href="/Employees/Front/delete-employees.php" class="navText sidebarText">Delete Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
             <div>
-                <a href="/Employees/Front/update-employee.php" class="navText sidebarText">Update Employee</a>
+                <a href="/Employees/Front/update-employees.php" class="navText sidebarText">Update Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
             <div>
