@@ -21,7 +21,10 @@
                 <a href="/Employees/Front/delete-employee.php" style="text-decoration:none;color:inherit">Delete Employee</a>
             </div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Update Employee</div>
+            <div class="navText sidebarText">
+                <!-- Hyperlink to the Employee Update page -->
+                <a href="/Employees/Front/update-employee.php" style="text-decoration:none;color:inherit">Update Employee</a>
+            </div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">Get Employee Information</div>
             <hr class="sidebarLine"></hr>
