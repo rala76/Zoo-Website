@@ -68,8 +68,8 @@
             $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
             $Department_Name = $_POST["employee-department-name"];
             $Department_ID = $_POST["employee-department-id"];
-            $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : NULL;
-            $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : NULL;
+            $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : "0";
+            $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : "0";
             $Weekly_Hours_Worked = !empty($_POST["employee-weekly-hours-worked"]) ? $_POST["employee-weekly-hours-worked"] : "0";
 
             // Create update statement
@@ -194,12 +194,12 @@
             <br>
 
             <label class="input-label">Hourly Wage</label><br>
-            <input name="employee-hourly-wage" type="number" min="1" step="0.01" class="form-control" placeholder="NULL"
+            <input name="employee-hourly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="NULL"
             value="<?php echo isset($row['Hourly_Wage']) ? $row['Hourly_Wage'] : NULL ?>">
             <br>
 
             <label class="input-label">Weekly Wage</label><br>
-            <input name="employee-weekly-wage" type="number" min="1" step="0.01" class="form-control" placeholder="NULL"
+            <input name="employee-weekly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="NULL"
             value="<?php echo isset($row['Weekly_Wage']) ? $row['Weekly_Wage'] : NULL ?>">
             <br>
 
