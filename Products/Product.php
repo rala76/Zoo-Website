@@ -8,13 +8,11 @@
     <title>Products</title>
 </head>
 <body>
-    <!-- This part is going to need to be refactored into a component to look way nicer -->
-    <!-- Replaced style="transform:translateY(50%)" for display:flex and align-items:center in .sidebar css -->
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">
-                <!-- Hyperlink to the Products web page -->
+                <!-- Hyperlink to the Products Insert page -->
                 <a href="/Products/Front/insert-product.php" style="text-decoration:none;color:inherit">Insert New Products</a>
             </div>
             <hr class="sidebarLine"></hr>

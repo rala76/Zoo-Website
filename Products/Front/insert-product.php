@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="form-base">
-        <!-- Insert form for Product_Data -->
+        <!-- Insert form for Product_Information -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <label class="required-input-label">Category</label><br>
             <select name="Store-category" class="dropdown-control" required>
@@ -32,25 +32,19 @@
             value="<?php echo isset($_POST['Product-name']) ? $_POST['Product-name'] : '' ?>">
             <br>
 
-
             <label class="required-input-label">Inventory Amount</label><br>
-            <input name="Product-inventory" type="number" class="form-control" 
+            <input name="Product-inventory" type="number" min="0" class="form-control" placeholder="0" required
             value="<?php echo isset($_POST['Product-inventory']) ? $_POST['Product-inventory'] : '' ?>">
             <br>
 
             <label class="required-input-label">Amount Sold</label><br>
-            <input name="Product-amountSold" type="number" min="1" class="form-control" 
+            <input name="Product-amountSold" type="number" min="0" class="form-control" placeholder="0" required
             value="<?php echo isset($_POST['Product-amountSold']) ? $_POST['Product-amountSold'] : '' ?>">
             <br>
 
             <label class="required-input-label">Price</label><br>
-            <input name="Product-price" type="number" min="1" class="form-control" 
+            <input name="Product-price" type="number" min="1" step="0.1" class="form-control" required
             value="<?php echo isset($_POST['Product-price']) ? $_POST['Product-price'] : '' ?>">
-            <br>
-            
-            <label class="required-input-label">Product ID</label><br>
-            <input name="Product-productID" type="number" min="1" class="form-control" 
-            value="<?php echo isset($_POST['Product-productID']) ? $_POST['Product-productID'] : '' ?>">
             <br>
 
             <button name="Product-submit" type="submit" class="form-submit">Submit</button>
@@ -62,25 +56,23 @@
 
         // Get data from Product form once submit button is pressed
         if(isset($_POST["Product-submit"])) {
-            $category = $_POST["Product-category"];
+            $category = $_POST["Store-category"];
             $purchaseDate = $_POST["Product-purchaseDate"];
             $name = $_POST["Product-name"];
             $inventoryAmount = !empty($_POST["Product-inventory"]) ? $_POST["Product-inventory"] : "0";;
             $amountSold = !empty($_POST["Product-amountSold"]) ? $_POST["Product-amountSold"] : "0";;
             $price = $_POST["Product-price"];
-            $productID =  $_POST["Product-productID"];
 
             // Create insert statement
-            $sql = "INSERT INTO [dbo].[Product_Data] 
+            $sql = "INSERT INTO [dbo].[Product_Information] 
                 ([Category]
-                ,[purchase_Date]
+                ,[Purchase_Date]
                 ,[Product_Name]
                 ,[Inventory_Amount]
                 ,[Amount_Sold]
-                ,[Price]
-                ,[Product_ID])
+                ,[Price])
                 VALUES 
-                (?, ?, ?, ?, ?, ?, ?)";
+                (?, ?, ?, ?, ?, ?)";
             
             // Parameters of insert statement
             $params = array($category
@@ -88,8 +80,7 @@
                 ,$name
                 ,$inventoryAmount
                 ,$amountSold
-                ,$price
-                ,$productID);
+                ,$price);
             
             // Status and error message to output on web page
             $message = "Successfully Inserted New Product";
