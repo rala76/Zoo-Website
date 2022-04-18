@@ -17,11 +17,20 @@
             <a href="/Customers/Customer.php" style="text-decoration:none;color:inherit">Customers</a>
         </div>
 
-        <div class="navText">Products</div>
+        <!-- Hyperlink to the Products web page -->
+        <div class="navText">
+            <a href="/Products/Product.php" style="text-decoration:none;color:inherit">Products</a>
+        </div>
 
-        <div class="navText">Stores</div>
+        <!-- Hyperlink to the Stores web page -->
+        <div class="navText">
+            <a href="/Stores/Stores.php" style="text-decoration:none;color:inherit">Stores</a>
+        </div>
 
-        <div class="navText">Events</div>
+        <!-- Hyperlink to the Events web page -->
+        <div class="navText">
+            <a href="/Events/Events.php" style="text-decoration:none;color:inherit">Events</a>
+        </div>
 
         <!-- Hyperlink to the Animals web page -->
         <div class="navText">
