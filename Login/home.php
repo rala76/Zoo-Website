@@ -11,7 +11,7 @@ if ($_SESSION['loggedin'] != true) {
 <!doctype html>
 <html>
 <head>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Styles/styles.css">
     <title>Home Page</title>
 </head>
 <body>

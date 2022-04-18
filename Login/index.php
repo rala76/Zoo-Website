@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <link rel="stylesheet" href="/loginStyles.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/Styles/loginStyles.css">
+    <link rel="stylesheet" href="/Styles/styles.css">
     <title>Login to Zoo Database</title>
 </head>
 <body>
