@@ -22,7 +22,7 @@
             <hr class="sidebarLine"></hr>
             <div class="navText sidebarText">Get Product Information</div>
             <hr class="sidebarLine"></hr>
-            <div class="navText sidebarText">Search Productss</div>
+            <div class="navText sidebarText">Search Products</div>
             <hr class="sidebarLine"></hr>
         </div>
     </div>
