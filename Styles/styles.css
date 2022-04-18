@@ -38,7 +38,12 @@ body {
     font-weight: lighter;
     margin-left: 3vh;
     display: inline-block;
+    text-decoration: none;
     transform: translateY(42%);
+}
+
+.navText:hover {
+    color: #C7C7C7;
 }
 
 .navText.sidebarText {
@@ -47,6 +52,10 @@ body {
     margin-left: 0;
     text-align: center;
     transform: translateY(8%);
+}
+
+.navText.sidebarText:hover {
+    color: #777777;
 }
 
 /* Base area for form (under header & to the side of sidebar) */
