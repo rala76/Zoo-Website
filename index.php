@@ -7,40 +7,13 @@
 </head>
 <body>
     <div class="header">
-        <!-- Hyperlink to the Employee web page -->
-        <div class="navText">
-            <a href="/Employees/Employee.php" style="text-decoration:none;color:inherit">Employees</a>
-        </div>
-
-        <!-- Hyperlink to the Customer web page -->
-        <div class="navText">
-            <a href="/Customers/Customer.php" style="text-decoration:none;color:inherit">Customers</a>
-        </div>
-
-        <!-- Hyperlink to the Products web page -->
-        <div class="navText">
-            <a href="/Products/Product.php" style="text-decoration:none;color:inherit">Products</a>
-        </div>
-
-        <!-- Hyperlink to the Stores web page -->
-        <div class="navText">
-            <a href="/Stores/Stores.php" style="text-decoration:none;color:inherit">Stores</a>
-        </div>
-
-        <!-- Hyperlink to the Events web page -->
-        <div class="navText">
-            <a href="/Events/Events.php" style="text-decoration:none;color:inherit">Events</a>
-        </div>
-
-        <!-- Hyperlink to the Animals web page -->
-        <div class="navText">
-            <a href="/Animals/Animal.php" style="text-decoration:none;color:inherit">Animals</a>
-        </div>
-        
-        <!-- Hyperlink to the Enclosure web page -->
-        <div class="navText">
-            <a href="/Enclosures/Enclosure.php" style="text-decoration:none;color:inherit">Enclosures</a>
-        </div>
+        <a href="/Employees/Employee.php" class="navText">Employees</a>
+        <a href="/Customers/Customer.php" class="navText">Customers</a>
+        <a href="/Products/Product.php" class="navText">Products</a>
+        <a href="/Stores/Stores.php" class="navText">Stores</a>
+        <a href="/Events/Events.php" class="navText">Events</a>
+        <a href="/Animals/Animal.php" class="navText">Animals</a>
+        <a href="/Enclosures/Enclosure.php" class="navText">Enclosures</a>
     </div>
 </body>
 </html>
