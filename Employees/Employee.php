@@ -11,25 +11,15 @@
     <div class="sidebar">
         <div>
             <hr class="sidebarLine"></hr>
-            <div>
-                <a href="/Employees/Front/insert-employees.php" class="navText sidebarText">Insert New Employee</a>
-            </div>
+            <a href="/Employees/Front/insert-employees.php" class="navText sidebarText">Insert New Employee</a>
             <hr class="sidebarLine"></hr>
-            <div>
-                <a href="/Employees/Front/delete-employees.php" class="navText sidebarText">Delete Employee</a>
-            </div>
+            <a href="/Employees/Front/delete-employees.php" class="navText sidebarText">Delete Employee</a>
             <hr class="sidebarLine"></hr>
-            <div>
-                <a href="/Employees/Front/update-employees.php" class="navText sidebarText">Update Employee</a>
-            </div>
+            <a href="/Employees/Front/update-employees.php" class="navText sidebarText">Update Employee</a>
             <hr class="sidebarLine"></hr>
-            <div>
-                <a href="Employees/Front/get-employee-information.php" class="navText sidebarText">Get Employee Information</a>
-            </div>
+            <a href="Employees/Front/get-employee-information.php" class="navText sidebarText">Get Employee Information</a>
             <hr class="sidebarLine"></hr>
-            <div>
-                <a href="Employees/Front/search-employees.php" class="navText sidebarText">Search Employees</a>
-            </div>
+            <a href="Employees/Front/search-employees.php" class="navText sidebarText">Search Employees</a>
             <hr class="sidebarLine"></hr>
         </div>
     </div>
