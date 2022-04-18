@@ -2,7 +2,7 @@
 //Start session
 session_start();
 //Get connection details from connect-sql.php file
-include 'connect-sql.php';
+include (__DIR__."/../connect-sql.php");
 
 //Variables to store username and password input by the user
 $Username = $_POST['Username'];

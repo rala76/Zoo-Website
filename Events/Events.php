@@ -3,7 +3,7 @@
 <html>
 <head>
     <!-- Include index page (header) -->
-    <?php include(__DIR__."/../home.php") ?>
+    <?php include(__DIR__."/../Login/home.php") ?>
 
     <title>Events</title>
 </head>
