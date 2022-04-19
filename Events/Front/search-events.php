@@ -71,13 +71,13 @@
             if ($_POST["event-orderBy"] == "Ascending") {
                 $sql = "SELECT [Event_ID], [Event_Name], [Event_Date], [Event_Time]
                     , [Num_Attendees], [Weekly_Revenue]
-                    FROM [dbo].[Employee_Data] 
+                    FROM [dbo].[Events] 
                     ORDER BY '$Sort_By' ASC ";
             }
             else {
                 $sql = "SELECT [Event_ID], [Event_Name], [Event_Date], [Event_Time]
                     , [Num_Attendees], [Weekly_Revenue]
-                    FROM [dbo].[Employee_Data] 
+                    FROM [dbo].[Events] 
                     ORDER BY '$Sort_By' DESC ";
             }
 
@@ -105,7 +105,7 @@
                     echo "<td>" . $row["Event_ID"] . "</td>";
                     echo "<td>" . $row["Event_Name"] . "</td>";
                     echo "<td>" . $row["Event_Date"]->format('Y-m-d') . "</td>";
-                    echo "<td>" . $row["Event_Time"]->format('hh:mm:ss') . "</td>";
+                    echo "<td>" . $row["Event_Time"] . "</td>";
                     echo "<td>" . $row["Num_Attendees"] . "</td>";
                     echo "<td>" . $row["Weekly_Revenue"] . "</td>";
                     echo "</tr>";
