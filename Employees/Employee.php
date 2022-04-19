@@ -3,7 +3,7 @@
 <html>
 <head>
     <!-- Check session -->
-    <?php include(__DIR__."/../check-session.php") ?>
+    <?php include_once(__DIR__."/../check-session.php") ?>
 
     <!-- Include index page (header) -->
     <?php include(__DIR__."/../Login/home.php") ?>
