@@ -20,8 +20,6 @@
             <hr class="sidebarLine"></hr>
             <a href="/Animals/Front/update-animals.php"class="navText sidebarText">Update Animal</a>
             <hr class="sidebarLine"></hr>
-            <a href="/Animals/Front/get-animal-information.php"class="navText sidebarText">Get Animal Information</a>
-            <hr class="sidebarLine"></hr>
             <a href="/Animals/Front/search-animals.php"class="navText sidebarText">Search Animals</a>
             <hr class="sidebarLine"></hr>
         </div>

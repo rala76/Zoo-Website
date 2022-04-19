@@ -20,9 +20,7 @@
             <hr class="sidebarLine"></hr>
             <a href="/Employees/Front/update-employees.php" class="navText sidebarText">Update Employee</a>
             <hr class="sidebarLine"></hr>
-            <a href="Employees/Front/get-employee-information.php" class="navText sidebarText">Get Employee Information</a>
-            <hr class="sidebarLine"></hr>
-            <a href="Employees/Front/search-employees.php" class="navText sidebarText">Search Employees</a>
+            <a href="/Employees/Front/search-employees.php" class="navText sidebarText">Search Employees</a>
             <hr class="sidebarLine"></hr>
         </div>
     </div>
