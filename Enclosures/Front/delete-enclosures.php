@@ -31,7 +31,7 @@
             $ID = $_POST["enclosure-id-1"];
 
             // Info of Enclosure to be deleted
-            $sql_1 = "SELECT [Maintenence_Fees], [Num_Animals], [Enclosure_ID]
+            $sql_1 = "SELECT [Enclosure_ID], [Maintenance_Fees], [Num_Animals], [Department_ID]
                 FROM [dbo].[Enclosure_Data] 
                 WHERE [Enclosure_ID]='$ID'";
 
@@ -79,9 +79,10 @@
             echo "<label class='form-control'>Enclosure Deleted:</label><br>";
             echo "<table>";
                 echo "<tr>";
+                    echo "<th>Enclosure ID</th>";
                     echo "<th>Maintenance Fees</th>";
                     echo "<th>Number of Animals</th>";
-                    echo "<th>Enclosure ID</th>";
+                    echo "<th>Department ID</th>";
                 echo "</tr>";
 
                 // Fetch row from Enclosure_Data
@@ -90,7 +91,7 @@
                     echo "<td>" . $row["Enclosure_ID"] . "</td>";
                     echo "<td>" . $row["Maintenance_Fees"] . "</td>";
                     echo "<td>" . $row["Num_Animals"] . "</td>";
-                    
+                    echo "<td>" . $row["Department_ID"] . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";

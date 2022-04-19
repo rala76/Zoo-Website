@@ -63,7 +63,7 @@
         if (isset($_POST["Enclosure-update-2"])) {
             $Maintenance_Fees = $_POST["Enclosure-Maintenance_Fees"];
             $Num_Animals = $_POST["Enclosure-Num_Animals"];
-            $Enclosure_ID = $_POST["Enclosure-Enclosure_ID"];
+            $Department_ID = $_POST["Enclosure-Department_ID"];
 
             // Create update statement
             $ID = $_POST["Enclosure-id"];
@@ -71,7 +71,7 @@
             $sql_2 = "UPDATE [dbo].[Enclosure_Data] 
                 SET [Maintenance_Fees] = '$Maintenance_Fees'
                 ,[Num_Animals] = '$Num_Animals'
-                ,[Enclosure_ID] = '$Enclosure_ID'
+                ,[Department_ID] = '$Department_ID'
     
                 WHERE [Enclosure_ID]='$ID'";
             
@@ -131,20 +131,19 @@
             <p style="font-size:large"><b>Update Fields:</b></p>
 
             <label class="required-input-label">Maintenance Fees</label><br>
-            <input name="Enclosure-Maintenance_Fees" type="text" class="form-control"
+            <input name="Enclosure-Maintenance_Fees" type="number" min="0" step="0.1" class="form-control"
             value="<?php echo isset($row['Maintenance_Fees']) ? $row['Maintenance_Fees'] : '' ?>">
             <br>
 
             <label class="required-input-label">Number of Animals</label><br>
-            <input name="Enclosure-Num_Animals" type="text" class="form-control"
+            <input name="Enclosure-Num_Animals" type="number" min="0" class="form-control"
             value="<?php echo isset($row['Num_Animals']) ? $row['Num_Animals'] : '' ?>">
             <br>
 
-            <label class="required-input-label">Enclosure ID</label><br>
-            <input name="Enclosure-Enclosure_ID" type="text" class="form-control"
-            value="<?php echo isset($row['Enclosure_ID']) ? $row['Enclosure_ID'] : '' ?>">
+            <label class="required-input-label">Department ID</label><br>
+            <input name="Enclosure-Department_ID" type="number" min="1" class="form-control"
+            value="<?php echo isset($row['Department_ID']) ? $row['Department_ID'] : '' ?>">
             <br>
-
          
             <button name="Enclosure-update-2" type="submit" class="form-submit">Submit</button>
         </form>

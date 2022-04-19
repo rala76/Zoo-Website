@@ -20,6 +20,11 @@
             <input name="enclosure-numAnimals" type="number" min="0" class="form-control" placeholder="0" required
             value="<?php echo isset($_POST['enclosure-numAnimals']) ? $_POST['enclosure-numAnimals'] : '' ?>">
             <br>
+
+            <label class="required-input-label">Department ID</label><br>
+            <input name="enclosure-departmentID" type="number" min="1" class="form-control" required
+            value="<?php echo isset($_POST['enclosure-departmentID']) ? $_POST['enclosure-departmentID'] : '' ?>">
+            <br>
             
             <button name="enclosure-submit" type="submit" class="form-submit">Submit</button>
         </form>
@@ -32,17 +37,20 @@
         if(isset($_POST["enclosure-submit"])) {
             $maintenanceFees = $_POST["enclosure-maintenanceFees"];
             $numAnimals = !empty($_POST["enclosure-numAnimals"]) ? $_POST["enclosure-numAnimals"] : "0";
+            $departmentID = $_POST["enclosure-departmentID"];
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Enclosure_Data] 
                 ([Maintenance_Fees]
-                ,[Num_Animals])
+                ,[Num_Animals]
+                ,[Department_ID])
                 VALUES 
-                (?, ?)";
+                (?, ?, ?)";
             
             // Parameters of insert statement
             $params = array($maintenanceFees
-                ,$numAnimals);
+                ,$numAnimals
+                ,$departmentID);
             
             // Status and error message to output on web page
             $message = "Successfully Inserted New Enclosure";
