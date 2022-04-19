@@ -58,6 +58,7 @@
             $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
                 , [Gender], [Phone_Number], [Department_Name], [Department_ID]
                 , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data] 
                 WHERE [Employee_ID]='$ID'";
 
             // Create delete statement (ID)
@@ -73,6 +74,7 @@
             $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
                 , [Gender], [Phone_Number], [Department_Name], [Department_ID]
                 , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data] 
                 WHERE [Employee_ID]='$ID' AND [Fname]='$Fname' AND [Lname]='$Lname'";
 
             // Create delete statement (ID + Name)
