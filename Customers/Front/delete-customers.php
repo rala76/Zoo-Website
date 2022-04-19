@@ -120,8 +120,7 @@
                     echo "<th>ID</th>";
                     echo "<th>First Name</th>";
                     echo "<th>Last Name</th>";
-                    echo "<th>Department ID</th>";
-                    echo "<th>Department Name</th>";
+                    echo "<th>Age</th>";
                 echo "</tr>";
 
                 // Fetch row from Customer_Data
@@ -130,8 +129,7 @@
                     echo "<td>" . $row["Customer_ID"] . "</td>";
                     echo "<td>" . $row["Fname"] . "</td>";
                     echo "<td>" . $row["Lname"] . "</td>";
-                    echo "<td>" . $row["Department_ID"] . "</td>";
-                    echo "<td>" . $row["Department_Name"] . "</td>";
+                    echo "<td>" . $row["Age"] . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";
