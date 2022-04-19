@@ -80,7 +80,7 @@
             echo "<label class='form-control'></label><br>";
             echo "<table>";
                 echo "<tr>";
-                    echo "<th>Enclosure ID/th>";
+                    echo "<th>Enclosure ID</th>";
                     echo "<th>Department ID</th>";
                     echo "<th>Number of Animals</th>";
                     echo "<th>Maintenance Fees</th>";
