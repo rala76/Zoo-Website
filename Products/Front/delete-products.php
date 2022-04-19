@@ -31,8 +31,8 @@
             $ID = $_POST["product-id-1"];
 
             // Info of product to be deleted
-            $sql_1 = "SELECT [Product_ID], [Category], [Purchase_Date], [Product_Name]
-                , [Inventory_Amount], [Amount_Sold], [Price]
+            $sql_1 = "SELECT [Product_ID], [Product_Name], [Category]
+                , [Purchase_Date], [Inventory_Amount], [Amount_Sold], [Price]
                 FROM [dbo].[Product_Information] 
                 WHERE [Product_ID]='$ID'";
 
@@ -81,9 +81,9 @@
             echo "<table>";
                 echo "<tr>";
                     echo "<th>Product ID</th>";
+                    echo "<th>Product Name</th>";
                     echo "<th>Category</th>";
                     echo "<th>Purchase Date</th>";
-                    echo "<th>Product Name</th>";
                     echo "<th>Inventory Amount</th>";
                     echo "<th>Amount Sold</th>";
                     echo "<th>Price</th>";
@@ -93,12 +93,13 @@
                 while($row = sqlsrv_fetch_array($stmt_1, SQLSRV_FETCH_ASSOC)) {
                     echo "<tr>";
                     echo "<td>" . $row["Product_ID"] . "</td>";
+                    echo "<td>" . $row["Product_ID"] . "</td>";
+                    echo "<td>" . $row["Product_Name"] . "</td>";
                     echo "<td>" . $row["Category"] . "</td>";
                     echo "<td>" . $row["Purchase_Date"]->format('Y-m-d') . "</td>";
-                    echo "<td>" . $row["Product_Name"] . "</td>";
                     echo "<td>" . $row["Inventory_Amount"] . "</td>";
                     echo "<td>" . $row["Amount_Sold"] . "</td>";
-                    echo "<td>" . $row["Price"] . "</td>";
+                    echo "<td>$" . number_format($row["Price"], 2) . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";

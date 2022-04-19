@@ -17,8 +17,6 @@
             <hr class="sidebarLine"></hr>
             <a href="/Stores/Front/update-stores.php" class="navText sidebarText">Update Store</a>
             <hr class="sidebarLine"></hr>
-            <a href="/Stores/Front/get-store-information.php" class="navText sidebarText">Get Store Information</a>
-            <hr class="sidebarLine"></hr>
             <a href="/Stores/Front/search-stores.php" class="navText sidebarText">Search Stores</a>
             <hr class="sidebarLine"></hr>
         </div>

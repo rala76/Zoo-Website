@@ -31,8 +31,8 @@
             $ID = $_POST["event-id-1"];
 
             // Info of event to be deleted
-            $sql_1 = "SELECT [Event_Name], [Num_Attendees], [Weekly_Revenue]
-                , [Event_Date], [Event_Time], [Event_ID]
+            $sql_1 = "SELECT [Event_ID], [Event_Name], [Event_Date], [Event_Time]
+                , [Num_Attendees], [Weekly_Revenue]
                 FROM [dbo].[Events] 
                 WHERE [Event_ID]='$ID'";
 
@@ -82,10 +82,10 @@
                 echo "<tr>";
                     echo "<th>Event ID</th>";
                     echo "<th>Event Name</th>";
+                    echo "<th>Event Date</th>";
+                    echo "<th>Event Time</th>";
                     echo "<th>Number of Attendees</th>";
                     echo "<th>Weekly Revenue</th>";
-                    echo "<th>Date</th>";
-                    echo "<th>Time</th>";
                 echo "</tr>";
 
                 // Fetch row from Events
@@ -93,10 +93,10 @@
                     echo "<tr>";
                     echo "<td>" . $row["Event_ID"] . "</td>";
                     echo "<td>" . $row["Event_Name"] . "</td>";
-                    echo "<td>" . $row["Num_Attendees"] . "</td>";
-                    echo "<td>" . $row["Weekly_Revenue"] . "</td>";
                     echo "<td>" . $row["Event_Date"]->format('Y-m-d') . "</td>";
                     echo "<td>" . $row["Event_Time"] . "</td>";
+                    echo "<td>" . $row["Num_Attendees"] . "</td>";
+                    echo "<td>$" . number_format($row["Weekly_Revenue"], 2) . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";
