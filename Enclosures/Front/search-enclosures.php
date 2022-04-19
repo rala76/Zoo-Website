@@ -92,7 +92,7 @@
                     echo "<td>" . $row["Enclosure_ID"] . "</td>";
                     echo "<td>" . $row["Department_ID"] . "</td>";
                     echo "<td>" . $row["Num_Animals"] . "</td>";
-                    echo "<td>" . $row["Maintenace_Fees"] . "</td>";
+                    echo "<td>" . $row["Maintenance_Fees"] . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";
