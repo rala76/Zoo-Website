@@ -20,8 +20,6 @@
             <hr class="sidebarLine"></hr>
             <a href="/Customers/Front/update-customers.php" class="navText sidebarText">Update Customer</a>
             <hr class="sidebarLine"></hr>
-            <a href="/Customers/Front/get-customer-information.php" class="navText sidebarText">Get Customer Information</a>
-            <hr class="sidebarLine"></hr>
             <a href="/Customers/Front/search-customers.php" class="navText sidebarText">Search Customers</a>
             <hr class="sidebarLine"></hr>
         </div>
