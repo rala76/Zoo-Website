@@ -17,7 +17,8 @@
         <a href="/Animals/Animal.php" class="navText">Animals</a>
         <a href="/Enclosures/Enclosure.php" class="navText">Enclosures</a>
 
-        <a href="/Login/logout.php" style="float:right;margin-right:2%" class="navText">Logout</a>
+        <a href="/Login/logout.php" style="float:right;margin-right:3vh" class="navText">Logout</a>
+        <div style="float:right;margin-right:3vh" class="navText">User: <?php echo $_SESSION["Username"] ?></div>
     </div>
 </body>
 </html>
