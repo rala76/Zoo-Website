@@ -10,11 +10,11 @@
     <div class="form-base">
         <!-- Insert form for Product_Information -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <label class="required-input-label">Category</label><br>
-            <select name="Store-category" class="dropdown-control" required>
+            <label class="required-input-label">Category</label><br>
+            <select name="product-category" class="dropdown-control" required>
                 <!-- Default option -->
-                <option value="<?php echo isset($_POST['Store-category']) ? $_POST['Store-category'] : '' ?>" hidden>
-                    <?php echo isset($_POST['Store-category']) ? $_POST['Store-category'] : 'Select an Option' ?>
+                <option value="<?php echo isset($_POST['product-category']) ? $_POST['product-category'] : '' ?>" hidden>
+                    <?php echo isset($_POST['product-category']) ? $_POST['product-category'] : 'Select an Option' ?>
                 </option>
 
                 <option value="Food">Food</option>
@@ -56,11 +56,11 @@
 
         // Get data from Product form once submit button is pressed
         if(isset($_POST["Product-submit"])) {
-            $category = $_POST["Store-category"];
+            $category = $_POST["product-category"];
             $purchaseDate = $_POST["Product-purchaseDate"];
             $name = $_POST["Product-name"];
-            $inventoryAmount = !empty($_POST["Product-inventory"]) ? $_POST["Product-inventory"] : "0";;
-            $amountSold = !empty($_POST["Product-amountSold"]) ? $_POST["Product-amountSold"] : "0";;
+            $inventoryAmount = !empty($_POST["Product-inventory"]) ? $_POST["Product-inventory"] : "0";
+            $amountSold = !empty($_POST["Product-amountSold"]) ? $_POST["Product-amountSold"] : "0";
             $price = $_POST["Product-price"];
 
             // Create insert statement

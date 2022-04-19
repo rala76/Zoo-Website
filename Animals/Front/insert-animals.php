@@ -37,8 +37,8 @@
                 <option value="Female">Female</option>
             </select><br>
             
-            <label class="input-label">Enclosure ID</label><br>
-            <input name="Animal-enclosure-id" type="number" min="1" class="form-control" 
+            <label class="required-input-label">Enclosure ID</label><br>
+            <input name="Animal-enclosure-id" type="number" min="1" class="form-control" required
             value="<?php echo isset($_POST['Animal-enclosure-id']) ? $_POST['Animal-enclosure-id'] : '' ?>">
             <br>
 

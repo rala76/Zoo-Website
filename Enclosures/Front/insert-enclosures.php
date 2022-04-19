@@ -11,9 +11,9 @@
         <!-- Insert form for Enclosure_Data -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             
-        <label class="required-input-label">Maintanence Fees</label><br>
-            <input name="enclosure-maintanenceFees" type="number" min="1" step="0.1" class="form-control" required
-            value="<?php echo isset($_POST['enclosure-maintanenceFees']) ? $_POST['enclosure-maintanenceFees'] : '' ?>">
+        <label class="required-input-label">Maintenance Fees</label><br>
+            <input name="enclosure-maintenanceFees" type="number" min="1" step="0.1" class="form-control" required
+            value="<?php echo isset($_POST['enclosure-maintenanceFees']) ? $_POST['enclosure-maintenanceFees'] : '' ?>">
             <br>
 
             <label class="required-input-label">Number of Animals</label><br>
@@ -30,18 +30,18 @@
 
         // Get data from Enclosure form once submit button is pressed
         if(isset($_POST["enclosure-submit"])) {
-            $maintanenceFees = $_POST["enclosure-maintanenceFees"];
+            $maintenanceFees = $_POST["enclosure-maintenanceFees"];
             $numAnimals = !empty($_POST["enclosure-numAnimals"]) ? $_POST["enclosure-numAnimals"] : "0";
 
             // Create insert statement
             $sql = "INSERT INTO [dbo].[Enclosure_Data] 
-                ([Maintanence_Fees]
+                ([Maintenance_Fees]
                 ,[Num_Animals])
                 VALUES 
                 (?, ?)";
             
             // Parameters of insert statement
-            $params = array($maintanenceFees
+            $params = array($maintenanceFees
                 ,$numAnimals);
             
             // Status and error message to output on web page

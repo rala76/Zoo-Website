@@ -117,7 +117,7 @@
             echo "<label class='form-control'>Employee Deleted:</label><br>";
             echo "<table>";
                 echo "<tr>";
-                    echo "<th>ID</th>";
+                    echo "<th>Employee ID</th>";
                     echo "<th>First Name</th>";
                     echo "<th>Last Name</th>";
                     echo "<th>Department ID</th>";

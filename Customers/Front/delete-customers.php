@@ -117,7 +117,7 @@
             echo "<label class='form-control'>Customer Deleted:</label><br>";
             echo "<table>";
                 echo "<tr>";
-                    echo "<th>ID</th>";
+                    echo "<th>Customer ID</th>";
                     echo "<th>First Name</th>";
                     echo "<th>Last Name</th>";
                     echo "<th>Age</th>";
