@@ -33,6 +33,7 @@
             // Info of product to be deleted
             $sql_1 = "SELECT [Product_ID], [Product_Name], [Category]
                 , [Purchase_Date], [Inventory_Amount], [Amount_Sold], [Price]
+                FROM [dbo].[Product_Information] 
                 WHERE [Product_ID]='$ID'";
 
             // Create delete statement (ID)
