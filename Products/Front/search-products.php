@@ -73,14 +73,14 @@
 
             // Create select query based on
             if ($_POST["product-orderBy"] == "Ascending") {
-                $sql = "SELECT [Product_ID], [Product_Name], [Category], [Purchase_Date]
-                    , [Inventory_Amount], [Amount_Sold], [Price]
+                $sql = "SELECT [Product_ID], [Product_Name], [Category]
+                    , [Purchase_Date], [Inventory_Amount], [Amount_Sold], [Price]
                     FROM [dbo].[Product_Information] 
                     ORDER BY '$Sort_By' ASC ";
             }
             else {
-                $sql = "SELECT [Product_ID], [Product_Name], [Category], [Purchase_Date]
-                    , [Inventory_Amount], [Amount_Sold], [Price]
+                $sql = "SELECT [Product_ID], [Product_Name], [Category]
+                    , [Purchase_Date], [Inventory_Amount], [Amount_Sold], [Price]
                     FROM [dbo].[Product_Information] 
                     ORDER BY '$Sort_By' DESC ";
             }
