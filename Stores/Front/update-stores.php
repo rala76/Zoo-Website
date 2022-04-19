@@ -21,7 +21,7 @@
 
             // Info of Stores to be updated
             $sql_1 = "SELECT *
-                FROM [dbo].[Stores_Data] 
+                FROM [dbo].[Stores]
                 WHERE [Store_ID]='$ID'";
             
             // Status and error message to output on web page
@@ -55,7 +55,7 @@
 
             echo "<div class='break-row'></div>";
 
-            // Fetch row from Stores_Data
+            // Fetch row from Stores
             $row = sqlsrv_fetch_array($stmt_1, SQLSRV_FETCH_ASSOC);    
         }
 
@@ -67,22 +67,20 @@
             $Num_Customers = $_POST["Stores-Num_Customers"];
             $Weekly_Revenue = $_POST["Stores-Weekly_Revenue"];
             $Product_ID = $_POST["Stores-Product_ID"];
-            $Store_ID = $_POST["Stores-Store_ID"];
-            $Employee_ID = ["Stores-Employee_ID"];
+            $Department_ID = $_POST["Stores-Department_ID"];
 
             // Create update statement
             $ID = $_POST["Stores-id"];
 
-            $sql_2 = "UPDATE [dbo].[Stores_Data] 
+            $sql_2 = "UPDATE [dbo].[Stores] 
                 SET [Category] = '$Category'
                 ,[Store_Name] = '$Store_Name'
                 ,[Hours_Of_Operation] = '$Hours_Of_Operation'
                 ,[Num_Customers] = '$Num_Customers'
                 ,[Weekly_Revenue] = '$Weekly_Revenue'
                 ,[Product_ID] = '$Product_ID'
-                ,[Store_ID] = '$Store_ID'
-                ,[Employee_ID] = '$Employee_ID'
-                WHERE [Stores_ID]='$ID'";
+                ,[Department_ID] = '$Department_ID'
+                WHERE [Store_ID]='$ID'";
             
             // Status and error message to output on web page
             $message = "Successfully Updated Stores";
@@ -114,17 +112,17 @@
 
             // Info of updated Stores
             $sql_1 = "SELECT *
-                FROM [dbo].[Stores_Data] 
-                WHERE [Stores_ID]='$ID'";
+                FROM [dbo].[Stores]
+                WHERE [Store_ID]='$ID'";
             
             $stmt_1 = sqlsrv_query($conn, $sql_1);
 
-            // Fetch updated Stores from Stores_Data
+            // Fetch updated Stores from Stores
             $row = sqlsrv_fetch_array($stmt_1, SQLSRV_FETCH_ASSOC);
         }
         ?>
 
-        <!-- Update form for Stores_Data -->
+        <!-- Update form for Stores -->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <p style="font-size:large"><b>Stores to Update:</b></p>
 
@@ -149,40 +147,30 @@
             value="<?php echo isset($row['Store_Name']) ? $row['Store_Name'] : '' ?>">
             <br>
 
-            <label class="required-input-label">Hours of Operation</label><br>
+            <label class="required-input-label">Hours of Operation ( HH:MM[AM/PM]-HH:MM[AM/PM] )</label><br>
             <input name="Stores-hours" type="text" class="form-control"
             value="<?php echo isset($row['Hours_Of_Operation']) ? $row['Hours_Of_Operation']: '' ?>">
             <br>
 
             <label class="required-input-label">Number of Customers</label><br>
-            <input name="Stores-Num_Customers" type="number" class="form-control"
+            <input name="Stores-Num_Customers" type="number" min="0" class="form-control"
             value="<?php echo isset($row['Num_Customers']) ? $row['Num_Customers'] : '' ?>">
             <br>
 
             <label class="input-label">Weekly Revenue</label><br>
-            <input name="Stores-Weekly_Revenue" type="number" class="form-control" 
+            <input name="Stores-Weekly_Revenue" type="number" min="0" step="0.1" class="form-control" 
             value="<?php echo isset($row['Weekly_Revenue']) ? $row['Weekly_Revenue'] : $Weekly_Revenue ?>">
             <br>
 
-            <!-- Dropdown list for Product_ID -->
             <label class="required-input-label">Product ID</label><br>
-                <!-- Default option -->
-                <input name="Stores-Product_ID" type="number" class="form-control" placeholder="NULL"
-            value="<?php echo isset($row['Product_ID']) ? $row['Product_ID'] : NULL ?>">
-
-              
+            <input name="Stores-Product_ID" type="number" min="1" class="form-control" 
+            value="<?php echo isset($row['Product_ID']) ? $row['Product_ID'] : $Product_ID ?>">
             <br>
 
-            <label class="required-input-label">Store ID</label><br>
-            <input name="Stores-Store_ID" type="number" class="form-control" 
-            value="<?php echo isset($row['Store_ID']) ? $row['Store_ID'] : $Store_ID ?>">
+            <label class="required-input-label">Department ID</label><br>
+            <input name="Stores-Department_ID" type="number" min="1" class="form-control"
+            value="<?php echo isset($row['Department_ID']) ? $row['Department_ID'] : $Department_ID ?>">
             <br>
-
-            <label class="input-label">Employee ID</label><br>
-            <input name="Stores-Employee_ID" type="number"  
-            value="<?php echo isset($row['Employee_ID']) ? $row['Employee_ID'] : $Employee_ID ?>">
-            <br>
-
 
             <button name="Stores-update-2" type="submit" class="form-submit">Submit</button>
         </form>

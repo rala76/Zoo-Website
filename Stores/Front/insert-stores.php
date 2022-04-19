@@ -42,8 +42,8 @@
             value="<?php echo isset($_POST['Store-weeklyRevenue']) ? $_POST['Store-weeklyRevenue'] : '' ?>">
             <br>
 
-            <label class="input-label">Product ID</label><br>
-            <input name="Store-productID" type="number" min="1" class="form-control" placeholder="NULL"
+            <label class="required-input-label">Product ID</label><br>
+            <input name="Store-productID" type="number" min="1" class="form-control" required
             value="<?php echo isset($_POST['Store-productID']) ? $_POST['Store-productID'] : '' ?>">
             <br>
 
