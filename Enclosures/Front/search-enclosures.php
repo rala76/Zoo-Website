@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Include default Employee page -->
+    <!-- Include default Enclosure page -->
     <?php include(__DIR__."/../Enclosure.php"); ?>
 
     <title>Search Enclosures</title>
@@ -16,11 +16,11 @@
                 <option value="<?php echo isset($_POST['enclosure-sortBy']) ? $_POST['enclosure-sortBy'] : '' ?>" hidden>
                     <?php echo isset($_POST['enclosure-sortBy']) ? $_POST['enclosure-sortBy'] : 'Select an Option' ?>
                 </option>
-
-                <option value="Maintenance Fees">Maintenance Fees</option>
-                <option value="Number of Animals">Number of Animals</option>
+                
                 <option value="Enclosure ID">Enclosure ID</option>
                 <option value="Department ID">Department ID</option>
+                <option value="Number of Animals">Number of Animals</option>
+                <option value="Maintenance Fees">Maintenance Fees</option>
             </select><br>
 
             <!-- Dropdown list for Order By -->
@@ -45,19 +45,18 @@
         // Select query based on Sort/Order by
         if (isset($_POST["enclosure-search-submit"])) {
             // Get Sort By value based on input
-            if ($_POST["enclosure-sortBy"] == "Maintenance Fees") {
-                $Sort_By = "Maintenance_Fees";
+            if ($_POST["enclosure-sortBy"] == "Enclosure ID") {
+                $Sort_By = "Enclosure_ID";
+            }
+            else if ($_POST["enclosure-sortBy"] == "Department ID"){
+                $Sort_By = "Department_ID";
             }
             else if ($_POST["enclosure-sortBy"] == "Number of Animals") {
                 $Sort_By = "Num_Animals";
             }
-            else if ($_POST["enclosure-sortBy"] == "Enclosure ID") {
-                $Sort_By = "Enclosure_ID";
-            }
             else {
-                $Sort_By = "Department_ID";
+                $Sort_By = "Maintenance_Fees";
             }
-            
 
             // Create select query based on
             if ($_POST["enclosure-orderBy"] == "Ascending") {
@@ -76,7 +75,7 @@
             // Break row
             echo "<div class='break-row'></div>";
 
-            // Display Employee as table
+            // Display Enclosure as table
             echo "<div>";
             echo "<label class='form-control'></label><br>";
             echo "<table>";
@@ -87,7 +86,7 @@
                     echo "<th>Maintenance Fees</th>";
                 echo "</tr>";
 
-                // Fetch rows from Employee_Data
+                // Fetch rows from Enclosure_Data
                 while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                     echo "<tr>";
                     echo "<td>" . $row["Enclosure_ID"] . "</td>";
