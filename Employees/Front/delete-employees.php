@@ -55,8 +55,9 @@
             $ID = $_POST["employee-id-1"];
 
             // Info of employee to be deleted
-            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Department_ID], [Department_Name]
-                FROM [dbo].[Employee_Data] 
+            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
                 WHERE [Employee_ID]='$ID'";
 
             // Create delete statement (ID)
@@ -69,8 +70,9 @@
             $Lname = $_POST["employee-Lname"];
 
             // Info of employee to be deleted
-            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Department_ID], [Department_Name]
-                FROM [dbo].[Employee_Data]
+            $sql_1 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
                 WHERE [Employee_ID]='$ID' AND [Fname]='$Fname' AND [Lname]='$Lname'";
 
             // Create delete statement (ID + Name)
@@ -120,8 +122,13 @@
                     echo "<th>Employee ID</th>";
                     echo "<th>First Name</th>";
                     echo "<th>Last Name</th>";
-                    echo "<th>Department ID</th>";
+                    echo "<th>Date of Birth</th>";
+                    echo "<th>Gender</th>";
+                    echo "<th>Phone Number</th>";
                     echo "<th>Department Name</th>";
+                    echo "<th>Department ID</th>";
+                    echo "<th>Hourly Wage</th>";
+                    echo "<th>Weekly Hours Worked</th>";
                 echo "</tr>";
 
                 // Fetch row from Employee_Data
@@ -130,8 +137,13 @@
                     echo "<td>" . $row["Employee_ID"] . "</td>";
                     echo "<td>" . $row["Fname"] . "</td>";
                     echo "<td>" . $row["Lname"] . "</td>";
-                    echo "<td>" . $row["Department_ID"] . "</td>";
+                    echo "<td>" . $row["Date_Of_Birth"]->format('Y-m-d') . "</td>";
+                    echo "<td>" . $row["Gender"] . "</td>";
+                    echo "<td>" . $row["Phone_Number"] . "</td>";
                     echo "<td>" . $row["Department_Name"] . "</td>";
+                    echo "<td>" . $row["Department_ID"] . "</td>";
+                    echo "<td>$" . number_format($row["Hourly_Wage"], 2) . "</td>";
+                    echo "<td>" . $row["Weekly_Hours_Worked"] . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";
