@@ -32,9 +32,10 @@ if (sqlsrv_has_rows($stmt) != 1) {
 else {
     //Set loggedin to true, and store username/password in the session
     if($row = sqlsrv_fetch_array($stmt)) {
-        $_SESSION['loggedin'] = TRUE;
-        $_SESSION['Username'] = $row['Username'];
-        $_SESSION['Password'] = $row['Password'];
+        //$_SESSION['loggedin'] = TRUE;
+        //$_SESSION['Username'] = $row['Username'];
+        //$_SESSION['Password'] = $row['Password'];
+        $_SESSION['loggedin'] = $row['Username'];
     }
     
     //Take user to home page
