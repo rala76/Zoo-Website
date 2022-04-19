@@ -120,7 +120,7 @@
                     echo "<td>" . $row["Phone_Number"] . "</td>";
                     echo "<td>" . $row["Department_Name"] . "</td>";
                     echo "<td>" . $row["Department_ID"] . "</td>";
-                    echo "<td>" . $row["Hourly_Wage"] . "</td>";
+                    echo "<td>$" . number_format($row["Hourly_Wage"], 2) . "</td>";
                     echo "<td>" . $row["Weekly_Hours_Worked"] . "</td>";
                     echo "</tr>";
                 }
