@@ -75,7 +75,7 @@
             // Break row
             echo "<div class='break-row'></div>";
 
-            // Display customer as table
+            // Display Customer as table
             echo "<div>";
             echo "<label class='form-control'></label><br>";
             echo "<table>";
@@ -86,7 +86,7 @@
                     echo "<th>Age</th>";
                 echo "</tr>";
 
-                // Fetch rows from customer_Data
+                // Fetch rows from Customer_Data
                 while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                     echo "<tr>";
                     echo "<td>" . $row["Customer_ID"] . "</td>";
