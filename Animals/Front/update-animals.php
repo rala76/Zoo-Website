@@ -65,8 +65,7 @@
             $Species = $_POST["Animal-Species"];
             $Date_Of_Birth = $_POST["Animal-date-of-birth"];
             $Gender = $_POST["Animal-gender"];
-            $Animal_ID = $_POST["Animal-Animal_ID"];
-            $Enclosure_ID = $_POST["Animal-department-name"];
+            $Enclosure_ID = $_POST["Animal-enclosure-id"];
 
             // Create update statement
             $ID = $_POST["Animal-id"];
@@ -76,7 +75,6 @@
                 ,[Species] = '$Species'
                 ,[Date_Of_Birth] = '$Date_Of_Birth'
                 ,[Gender] = '$Gender'
-                ,[Animal_ID] = '$Animal_ID'
                 ,[Enclosure_ID] = '$Enclosure_ID'
                 WHERE [Animal_ID]='$ID'";
             
@@ -137,17 +135,17 @@
 
             <label class="required-input-label">Animal Name</label><br>
             <input name="Animal-Name" type="text" class="form-control"
-            value="<?php echo isset($row['Name']) ? $row['Name'] : $Name ?>">
+            value="<?php echo isset($row['Animal_Name']) ? $row['Animal_Name'] : '' ?>">
             <br>
 
             <label class="required-input-label">Species</label><br>
             <input name="Animal-Species" type="text" class="form-control"
-            value="<?php echo isset($row['Species']) ? $row['Species'] : $Species ?>">
+            value="<?php echo isset($row['Species']) ? $row['Species'] : '' ?>">
             <br>
 
             <label class="required-input-label">Date of Birth (YYYY-MM-DD)</label><br>
             <input name="Animal-date-of-birth" type="text" class="form-control"
-            value="<?php echo isset($row['Date_Of_Birth']) ? $row['Date_Of_Birth']->format('Y-m-d') : $Date_Of_Birth ?>">
+            value="<?php echo isset($row['Date_Of_Birth']) ? $row['Date_Of_Birth']->format('Y-m-d') : '' ?>">
             <br>
 
             <!-- Dropdown list for Gender -->
@@ -162,16 +160,10 @@
                 <option value="Female">Female</option>
             </select><br>
 
-            <label class="input-label">Animal ID</label><br>
-            <input name="Animal-Animal_ID" type="number" class="form-control" 
-            value="<?php echo isset($row['Animal_ID']) ? $row['Animal_ID'] : $Animal_ID ?>">
-            <br>
-
             <label class="input-label">Enclosure ID</label><br>
-            <input name="Animal-Enclosure_ID" type="number" class="form-control" 
+            <input name="Animal-enclosure-id" type="number" min="1" class="form-control" 
             value="<?php echo isset($row['Enclosure_ID']) ? $row['Enclosure_ID'] : $Enclosure_ID ?>">
             <br>
-            
 
             <button name="Animal-update-2" type="submit" class="form-submit">Submit</button>
         </form>
