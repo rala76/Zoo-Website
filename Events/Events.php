@@ -24,8 +24,6 @@
             <hr class="sidebarLine"></hr>
             <a href="/Events/Front/search-events.php" class="navText sidebarText">Search Events</a>
             <hr class="sidebarLine"></hr>
-            <a href="/Events/Front/view-event-table.php" class="navText sidebarText">View Event Table</a>
-            <hr class="sidebarLine"></hr>
         </div>
     </div>
 </body>

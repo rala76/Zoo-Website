@@ -24,8 +24,6 @@
             <hr class="sidebarLine"></hr>
             <a href="/Enclosures/Front/search-enclosure.php" class="navText sidebarText">Search Enclosures</a>
             <hr class="sidebarLine"></hr>
-            <a href="/Enclosures/Front/view-enclosure-table.php" class="navText sidebarText">View Enclosure Table</a>
-            <hr class="sidebarLine"></hr>
         </div>
     </div>
 </body>

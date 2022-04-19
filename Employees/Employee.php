@@ -24,8 +24,6 @@
             <hr class="sidebarLine"></hr>
             <a href="Employees/Front/search-employees.php" class="navText sidebarText">Search Employees</a>
             <hr class="sidebarLine"></hr>
-            <a href="Employees/Front/view-employee-table.php" class="navText sidebarText">View Employee Table</a>
-            <hr class="sidebarLine"></hr>
         </div>
     </div>
 </body>
