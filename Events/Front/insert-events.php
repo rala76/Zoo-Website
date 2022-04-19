@@ -34,11 +34,6 @@
             <input name="Event-eventTime" type="text" class="form-control" required
             value="<?php echo isset($_POST['Event-eventTime']) ? $_POST['Event-eventTime'] : '' ?>">
             <br>
-            
-            <label class="input-label">Animal ID</label><br>
-            <input name="Event-animal-id" type="number" min="1" class="form-control" placeholder="NULL"
-            value="<?php echo isset($_POST['Event-animal-id']) ? $_POST['Event-animal-id'] : '' ?>">
-            <br>
 
             <button name="Event-submit" type="submit" class="form-submit">Submit</button>
         </form>
@@ -54,7 +49,6 @@
             $weeklyRevenue = !empty($_POST["Event-weeklyRevenue"]) ? $_POST["Event-weeklyRevenue"] : "0";
             $eventDate = $_POST["Event-eventDate"];
             $eventTime = $_POST["Event-eventTime"];
-            $Animal_ID = !empty($_POST["Event-animal-id"]) ? $_POST["Event-animal-id"] : NULL;
            
 
             // Create insert statement
@@ -63,18 +57,16 @@
                 ,[Num_Attendees]
                 ,[Weekly_Revenue]
                 ,[Event_Date]
-                ,[Event_Time]
-                ,[Animal_ID])
+                ,[Event_Time])
                 VALUES 
-                (?, ?, ?, ?, ?, ?)";
+                (?, ?, ?, ?, ?)";
             
             // Parameters of insert statement
             $params = array($name
                 ,$numAttendees
                 ,$weeklyRevenue
                 ,$eventDate
-                ,$eventTime
-                ,$Animal_ID);
+                ,$eventTime);
             
             // Status and error message to output on web page
             $message = "Successfully Inserted New Event";
