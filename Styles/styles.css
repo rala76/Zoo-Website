@@ -176,3 +176,22 @@ details[open] summary {
     border-width: 2px;
     border-color: #2C2C2C;
 }
+
+/* Style for tables */
+table {
+    font-family: 'Calibri';
+    font-size: 2.5vmin;
+    font-weight: lighter;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 0.5px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
