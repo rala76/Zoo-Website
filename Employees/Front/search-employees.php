@@ -20,6 +20,10 @@
                 <option value="Employee ID">Employee ID</option>
                 <option value="First Name">First Name</option>
                 <option value="Last Name">Last Name</option>
+                <option value="Date of Birth">Date of Birth</option>
+                <option value="Department ID">Department ID</option>
+                <option value="Hourly Wage">Hourly Wage</option>
+                <option value="Weekly Hours Worked">Weekly Hours Worked</option>
             </select><br>
 
             <!-- Dropdown list for Order By -->
@@ -50,8 +54,20 @@
             else if ($_POST["employee-sortBy"] == "First Name") {
                 $Sort_By = "Fname";
             }
-            else {
+            else if ($_POST["employee-sortBy"] == "Last Name") {
                 $Sort_By = "Lname";
+            }
+            else if ($_POST["employee-sortBy"] == "Date of Birth") {
+                $Sort_By = "Date_Of_Birth";
+            }
+            else if ($_POST["employee-sortBy"] == "Department ID") {
+                $Sort_By = "Department_ID";
+            }
+            else if ($_POST["employee-sortBy"] == "Hourly Wage") {
+                $Sort_By = "Hourly_Wage";
+            }
+            else {
+                $Sort_By = "Weekly_Hours_Worked";
             }
             
 

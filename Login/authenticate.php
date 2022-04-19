@@ -10,7 +10,9 @@ $Password = $_POST['Password'];
 
 //Checks to ensure username and password were entered
 if (empty($_POST['Username']) || empty($_POST['Password'])) {
+    echo '<h4 style="text-align:center">';
     echo 'Please fill both the username and password fields';
+    echo '</h4>';
     exit;
 }
 
@@ -19,15 +21,18 @@ $tsql = "SELECT * FROM [Zoo-Project-DB].[dbo].[Accounts] WHERE Username='{$Usern
 $stmt = sqlsrv_query($conn, $tsql);
 
 //Checks to ensure query executed successfully
-if($stmt === false )  
-{  
-     echo "Error in executing query.</br>";  
-     die(print_r(sqlsrv_errors(), true));  
+if($stmt === false ) {
+    echo '<h4 style="text-align:center">';
+    echo "Error in executing query.</br>";
+    echo '</h4>';
+    die(print_r(sqlsrv_errors(), true));  
 } 
 
 //Checks to make sure user account exists in database, and there is only one instance of it
 if (sqlsrv_has_rows($stmt) != 1) {
+    echo '<h4 style="text-align:center">';
     echo "User/password not found";
+    echo '</h4>';
 }
 else {
     //Set loggedin to true, and store username/password in the session
