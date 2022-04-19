@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Include default Stores page -->
+    <?php include(__DIR__."/../Stores.php"); ?>
+
+    <title>Update Stores</title>
+</head>
+<body>
+    <div class="form-base">
+        <?php
+        // Connect to Microsoft Azure SQL Database
+        include(__DIR__."/../../connect-sql.php");
+
+        // Declare
+        $row = NULL;
+
+        // Select Stores by ID & Fetch Stores Data to display
+        if(isset($_POST["Stores-update-1"])) {
+            $ID = $_POST["Stores-id"];
+
+            // Info of Stores to be updated
+            $sql_1 = "SELECT *
+                FROM [dbo].[Stores_Data] 
+                WHERE [Store_ID]='$ID'";
+            
+            // Status and error message to output on web page
+            $message = "Stores Found";
+            $error_msg = NULL;
+            
+            $stmt_1 = sqlsrv_query($conn, $sql_1);
+            if ($stmt_1 == false) {
+                $message = "Failed to Find Stores";
+                $error_msg = sqlsrv_errors();
+            }
+            else if (sqlsrv_has_rows($stmt_1) <= 0) {
+                $message = "Store not found";
+            }
+
+            // Output status and error message
+            echo "<div>";
+            echo "<h2>$message</h2>";
+            echo "<details>";
+            echo "<summary>Toggle Errors</summary>";
+                if ($error_msg != NULL) {
+                    foreach ( $error_msg as $error ) {
+                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
+                        echo "<b>Code: </b> ".$error['code']."<br>";
+                        echo "<b>Message: </b>".$error['message']."<br>";
+                        echo "<br>";
+                    }
+                }
+            echo "</details>";
+            echo "</div>";
+
+            echo "<div class='break-row'></div>";
+
+            // Fetch row from Stores_Data
+            $row = sqlsrv_fetch_array($stmt_1, SQLSRV_FETCH_ASSOC);    
+        }
+
+        // Update Stores Information
+        if (isset($_POST["Stores-update-2"])) {
+            $Category = $_POST["Stores-Category"];
+            $Store_Name = $_POST["Stores-Store_Name"];
+            $Hours_Of_Operation = $_POST["Stores-hours"];
+            $Num_Customers = $_POST["Stores-Num_Customers"];
+            $Weekly_Revenue = $_POST["Stores-Weekly_Revenue"];
+            $Product_ID = $_POST["Stores-Product_ID"];
+            $Store_ID = $_POST["Stores-Store_ID"];
+            $Employee_ID = ["Stores-Employee_ID"];
+
+            // Create update statement
+            $ID = $_POST["Stores-id"];
+
+            $sql_2 = "UPDATE [dbo].[Stores_Data] 
+                SET [Category] = '$Category'
+                ,[Store_Name] = '$Store_Name'
+                ,[Hours_Of_Operation] = '$Hours_Of_Operation'
+                ,[Num_Customers] = '$Num_Customers'
+                ,[Weekly_Revenue] = '$Weekly_Revenue'
+                ,[Product_ID] = '$Product_ID'
+                ,[Store_ID] = '$Store_ID'
+                ,[Employee_ID] = '$Employee_ID'
+                WHERE [Stores_ID]='$ID'";
+            
+            // Status and error message to output on web page
+            $message = "Successfully Updated Stores";
+            $error_msg = NULL;
+
+            $stmt_2 = sqlsrv_query($conn, $sql_2);
+            if ($stmt_2 == false || sqlsrv_rows_affected($stmt_2) <= 0) {
+                $message = "Failed to Update Stores";
+                $error_msg = sqlsrv_errors();
+            }
+
+            // Output status and error message
+            echo "<div>";
+            echo "<h2>$message</h2>";
+            echo "<details>";
+            echo "<summary>Toggle Errors</summary>";
+                if ($error_msg != NULL) {
+                    foreach ( $error_msg as $error ) {
+                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
+                        echo "<b>Code: </b> ".$error['code']."<br>";
+                        echo "<b>Message: </b>".$error['message']."<br>";
+                        echo "<br>";
+                    }
+                }
+            echo "</details>";
+            echo "</div>";
+
+            echo "<div class='break-row'></div>";
+
+            // Info of updated Stores
+            $sql_1 = "SELECT *
+                FROM [dbo].[Stores_Data] 
+                WHERE [Stores_ID]='$ID'";
+            
+            $stmt_1 = sqlsrv_query($conn, $sql_1);
+
+            // Fetch updated Stores from Stores_Data
+            $row = sqlsrv_fetch_array($stmt_1, SQLSRV_FETCH_ASSOC);
+        }
+        ?>
+
+        <!-- Update form for Stores_Data -->
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <p style="font-size:large"><b>Stores to Update:</b></p>
+
+            <label class="required-input-label">Stores ID:</label>
+            <input name="Stores-id" type="number" min="1" class="form-control"
+            value="<?php echo isset($_POST['Stores-id']) ? $_POST['Stores-id'] : '' ?>">
+            <br>
+
+            <button name="Stores-update-1" type="submit" class="form-submit">Submit</button>
+
+            <!-- ============================================================================== -->
+
+            <p style="font-size:large"><b>Update Fields:</b></p>
+
+            <label class="required-input-label">Category</label><br>
+            <input name="Stores-Category" type="text" class="form-control"
+            value="<?php echo isset($row['Category']) ? $row['Category'] : '' ?>">
+            <br>
+
+            <label class="required-input-label">Store Name</label><br>
+            <input name="Stores-Store_Name" type="text" class="form-control"
+            value="<?php echo isset($row['Store_Name']) ? $row['Store_Name'] : '' ?>">
+            <br>
+
+            <label class="required-input-label">Hours of Operation</label><br>
+            <input name="Stores-hours" type="text" class="form-control"
+            value="<?php echo isset($row['Hours_Of_Operation']) ? $row['Hours_Of_Operation']: '' ?>">
+            <br>
+
+            <label class="required-input-label">Number of Customers</label><br>
+            <input name="Stores-Num_Customers" type="number" class="form-control"
+            value="<?php echo isset($row['Num_Customers']) ? $row['Num_Customers'] : '' ?>">
+            <br>
+
+            <label class="input-label">Weekly Revenue</label><br>
+            <input name="Stores-Weekly_Revenue" type="number" class="form-control" 
+            value="<?php echo isset($row['Weekly_Revenue']) ? $row['Weekly_Revenue'] : $Weekly_Revenue ?>">
+            <br>
+
+            <!-- Dropdown list for Product_ID -->
+            <label class="required-input-label">Product ID</label><br>
+                <!-- Default option -->
+                <input name="Stores-Product_ID" type="number" class="form-control" placeholder="NULL"
+            value="<?php echo isset($row['Product_ID']) ? $row['Product_ID'] : NULL ?>">
+
+              
+            <br>
+
+            <label class="required-input-label">Store ID</label><br>
+            <input name="Stores-Store_ID" type="number" class="form-control" 
+            value="<?php echo isset($row['Store_ID']) ? $row['Store_ID'] : $Store_ID ?>">
+            <br>
+
+            <label class="input-label">Employee ID</label><br>
+            <input name="Stores-Employee_ID" type="number"  
+            value="<?php echo isset($row['Employee_ID']) ? $row['Employee_ID'] : $Employee_ID ?>">
+            <br>
+
+
+            <button name="Stores-update-2" type="submit" class="form-submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
