@@ -10,9 +10,6 @@ $Password = $_POST['Password'];
 
 //Checks to ensure username and password were entered
 if (empty($_POST['Username']) || empty($_POST['Password'])) {
-    //Include login page from logon.php
-    include_once(__DIR__."/logon.php");
-
     echo '<h4 style="text-align:center">';
     echo 'Please fill both the username and password fields';
     echo '</h4>';
@@ -25,9 +22,6 @@ $stmt = sqlsrv_query($conn, $tsql);
 
 //Checks to ensure query executed successfully
 if($stmt === false ) {
-    //Include login page from logon.php
-    include_once(__DIR__."/logon.php");
-
     echo '<h4 style="text-align:center">';
     echo "Error in executing query.</br>";
     echo '</h4>';
@@ -36,9 +30,6 @@ if($stmt === false ) {
 
 //Checks to make sure user account exists in database, and there is only one instance of it
 if (sqlsrv_has_rows($stmt) != 1) {
-    //Include login page from logon.php
-    include_once(__DIR__."/logon.php");
-
     echo '<h4 style="text-align:center">';
     echo "User/password not found";
     echo '</h4>';
