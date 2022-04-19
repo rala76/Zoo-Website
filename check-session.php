@@ -5,5 +5,4 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: logon.php');
 }
-echo "hello";
 ?>
