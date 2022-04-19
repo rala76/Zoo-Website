@@ -60,12 +60,12 @@
 
             // Create select query based on
             if ($_POST["enclosure-orderBy"] == "Ascending") {
-                $sql = "SELECT [Maintenance_Fees], [Num_Animals, [Enclosure_ID], [Department_ID]
+                $sql = "SELECT [Enclosure_ID], [Department_ID], [Num_Animals], [Maintenance_Fees]
                     FROM [dbo].[Enclosure_Data]
                     ORDER BY '$Sort_By' ASC ";
             }
             else {
-                $sql = "SELECT [Maintenance_Fees], [Num_Animals, [Enclosure_ID], [Department_ID]
+                $sql = "SELECT [Enclosure_ID], [Department_ID], [Num_Animals], [Maintenance_Fees]
                     FROM [dbo].[Enclosure_Data]
                     ORDER BY '$Sort_By' DESC ";
             }
