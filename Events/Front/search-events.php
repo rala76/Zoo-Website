@@ -107,7 +107,7 @@
                     echo "<td>" . $row["Event_Date"]->format('Y-m-d') . "</td>";
                     echo "<td>" . $row["Event_Time"] . "</td>";
                     echo "<td>" . $row["Num_Attendees"] . "</td>";
-                    echo "<td>" . $row["Weekly_Revenue"] . "</td>";
+                    echo "<td>$" . number_format($row["Weekly_Revenue"], 2) . "</td>";
                     echo "</tr>";
                 }
             echo "</table>";
