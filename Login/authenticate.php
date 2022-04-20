@@ -47,7 +47,7 @@ else {
     }
     
     //Take user to home page
-    if ($Role = 'Admin') {
+    if ($Role == 'Admin') {
         header('Location: admin-home.php');
     }
     else {
