@@ -7,6 +7,8 @@ include (__DIR__."/../connect-sql.php");
 //Variables to store username and password input by the user
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
+$Email = $_POST['Email'];
+$Role = $_POST['Role'];
 
 //Checks to ensure username and password were entered
 if (empty($_POST['Username']) || empty($_POST['Password'])) {
@@ -40,10 +42,17 @@ else {
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['Username'] = $row['Username'];
         $_SESSION['Password'] = $row['Password'];
+        $_SESSION['Email'] = $row['Email'];
+        $_SESSION['Role'] = $row['Role'];
     }
     
     //Take user to home page
-    header('Location: home.php');
+    if ($Role = 'Admin') {
+        header('Location: admin-home.php');
+    }
+    else {
+        header('Location: customer-home.php');
+    }
 }
 
 //Free up connection resources
