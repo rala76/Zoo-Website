@@ -7,8 +7,6 @@ include (__DIR__."/../connect-sql.php");
 //Variables to store username and password input by the user
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
-$Email = $_POST['Email'];
-$Role = $_POST['Role'];
 
 //Checks to ensure username and password were entered
 if (empty($_POST['Username']) || empty($_POST['Password'])) {
@@ -32,11 +30,11 @@ if($stmt === false ) {
 
 //Checks to make sure user account exists in database, and there is only one instance of it
 if (sqlsrv_has_rows($stmt) != 1) {
-    echo '<h4 style="text-align:center">';
-    echo "User/password not found";
-    echo '</h4>';
+    die(print_r("User/password not found", true));
 }
 else {
+    $Email = $_POST['Email'];
+    $Role = $_POST['Role'];
     //Set loggedin to true, and store username/password in the session
     if($row = sqlsrv_fetch_array($stmt)) {
         $_SESSION['loggedin'] = TRUE;
@@ -56,6 +54,6 @@ else {
 }
 
 //Free up connection resources
-sqlsrv_free_stmt( $stmt);  
-sqlsrv_close( $conn);  
+sqlsrv_free_stmt($stmt);  
+sqlsrv_close($conn);  
 ?>
