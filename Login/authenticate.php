@@ -33,12 +33,12 @@ if (sqlsrv_has_rows($stmt) != 1) {
     die(print_r("User/password not found", true));
 }
 else {
-    //$Email = $_POST['Email'];
-    //$Role = $_POST['Role'];
+    $Email = $_POST['Email'];
+    $Role = $_POST['Role'];
     //Set loggedin to true, and store username/password in the session
     if($row = sqlsrv_fetch_array($stmt)) {
         $_SESSION['loggedin'] = TRUE;
-        $_SESSION['Username'] = $Username;
+        $_SESSION['Username'] = $row['Username'];
         $_SESSION['Password'] = $row['Password'];
         $_SESSION['Email'] = $row['Email'];
         $_SESSION['Role'] = $row['Role'];
@@ -47,11 +47,9 @@ else {
     //Take user to home page
     if ($_SESSION['Role'] == "Admin") {
         header('Location: admin-home.php');
-        exit;
     }
     else {
         header('Location: customer-home.php');
-        exit;
     }
 }
 
