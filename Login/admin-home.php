@@ -2,7 +2,17 @@
 <html>
 <head>
     <!-- Check session -->
-    <?php include_once(__DIR__."/../check-session.php") ?>
+    <?php
+    session_start();
+    echo session_status();
+    echo "<br>";
+    echo session_id();
+    echo "<br>";
+    $_SESSION['user'] = "user1";
+    echo $_SESSION['user'];
+    echo $_SESSION['Username'];
+    echo 'DONE';
+    ?>
     
     <link rel="stylesheet" href="/Styles/styles.css">
     <title>Admin Home Page</title>
