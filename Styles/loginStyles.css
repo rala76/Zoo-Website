@@ -56,3 +56,12 @@
     transition: background-color 0.2s;
     border-color: black;
 }
+
+.login h1 a {
+    text-decoration: none; 
+    color:#2C2C2C
+}
+
+.login h1 a:hover {
+    color: #777777;
+}
