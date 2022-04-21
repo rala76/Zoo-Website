@@ -30,7 +30,7 @@ if($stmt === false ) {
 
 //Checks to make sure user account exists in database, and there is only one instance of it
 if (sqlsrv_has_rows($stmt) != 1) {
-    die(print_r("User/password not found", true));
+    header('Location: registration.php');
 }
 else {
     $Email = $_POST['Email'];
@@ -45,7 +45,7 @@ else {
     }
     
     //Take user to home page
-    if ($Role == 'Admin') {
+    if ($Role === 'Admin') {
         header('Location: admin-home.php');
     }
     else {
