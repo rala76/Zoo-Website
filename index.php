@@ -1,5 +1,7 @@
 <?php
+//header("Location: /Login/logon.php");
 session_start();
-header("Location: /Login/logon.php");
-exit;
+$_SESSION["Username"] = "admin";
+header("Location: /Login/admin-home.php");
+exit();
 ?>
