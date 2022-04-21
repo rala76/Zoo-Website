@@ -21,11 +21,10 @@ $userExists = "SELECT * FROM [dbo].[Accounts] WHERE Username='{$Username}' OR ".
 $stmt1 = sqlsrv_query($conn, $userExists);
 
 //Checks to ensure query executed successfully
-if($stmt1 === false ) {
+if($stmt1 === false) {
     echo '<h4 style="text-align:center">';
     echo "Error in executing query.</br>";
     echo '</h4>';
-    die(print_r(sqlsrv_errors(), true));  
 } 
 
 if (sqlsrv_has_rows($stmt1) == 0) {
@@ -47,11 +46,10 @@ if (sqlsrv_has_rows($stmt1) == 0) {
     echo "Successfully Inserted New Customer</br>";
 
     //Checks to ensure query executed successfully
-    if($stmt2 === false ) {
+    if($stmt2 === false) {
         echo '<h4 style="text-align:center">';
         echo "Error in executing query.</br>";
         echo '</h4>';
-        die(print_r(sqlsrv_errors(), true));  
     } 
 
     if ($stmt2 === false) {

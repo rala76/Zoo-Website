@@ -24,34 +24,17 @@
                 FROM [dbo].[Enclosure_Data] 
                 WHERE [Enclosure_ID]='$ID'";
             
-            // Status and error message to output on web page
             $message = "Enclosure Found";
-            $error_msg = NULL;
             
             $stmt_1 = sqlsrv_query($conn, $sql_1);
             if ($stmt_1 == false) {
                 $message = "Failed to Find Enclosure";
-                $error_msg = sqlsrv_errors();
             }
             else if (sqlsrv_has_rows($stmt_1) <= 0) {
-                $message = "Enclosure not found";
+                $message = "Enclosure Not Found";
             }
 
-            // Output status and error message
-            echo "<div>";
             echo "<h2>$message</h2>";
-            echo "<details>";
-            echo "<summary>Toggle Errors</summary>";
-                if ($error_msg != NULL) {
-                    foreach ( $error_msg as $error ) {
-                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
-                        echo "<b>Code: </b> ".$error['code']."<br>";
-                        echo "<b>Message: </b>".$error['message']."<br>";
-                        echo "<br>";
-                    }
-                }
-            echo "</details>";
-            echo "</div>";
 
             echo "<div class='break-row'></div>";
 
@@ -75,31 +58,14 @@
     
                 WHERE [Enclosure_ID]='$ID'";
             
-            // Status and error message to output on web page
             $message = "Successfully Updated Enclosure";
-            $error_msg = NULL;
 
             $stmt_2 = sqlsrv_query($conn, $sql_2);
             if ($stmt_2 == false || sqlsrv_rows_affected($stmt_2) <= 0) {
                 $message = "Failed to Update Enclosure";
-                $error_msg = sqlsrv_errors();
             }
 
-            // Output status and error message
-            echo "<div>";
             echo "<h2>$message</h2>";
-            echo "<details>";
-            echo "<summary>Toggle Errors</summary>";
-                if ($error_msg != NULL) {
-                    foreach ( $error_msg as $error ) {
-                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
-                        echo "<b>Code: </b> ".$error['code']."<br>";
-                        echo "<b>Message: </b>".$error['message']."<br>";
-                        echo "<br>";
-                    }
-                }
-            echo "</details>";
-            echo "</div>";
 
             echo "<div class='break-row'></div>";
 

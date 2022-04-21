@@ -82,32 +82,14 @@
                 ,$amountSold
                 ,$price);
             
-            // Status and error message to output on web page
             $message = "Successfully Inserted New Product";
-            $error_msg = NULL;
 
             $stmt = sqlsrv_query($conn, $sql, $params);
             if ($stmt == false) {
-                //die(print_r(sqlsrv_errors(), true));
                 $message = "Failed to Insert New Product";
-                $error_msg = sqlsrv_errors();
             }
             
-            // Output status and error message
-            echo "<div>";
             echo "<h2>$message</h2>";
-            echo "<details>";
-            echo "<summary>Toggle Errors</summary>";
-                if ($error_msg != NULL) {
-                    foreach ( $error_msg as $error ) {
-                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
-                        echo "<b>Code: </b> ".$error['code']."<br>";
-                        echo "<b>Message: </b>".$error['message']."<br>";
-                        echo "<br>";
-                    }
-                }
-            echo "</details>";
-            echo "</div>";
         }
         ?>
     </div>

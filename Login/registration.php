@@ -6,6 +6,7 @@
     <title>Register for Zoo Account</title>
 </head>
 <body>
+    
     <div class="login">
         <h1>Register for Zoo Acount</h1>
         <form action="register-authenticate.php" method="post">

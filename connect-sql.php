@@ -7,7 +7,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 // If connection failed
 if ($conn == false) {
-    die(print_r(sqlsrv_errors(), true));
+    die(print_r("Connection failed!", true));
 }
 
 ?>
