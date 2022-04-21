@@ -6,7 +6,7 @@
     <?php include_once(__DIR__."/../check-session.php") ?>
 
     <!-- Include index page (header) -->
-    <?php include(__DIR__."/../Login/home.php") ?>
+    <?php include(__DIR__."/../Login/admin-home.php") ?>
 
     <title>Employee</title>
 </head>

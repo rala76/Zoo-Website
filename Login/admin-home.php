@@ -5,7 +5,7 @@
     <?php include_once(__DIR__."/../check-session.php") ?>
     
     <link rel="stylesheet" href="/Styles/styles.css">
-    <title>Home Page</title>
+    <title>Admin Home Page</title>
 </head>
 <body>
     <div class="header">
@@ -16,7 +16,6 @@
         <a href="/Events/Events.php" class="navText">Events</a>
         <a href="/Animals/Animal.php" class="navText">Animals</a>
         <a href="/Enclosures/Enclosure.php" class="navText">Enclosures</a>
-
         <a href="/Login/logout.php" style="float:right;margin-right:3vh" class="navText">Logout</a>
     </div>
 </body>

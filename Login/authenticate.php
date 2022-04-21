@@ -30,23 +30,30 @@ if($stmt === false ) {
 
 //Checks to make sure user account exists in database, and there is only one instance of it
 if (sqlsrv_has_rows($stmt) != 1) {
-    echo '<h4 style="text-align:center">';
-    echo "User/password not found";
-    echo '</h4>';
+    die(print_r("User/password not found", true));
 }
 else {
+    $Email = $_POST['Email'];
+    $Role = $_POST['Role'];
     //Set loggedin to true, and store username/password in the session
     if($row = sqlsrv_fetch_array($stmt)) {
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['Username'] = $row['Username'];
         $_SESSION['Password'] = $row['Password'];
+        $_SESSION['Email'] = $row['Email'];
+        $_SESSION['Role'] = $row['Role'];
     }
     
     //Take user to home page
-    header('Location: home.php');
+    if ($Role == 'Admin') {
+        header('Location: admin-home.php');
+    }
+    else {
+        header('Location: customer-home.php');
+    }
 }
 
 //Free up connection resources
-sqlsrv_free_stmt( $stmt);  
-sqlsrv_close( $conn);  
+sqlsrv_free_stmt($stmt);  
+sqlsrv_close($conn);  
 ?>
