@@ -30,6 +30,15 @@
     padding: 0 15px;
 }
 
+.login form input[type="email"],
+.login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
 .login form input[type="submit"] {
     width: 100%;
     padding: 15px;
