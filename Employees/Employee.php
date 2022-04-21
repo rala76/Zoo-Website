@@ -4,6 +4,8 @@
 <head>
     <!-- Check session -->
     <?php include_once(__DIR__."/../check-session.php") ?>
+    <?php echo session_id() ?>
+    <?php echo "user:".$_SESSION['Username'] ?>
 
     <!-- Include index page (header) -->
     <?php include(__DIR__."/../Login/admin-home.php") ?>
