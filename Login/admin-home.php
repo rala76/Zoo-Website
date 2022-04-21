@@ -1,11 +1,11 @@
-<!-- Check session -->
-<?php session_start() ?>
-<?php echo session_id() ?>
-<?php echo "user:".$_SESSION['Username'] ?>
-
 <!doctype html>
 <html>
 <head>
+    <!-- Check session -->
+    <?php include_once(__DIR__."/../check-session.php") ?>
+    <?php echo session_id() ?>
+    <?php echo "user:".$_SESSION['Username'] ?>
+    
     <link rel="stylesheet" href="/Styles/styles.css">
     <title>Admin Home Page</title>
 </head>
