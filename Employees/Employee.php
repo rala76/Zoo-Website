@@ -1,5 +1,5 @@
 <!-- Check session -->
-<?php include_once(__DIR__."/../check-session.php") ?>
+<?php session_start() ?>
 <?php echo session_id() ?>
 <?php echo "user:".$_SESSION['Username'] ?>
 
