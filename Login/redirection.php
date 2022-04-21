@@ -8,7 +8,7 @@
 <body>
     <div class="login">
         <h1>
-            <a href="/Login/logon.php">Customer Already Registered!</br>Navigate Back To Login?</a>
+            <a href="/Login/logon.php">Guest Already Registered!</br>Navigate Back To Login?</a>
         </h1>
     </div>
 </body>

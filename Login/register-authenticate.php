@@ -64,7 +64,7 @@ if (sqlsrv_has_rows($stmt1) == 0) {
         $_SESSION['Email'] = $Email;
         $_SESSION['Role'] = 'Customer';
 
-        header('Location: customer-home.php');
+        header('Location: guest-home.php');
     }
 
     sqlsrv_free_stmt($stmt2);
