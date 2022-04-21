@@ -3,7 +3,6 @@
 <head>
     <!-- Check session -->
     <?php include_once(__DIR__."/../check-session.php") ?>
-    <?php echo 'Username:'.$_SESSION["Username"] ?>
     
     <link rel="stylesheet" href="/Styles/styles.css">
     <title>Admin Home Page</title>
