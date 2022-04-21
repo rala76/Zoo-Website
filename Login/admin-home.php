@@ -1,18 +1,9 @@
-<?php
-session_start();
-echo session_status();
-echo "<br>";
-echo session_id();
-echo "<br>";
-echo $_SESSION['user'];
-sleep(1);
-?>
-
 <!doctype html>
 <html>
 <head>
     <!-- Check session -->
     <?php include_once(__DIR__."/../check-session.php") ?>
+    <?php echo $_SESSION["Username"] ?>
     
     <link rel="stylesheet" href="/Styles/styles.css">
     <title>Admin Home Page</title>
