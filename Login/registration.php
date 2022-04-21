@@ -18,6 +18,10 @@
             <input type="submit" value="Register Account">
         </form>
     </div>
-     <a href="/Login/logon.php">Already have an account?</a>
+    <div class="login">
+        <h1>
+            <a href="/Login/logon.php">Already have an account?</a>
+        </h1>
+    </div>
 </body>
 </html>

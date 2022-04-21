@@ -16,6 +16,10 @@
             <input type="submit" value="Login">
         </form>
     </div>
-    <a href="/Login/registration.php">Create an account?</a>
+        <div class="login">
+        <h1>
+            <a href="/Login/registration.php">Create an account?</a>
+        </h1>
+    </div>
 </body>
 </html>
