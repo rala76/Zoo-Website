@@ -1,6 +1,15 @@
 <?php 
-//Start session
 session_start();
+echo session_status();
+echo "<br>";
+echo session_id();
+echo "<br>";
+echo $_SESSION['user'];
+
+sleep(10);
+
+//Start session
+// session_start();
 //Get connection details from connect-sql.php file
 include (__DIR__."/../connect-sql.php");
 
@@ -47,9 +56,11 @@ else {
     //Take user to home page
     if ($_SESSION['Role'] == "Admin") {
         header('Location: admin-home.php');
+        exit();
     }
     else {
         header('Location: customer-home.php');
+        exit();
     }
 }
 

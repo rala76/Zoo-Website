@@ -1,3 +1,12 @@
+<?php
+session_start();
+echo session_status();
+echo "<br>";
+echo session_id();
+echo "<br>";
+echo $_SESSION['user'];
+?>
+
 <!doctype html>
 <html>
 <head>
