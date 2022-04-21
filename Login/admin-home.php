@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Check session -->
-    <?php session_start() ?>
+    
     <?php echo 'Username:'.$_SESSION["Username"] ?>
     
     <link rel="stylesheet" href="/Styles/styles.css">

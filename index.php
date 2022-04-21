@@ -2,6 +2,5 @@
 //header("Location: /Login/logon.php");
 session_start();
 $_SESSION["Username"] = "admin";
-header("Location: /Login/admin-home.php");
-exit();
+include(__DIR__."/Login/admin-home.php");
 ?>
