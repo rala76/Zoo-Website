@@ -17,7 +17,7 @@ if (empty($_POST['Username']) || empty($_POST['Password']) || empty($_POST['Emai
     exit;
 }
 
-$userExists = "SELECT * FROM [dbo].[Accounts] WHERE Username='{$Username}' AND "." Password='{$Password}' AND "." Email='{$Email}'";
+$userExists = "SELECT * FROM [dbo].[Accounts] WHERE Username='{$Username}' OR "." Password='{$Password}' OR "." Email='{$Email}'";
 $stmt1 = sqlsrv_query($conn, $userExists);
 
 //Checks to ensure query executed successfully
@@ -28,20 +28,23 @@ if($stmt1 === false ) {
     die(print_r(sqlsrv_errors(), true));  
 } 
 
-if ($stmt1 == NULL) {
+if (sqlsrv_has_rows($stmt1) == 0) {
     //Query to get the user's account from the database
     $tsql = "INSERT INTO [dbo].[Accounts] 
             ([Username]
             , [Password] 
-            , [Email]) 
+            , [Email]
+            , [Role]) 
             VALUES
-            (?, ?, ?)";
+            (?, ?, ?, 'Customer')";
         
     $params = array($Username
         , $Password
         , $Email);
 
     $stmt2 = sqlsrv_query($conn, $tsql, $params);
+
+    echo "Successfully Inserted New Customer</br>";
 
     //Checks to ensure query executed successfully
     if($stmt2 === false ) {
@@ -51,23 +54,27 @@ if ($stmt1 == NULL) {
         die(print_r(sqlsrv_errors(), true));  
     } 
 
-    if ($stmt2 == false) {
-        $message = "Could Not Register New Customer";
+    if ($stmt2 === false) {
+        echo "Could Not Register New Customer</br>";
     }
+    else {    
+        $_SESSION['loggedin'] = TRUE;
+        $_SESSION['Username'] = $Username;
+        $_SESSION['Password'] = $Password;
+        $_SESSION['Email'] = $Email;
+        $_SESSION['Role'] = 'Customer';
+
+        header('Location: customer-home.php');
+    }
+
+    sqlsrv_free_stmt($stmt2);
 }
 else {
-    $message = "Customer Already Registered! Navigate Back To Login?";
+    echo "Customer Already Registered!</br>";
+    echo "<a href=/Login/logon.php>Navigate Back To Login?</a>";
 }
 
-$_SESSION['loggedin'] = TRUE;
-$_SESSION['Username'] = $Username;
-$_SESSION['Password'] = $Password;
-$_SESSION['Email'] = $Email;
-$_SESSION['Role'] = 'Customer';
-
-header('Location: customer-home.php');
-
 //Free up connection resources
-sqlsrv_free_stmt($stmt);  
+sqlsrv_free_stmt($stmt1);  
 sqlsrv_close($conn);  
 ?>
