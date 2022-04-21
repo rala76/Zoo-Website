@@ -15,7 +15,7 @@
             <input type="Password" name="Password" placeholder="Password" id="Password" required>
             <label for="Email"></label>
             <input type="Email" name="Email" placeholder="Email" id="Email" required>
-            <input type="submit" value="Login">
+            <input type="submit" value="Register Account">
         </form>
     </div>
      <a href="/Login/logon.php">Already have an account?</a>
