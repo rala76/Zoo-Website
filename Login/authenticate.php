@@ -6,7 +6,7 @@ echo session_id();
 echo "<br>";
 echo $_SESSION['user'];
 
-sleep(10);
+sleep(1);
 
 //Start session
 // session_start();

@@ -5,6 +5,7 @@ echo "<br>";
 echo session_id();
 echo "<br>";
 echo $_SESSION['user'];
+sleep(1);
 ?>
 
 <!doctype html>

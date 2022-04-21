@@ -9,7 +9,6 @@ echo "<br>";
 $_SESSION['user'] = "user1";
 echo $_SESSION['user'];
 
-sleep(5);
 header("Location: /Login/logon.php");
 exit();
 
