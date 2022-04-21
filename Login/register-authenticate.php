@@ -70,8 +70,7 @@ if (sqlsrv_has_rows($stmt1) == 0) {
     sqlsrv_free_stmt($stmt2);
 }
 else {
-    echo "Customer Already Registered!</br>";
-    echo "<a href=/Login/logon.php>Navigate Back To Login?</a>";
+    header('Location: redirection.php');
 }
 
 //Free up connection resources
