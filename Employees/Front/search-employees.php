@@ -7,7 +7,7 @@ include(__DIR__."/../../connect-sql.php");
 
 // Get input values for Edit form
 if (isset($_POST["employee-edit-1"])) {
-    $Employee_ID = $_POST["emp-ID"];
+    $Employee_ID = $_POST["emp-edit-ID-1"];
 
     // Info of employee to be updated
     $sql_4 = "SELECT * FROM [dbo].[Employee_Data] 
@@ -27,7 +27,7 @@ if (isset($_POST["employee-edit-1"])) {
 
 // Update employee based on Edit form
 if (isset($_POST["employee-edit-2"])) {
-    $Employee_ID = $_POST["emp-ID"];
+    $Employee_ID = $_POST["emp-edit-ID-2"];
 
     $Fname = $_POST["employee-Fname"];
     $Lname = $_POST["employee-Lname"];
@@ -64,7 +64,7 @@ if (isset($_POST["employee-edit-2"])) {
 
 // Delete employee
 if (isset($_POST["employee-delete"])) {
-    $Employee_ID = $_POST["emp-ID"];
+    $Employee_ID = $_POST["emp-delete-ID"];
 
     $sql_2 = "DELETE FROM [dbo].[Employee_Data]
         WHERE [Employee_ID]={$Employee_ID}";
@@ -205,16 +205,16 @@ if ($stmt_1 == false) {
                         <td><?php echo $row["Weekly_Hours_Worked"] ?></td>
                         <td>
                             <form action="#edit-popup" method="post">
-                                <input name="emp-ID" type="number" value="<?php echo $row['Employee_ID'] ?>" hidden>
+                                <input name="emp-edit-ID-1" type="number" value="<?php echo $row['Employee_ID'] ?>" hidden>
                                 
                                 <button name='employee-edit-1' id='employee-edit-1' type='submit' class="button button-edit">Edit</button>
                             </form>
                         </td>
                         <td>
-                            <form action="" method="post">
-                                <input name="emp-ID" type="number" value="<?php echo $row['Employee_ID'] ?>" hidden>
+                            <form method="post">
+                                <input name="emp-delete-ID" type="number" value="<?php echo $row['Employee_ID'] ?>" hidden>
                                 
-                                <button name='employee-delete-1' id='employee-delete-1' type='submit' class="button button-delete">Delete</button>
+                                <button name='employee-delete' id='employee-delete' type='submit' class="button button-delete">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -230,7 +230,7 @@ if ($stmt_1 == false) {
                 <div class="content content-form">
                     <form action="" method="post">
                         <!-- Hidden input to get Employee ID -->
-                        <input name="emp-ID" type="number" value="<?php echo $data['Employee_ID'] ?>"  hidden>
+                        <input name="emp-edit-ID-2" type="number" value="<?php echo $data['Employee_ID'] ?>"  hidden>
 
                         <label class="required-input-label">First Name</label><br>
                         <input name="employee-Fname" type="text" class="form-control" required
