@@ -131,6 +131,8 @@ if ($stmt_1 == false) {
 <head>
     <title>Search Employees</title>
     <link rel="stylesheet" href="/Styles/popupStyles.css">
+
+    <!-- Include JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -305,6 +307,7 @@ if ($stmt_1 == false) {
 
     </div>
 
+    <!-- Popup alert when edit button clicked (TESTING JQuery) -->
     <!-- <script>
         $(document).ready(function() {
             $(document).on('click', '#employee-edit-1', function() {
