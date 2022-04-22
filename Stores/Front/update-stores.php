@@ -24,34 +24,17 @@
                 FROM [dbo].[Stores]
                 WHERE [Store_ID]='$ID'";
             
-            // Status and error message to output on web page
             $message = "Stores Found";
-            $error_msg = NULL;
             
             $stmt_1 = sqlsrv_query($conn, $sql_1);
             if ($stmt_1 == false) {
                 $message = "Failed to Find Stores";
-                $error_msg = sqlsrv_errors();
             }
             else if (sqlsrv_has_rows($stmt_1) <= 0) {
-                $message = "Store not found";
+                $message = "Store Not Found";
             }
 
-            // Output status and error message
-            echo "<div>";
             echo "<h2>$message</h2>";
-            echo "<details>";
-            echo "<summary>Toggle Errors</summary>";
-                if ($error_msg != NULL) {
-                    foreach ( $error_msg as $error ) {
-                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
-                        echo "<b>Code: </b> ".$error['code']."<br>";
-                        echo "<b>Message: </b>".$error['message']."<br>";
-                        echo "<br>";
-                    }
-                }
-            echo "</details>";
-            echo "</div>";
 
             echo "<div class='break-row'></div>";
 
@@ -82,31 +65,14 @@
                 ,[Department_ID] = '$Department_ID'
                 WHERE [Store_ID]='$ID'";
             
-            // Status and error message to output on web page
             $message = "Successfully Updated Stores";
-            $error_msg = NULL;
 
             $stmt_2 = sqlsrv_query($conn, $sql_2);
             if ($stmt_2 == false || sqlsrv_rows_affected($stmt_2) <= 0) {
                 $message = "Failed to Update Stores";
-                $error_msg = sqlsrv_errors();
             }
 
-            // Output status and error message
-            echo "<div>";
             echo "<h2>$message</h2>";
-            echo "<details>";
-            echo "<summary>Toggle Errors</summary>";
-                if ($error_msg != NULL) {
-                    foreach ( $error_msg as $error ) {
-                        echo "<b>SQLSTATE: </b>".$error["SQLSTATE"]."<br>";
-                        echo "<b>Code: </b> ".$error['code']."<br>";
-                        echo "<b>Message: </b>".$error['message']."<br>";
-                        echo "<br>";
-                    }
-                }
-            echo "</details>";
-            echo "</div>";
 
             echo "<div class='break-row'></div>";
 

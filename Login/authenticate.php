@@ -25,7 +25,6 @@ if($stmt === false ) {
     echo '<h4 style="text-align:center">';
     echo "Error in executing query.</br>";
     echo '</h4>';
-    die(print_r(sqlsrv_errors(), true));  
 } 
 
 //Checks to make sure user account exists in database, and there is only one instance of it
