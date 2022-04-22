@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-    background-color: #2C2C2C;
+    background-color: #154734;
     position: absolute;
     width: 100vw;
     height: 7vh;
@@ -223,6 +223,6 @@ tr:nth-child(even) {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #04AA6D;
+    background-color: #006747;
     color: white;
 }

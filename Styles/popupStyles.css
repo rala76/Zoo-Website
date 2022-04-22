@@ -14,8 +14,8 @@
     display:inline-block
 }
 
-.button-delete {background-color: #dc3545;}
-.button-edit {background-color: #007bff;}
+.button-delete {background-color: #004F59;}
+.button-edit {background-color: #A9C47F;}
 
 .button-delete:hover {
     background: #b42c39;
