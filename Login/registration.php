@@ -3,22 +3,24 @@
 <head>
     <link rel="stylesheet" href="/Styles/loginStyles.css">
     <link rel="stylesheet" href="/Styles/styles.css">
-    <title>Login to Zoo Database</title>
+    <title>Register for Zoo Account</title>
 </head>
 <body>
     <div class="login">
-        <h1>Login to Zoo Database</h1>
-        <form action="authenticate.php" method="post">
+        <h1>Register for Zoo Acount</h1>
+        <form action="register-authenticate.php" method="post">
             <label for="Username"></label>
             <input type="text" name="Username" placeholder="Username" id="Username" required>
             <label for="Password"></label>
             <input type="Password" name="Password" placeholder="Password" id="Password" required>
-            <input type="submit" value="Login">
+            <label for="Email"></label>
+            <input type="Email" name="Email" placeholder="Email" id="Email" required>
+            <input type="submit" value="Register Account">
         </form>
     </div>
-        <div class="login">
+    <div class="login">
         <h1>
-            <a href="/Login/registration.php">Create an account?</a>
+            <a href="/Login/logon.php">Already have an account?</a>
         </h1>
     </div>
 </body>
