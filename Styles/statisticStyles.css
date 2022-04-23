@@ -1,4 +1,4 @@
-.report {
+.statistics {
     width: 400px;
     font-family: 'Calibri';
     background-color: #FFFFFF;
@@ -9,27 +9,27 @@
     margin-bottom: 0;
 }
 
-.report h1 {
+.statistics h1 {
     text-align: center;
     font-size: 30px;
     margin-bottom: 0;
 }
 
-.report h1.bottom {
+.statistics h1.bottom {
     font-size: 20px;
     padding: 12px 0 12px 0;
 }
 
-.report h1 a {
+.statistics h1 a {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.report h1 a:hover {
+.statistics h1 a:hover {
     color: #C7C7C7;
 }
 
-.report i {
+.statistics i {
     margin-top: 3vh;
     width: 100%;
     text-align: center;

@@ -18,42 +18,42 @@ include(__DIR__."/process-statistics.php");
     <script src="https://kit.fontawesome.com/e9a5785044.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="report" style="color:#A9C47F;">
+    <div class="statistics" style="color:#A9C47F;">
         <i class="fa-solid fa-otter fa-5x"></i>
         <h1>199</h1>
         <h1 class="bottom" style="background-color:#A9C47F;">
             <a href>Animals In Zoo</a>
         </h1>
     </div>
-    <div class="report" style="color:#006747;">
+    <div class="statistics" style="color:#006747;">
         <i class="fa-solid fa-people-line fa-5x"></i>
         <h1>199</h1>
         <h1 class="bottom" style="background-color:#006747;">
             <a href>Customers Visited</a>
         </h1>
     </div>
-    <div class="report" style="color:#004F59;">
+    <div class="statistics" style="color:#004F59;">
         <i class="fa-solid fa-store fa-5x"></i>
         <h1>199</h1>
         <h1 class="bottom" style="background-color:#004F59;">
             <a href>Stores Operating</a>
         </h1>
     </div>
-    <div class="report" style="color:#006747;">
+    <div class="statistics" style="color:#006747;">
         <i class="fa-regular fa-calendar fa-5x"></i>
         <h1>199</h1>
         <h1 class="bottom" style="background-color:#006747;">
             <a href>Events Held</a>
         </h1>
     </div>
-    <div class="report" style="color:#004F59;">
+    <div class="statistics" style="color:#004F59;">
         <i class="fa-solid fa-user-tie fa-5x"></i>
         <h1>199</h1>
         <h1 class="bottom" style="background-color:#004F59;">
             <a href>Employees Hired</a>
         </h1>
     </div>
-    <div class="report" style="color:#A9C47F;">
+    <div class="statistics" style="color:#A9C47F;">
         <i class="fa-solid fa-ticket fa-5x"></i>
         <h1>199</h1>
         <h1 class="bottom" style="background-color:#A9C47F;">
