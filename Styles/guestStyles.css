@@ -1,0 +1,14 @@
+.banner {
+    background-color: #154734;
+    width: 90vw;
+    height: 15vh;
+    display: flex;
+    margin-top: 6vh;
+    margin-left: 5vw;
+}
+
+.img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
