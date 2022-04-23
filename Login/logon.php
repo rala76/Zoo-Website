@@ -3,8 +3,7 @@
 <html>
 	
 <head>
-    <link rel="stylesheet" href="loginStyles.css">
-    <link rel="stylesheet" href="/Styles/styles.css">
+    <link rel="stylesheet" href="/Styles/loginStyles.css">
     <title>Login to Zoo Database</title>
 </head>
 	
