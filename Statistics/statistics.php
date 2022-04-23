@@ -24,7 +24,7 @@ include(__DIR__."/process-statistics.php");
             <?php echo $results_animals["Total_Animals"] ?>
         </h1>
         <h1 class="bottom" style="background-color:#A9C47F;">
-            <a href>Animal(s) In Zoo</a>
+            <a href="/Animals/Animal.php">Animal(s) In Zoo</a>
         </h1>
     </div>
     <div class="statistics" style="color:#006747;">
@@ -33,7 +33,7 @@ include(__DIR__."/process-statistics.php");
             <?php echo $results_customers["Total_Customers"] ?>
         </h1>
         <h1 class="bottom" style="background-color:#006747;">
-            <a href>Customer(s) Visited</a>
+            <a href="/Customers/Customer.php">Customer(s) Visited</a>
         </h1>
     </div>
     <div class="statistics" style="color:#004F59;">
@@ -42,7 +42,7 @@ include(__DIR__."/process-statistics.php");
             <?php echo $results_stores["Total_Stores"] ?>
         </h1>
         <h1 class="bottom" style="background-color:#004F59;">
-            <a href>Store(s) Operating</a>
+            <a href="/Stores/Stores.php">Store(s) Operating</a>
         </h1>
     </div>
     <div class="statistics" style="color:#006747;">
@@ -51,7 +51,7 @@ include(__DIR__."/process-statistics.php");
             <?php echo $results_events["Total_Events"] ?>
         </h1>
         <h1 class="bottom" style="background-color:#006747;">
-            <a href>Event(s) Held</a>
+            <a href="/Events/Events.php">Event(s) Held</a>
         </h1>
     </div>
     <div class="statistics" style="color:#004F59;">
@@ -60,7 +60,7 @@ include(__DIR__."/process-statistics.php");
             <?php echo $results_employees["Total_Employees"] ?>
         </h1>
         <h1 class="bottom" style="background-color:#004F59;">
-            <a href>Employee(s) Hired</a>
+            <a href="/Employees/Employee.php">Employee(s) Hired</a>
         </h1>
     </div>
     <div class="statistics" style="color:#A9C47F;">
@@ -69,7 +69,7 @@ include(__DIR__."/process-statistics.php");
             <?php echo $results_products["Total_Products"] ?>
         </h1>
         <h1 class="bottom" style="background-color:#A9C47F;">
-            <a href>Product(s) Sold</a>
+            <a href="/Products/Product.php">Product(s) Sold</a>
         </h1>
     </div>
 </body>
