@@ -1,48 +1,15 @@
-html, body{
-	margin: 0;
-	padding: 0;
-	font-family: arial;
-}
-body {
- background-image: url("https://www.choicehotels.com/cms/images/choice-hotels/explore/explore_zoo_intro/explore_zoo_intro.jpg");
- background-color: black;
-}
-.header {
-  padding: .3em;
-  margin: 0;
-  text-align: center;
-  background: none;
-  color: #274319;
-	text-align: left;
-	font-family: arial;
-  font-size: 30px;
-}
-.zoo{
-	text-align:center;
-	font-family: arial;
-	color: white;
-}
-.header img {
-  width: 4em;
-  height: 2em;
-margin: .7em 0em 0em 0em;
-}
-.header img:hover {
-	filter: grayscale(100%);
-}
+
 .login {
     width: 400px;
-	font-family: arial;
+    font-family: 'Calibri';
     background-color: #FFFFFF;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
-	border-radius: 1em;
 }
 
 .login h1 {
     text-align: center;
-    color: #4d4d4d;
-	font-family: arial;
+    color: #2C2C2C;
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
@@ -53,7 +20,6 @@ margin: .7em 0em 0em 0em;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
-	font-family: arial;
 }
 
 .login form input[type="password"],
@@ -62,41 +28,34 @@ margin: .7em 0em 0em 0em;
     height: 50px;
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
-	border-radius:  1em;
     padding: 0 15px;
-	font-family: arial;
 }
 
 .login form input[type="email"],
 .login form input[type="text"] {
     width: 310px;
     height: 50px;
-	font-family: arial;
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
-	border-radius:  1em;
 }
 
 .login form input[type="submit"] {
     width: 100%;
     padding: 15px;
     margin-top: 20px;
-    background-color: #689278;
+    background-color: #2C2C2C;
     border: 0;
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
     transition: background-color 0.2s;
-	border-radius:  0px 0px 1em 1em;
-	
 }
 
 .login form input[type="submit"]:hover {
-    background-color: #90ad93;
+    background-color: #777777;
     transition: background-color 0.2s;
     border-color: black;
-	border-radius:  0px 0px 1em 1em;
 }
 
 .login h1 a {
