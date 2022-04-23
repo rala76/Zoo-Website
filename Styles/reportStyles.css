@@ -1,0 +1,26 @@
+.report {
+    width: 400px;
+    font-family: 'Calibri';
+    background-color: #FFFFFF;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+    display: inline-block;
+    margin-left: 5vw;
+}
+
+.report h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.report h1.bottom {
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 12px 0 12px 0;
+}
+
+.report i {
+    margin-top: 3vh;
+    margin-left: 10vw;
+}
