@@ -16,7 +16,7 @@
         <a href="/Events/Events.php" class="navText">Events</a>
         <a href="/Animals/Animal.php" class="navText">Animals</a>
         <a href="/Enclosures/Enclosure.php" class="navText">Enclosures</a>
-        <a href="/Reports/reports.php" class="navText">Reports</a>
+        <a href="/Statistics/statistics.php" class="navText">Statistics</a>
         <a href="/Login/logout.php" style="float:right;margin-right:3vh" class="navText">Logout</a>
     </div>
 </body>

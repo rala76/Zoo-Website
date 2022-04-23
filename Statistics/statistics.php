@@ -1,6 +1,6 @@
 <?php
 // Include process code for forms & tables
-include(__DIR__."/process-reports.php");
+include(__DIR__."/process-statistics.php");
 ?>
 
 <!doctype html>
@@ -12,9 +12,9 @@ include(__DIR__."/process-reports.php");
     <!-- Include index page (header) -->
     <?php include(__DIR__."/../Login/admin-home.php") ?>
 
-    <title>Admin Reports</title>
+    <title>Admin Statistics</title>
     <link rel="stylesheet" href="/Styles/styles.css">
-    <link rel="stylesheet" href="/Styles/reportStyles.css">
+    <link rel="stylesheet" href="/Styles/statisticStyles.css">
     <script src="https://kit.fontawesome.com/e9a5785044.js" crossorigin="anonymous"></script>
 </head>
 <body>
