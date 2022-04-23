@@ -1,33 +1,24 @@
-
 <!doctype html>
 <html>
-	
 <head>
-    <link rel="stylesheet" href="loginStyles.css">
+    <link rel="stylesheet" href="/Styles/loginStyles.css">
+    <link rel="stylesheet" href="/Styles/styles.css">
     <title>Login to Zoo Database</title>
 </head>
-	
-<div class="header">
-	<a href="https://zoo-project.azurewebsites.net/Login/logon.php">
-
-	</a>
-</div>
-	
 <body>
-	<h1 class="zoo">Uma Zoo</h1>
     <div class="login">
-        <h1>Login</h1>
+        <h1>Login to Zoo Database</h1>
         <form action="authenticate.php" method="post">
             <label for="Username"></label>
             <input type="text" name="Username" placeholder="Username" id="Username" required>
             <label for="Password"></label>
             <input type="Password" name="Password" placeholder="Password" id="Password" required>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Login">
         </form>
     </div>
-        <div class="login">
+    <div class="login">
         <h1>
-            <a href="/Login/registration.php">Create account</a>
+            <a href="/Login/registration.php">Create an account?</a>
         </h1>
     </div>
 </body>
