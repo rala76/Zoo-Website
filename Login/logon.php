@@ -3,13 +3,13 @@
 <html>
 	
 <head>
-    <link rel="stylesheet" href="/Styles/loginStyles.css">
+    <link rel="stylesheet" href="loginStyles.css">
     <title>Login to Zoo Database</title>
 </head>
 	
 <div class="header">
 	<a href="https://zoo-project.azurewebsites.net/Login/logon.php">
-	<img src="https://logos-world.net/wp-content/uploads/2021/03/San-Diego-Zoo-Logo.png" alt="logo" />
+
 	</a>
 </div>
 	
