@@ -16,6 +16,7 @@
 
 .button-delete {background-color: #004F59;}
 .button-edit {background-color: #A9C47F;}
+.button-insert {background-color: #006747;}
 
 .button-delete:hover {
     background: #b42c39;
