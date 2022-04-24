@@ -56,11 +56,17 @@ include(__DIR__."/process-employees.php");
 
         <!-- Break row -->
         <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
 
         <!-- Insert Employee -->
         <form action="#insert-popup" method="post" style="margin-bottom: -10%">
             <button name='employee-insert-1' id='employee-delete' type='submit' class="button button-insert">Insert Employee</button>
         </form>
+
+        <!-- Break row -->
+        <div class='break-row'></div>
 
         <!-- ==================================================================================================== -->
         <!-- ==================================================================================================== -->
