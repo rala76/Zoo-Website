@@ -1,10 +1,40 @@
+body {
+    background-image: url("/Login/Images/login-background.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+}
+
+.login-header {
+    margin: 0;
+    text-align: center;
+    background: none;
+    text-align: left;
+    font-family: arial;
+    font-size: 30px;
+}
+.login-header img {
+    width: 3em;
+    height: 1.5em;
+    margin: .7em 0em 0em 0em;
+}
+.login-header img:hover {
+    filter: grayscale(100%);
+}
+
+.title {
+    text-align: center;
+    font-family: arial;
+    color: white;
+}
 
 .login {
     width: 400px;
     font-family: 'Calibri';
     background-color: #FFFFFF;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
+    margin: auto;
+    border-radius: 1em;
 }
 
 .login h1 {
@@ -13,6 +43,7 @@
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
+    border-radius: 1em;
 }
 
 .login form {
@@ -27,6 +58,7 @@
     width: 310px;
     height: 50px;
     border: 1px solid #dee0e4;
+    border-radius:  1em;
     margin-bottom: 20px;
     padding: 0 15px;
 }
@@ -36,6 +68,7 @@
     width: 310px;
     height: 50px;
     border: 1px solid #dee0e4;
+    border-radius:  1em;
     margin-bottom: 20px;
     padding: 0 15px;
 }
@@ -46,6 +79,7 @@
     margin-top: 20px;
     background-color: #2C2C2C;
     border: 0;
+    border-radius:  0px 0px 1em 1em;
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
@@ -56,6 +90,7 @@
     background-color: #777777;
     transition: background-color 0.2s;
     border-color: black;
+    border-radius:  0px 0px 1em 1em;
 }
 
 .login h1 a {

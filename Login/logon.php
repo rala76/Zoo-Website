@@ -6,8 +6,13 @@
     <title>Login to Zoo Database</title>
 </head>
 <body>
+    <div class="login-header">
+        <img src="/Login/Images/login-logo.png" alt="logo">
+    </div>
+    <h1 class="title">Zoo</h1>
+
     <div class="login">
-        <h1>Login to Zoo Database</h1>
+        <h1>Login</h1>
         <form action="authenticate.php" method="post">
             <label for="Username"></label>
             <input type="text" name="Username" placeholder="Username" id="Username" required>
@@ -16,9 +21,9 @@
             <input type="submit" value="Login">
         </form>
     </div>
-    <div class="login">
+    <div class="login" style="margin-top: 5%">
         <h1>
-            <a href="/Login/registration.php">Create an account?</a>
+            <a href="/Login/registration.php">Create account</a>
         </h1>
     </div>
 </body>
