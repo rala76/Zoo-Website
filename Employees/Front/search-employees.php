@@ -36,6 +36,18 @@ include(__DIR__."/process-employees.php");
                 <option value="Weekly Hours Worked">Weekly Hours Worked</option>
             </select><br>
 
+            <label class="input-label">Employee Status:</label><br>
+            <select name="employee-status" class="dropdown-control">
+                <!-- Default option -->
+                <option value="<?php echo isset($_POST['employee-status']) ? $_POST['employee-status'] : '' ?>" hidden>
+                    <?php echo isset($_POST['employee-status']) ? $_POST['employee-status'] : 'Select an Option' ?>
+                </option>
+
+                <option value="All">All</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Full Time">Full Time</option>
+            </select><br>
+
             <!-- Dropdown list for Order By -->
             <label class="input-label">Order By:</label><br>
             <select name="employee-orderBy" class="dropdown-control">
