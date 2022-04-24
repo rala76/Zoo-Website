@@ -116,13 +116,54 @@ if (!isset($_POST["Customer-search-submit"])) {
 
     // Create select query based on
     if ($_POST["Customer-orderBy"] == "Ascending") {
-        $sql_6 = "SELECT [Customer_ID], [Fname], [Lname], [Age]
-            FROM [dbo].[Customer_Data] 
-            ORDER BY '$Sort_By' ASC ";
-    } else {
-        $sql_6 = "SELECT [Customer_ID], [Fname], [Lname], [Age]
-            FROM [dbo].[Customer_Data] 
-            ORDER BY '$Sort_By' DESC ";
+        if($_POST["customer-age"] == "All") {     
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data] 
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else if ($_POST["customer-age"] == "Child") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data]
+                WHERE [Age] < 18
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else if ($_POST["customer-age"] == "Adult") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data]
+                WHERE [Age] >= 18 AND [Age] < 65
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data]
+                WHERE [Age] >= 65
+                ORDER BY '$Sort_By' ASC ";
+        } 
+    } 
+    else {
+        if($_POST["customer-age"] == "All") {     
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data] 
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else if ($_POST["customer-age"] == "Child") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data]
+                WHERE [Age] < 18
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else if ($_POST["customer-age"] == "Adult") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data]
+                WHERE [Age] >= 18 AND [Age] < 65
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Customer_Data]
+                WHERE [Age] >= 65
+                ORDER BY '$Sort_By' DESC ";
+        } 
     }
 }
 
