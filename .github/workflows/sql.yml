@@ -12,4 +12,4 @@ jobs:
     env:
       PASSWORD: ${{ secrets.SQL_PASSWORD }}
     steps:
-      - run: php connect-sql.php
+      - run: php /../connect-sql.php
