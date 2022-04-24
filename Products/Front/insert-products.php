@@ -82,12 +82,21 @@
                 ,$amountSold
                 ,$price);
             
-            $message = "Successfully Inserted New Product";
-
             $stmt = sqlsrv_query($conn, $sql, $params);
             if ($stmt == false) {
                 $message = "Failed to Insert New Product";
             }
+
+            $message = "Successfully Inserted New Product";
+             
+            $sql_trigger = "SELECT * FROM [dbo].[Trigger_Outputs]";
+            $stmt_trigger = sqlsrv_query($conn, $sql_trigger);
+            if (sqlsrv_has_rows($stmt_trigger) == 1) {
+                $message = "Failed to Insert New Product: Amount Sold Greater Than Inventory Amount";
+            }
+
+            $sql_delete_trigger = "DELETE FROM [dbo].[Trigger_Outputs]";
+            $stmt_delete_trigger = sqlsrv_query($conn, $sql_delete_trigger);
             
             echo "<h2>$message</h2>";
         }
