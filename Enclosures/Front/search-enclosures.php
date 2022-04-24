@@ -56,11 +56,17 @@ include(__DIR__ . "/process-enclosures.php");
 
         <!-- Break row -->
         <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
 
         <!-- Insert Enclosure -->
         <form action="#insert-popup" method="post" style="margin-bottom: -10%">
             <button name='Enclosure-insert-1' id='Enclosure-delete' type='submit' class="button button-insert">Insert Enclosure</button>
         </form>
+
+        <!-- Break row -->
+        <div class='break-row'></div>
 
         <!-- ==================================================================================================== -->
         <!-- ==================================================================================================== -->
