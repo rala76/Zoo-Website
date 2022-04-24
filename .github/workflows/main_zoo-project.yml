@@ -58,12 +58,3 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4B12087BC034F27A03812A63455EC46 }}
           package: .
-  
-  sql:
-    runs-on: ubuntu-latest
-    environment:
-      PASSWORD: ${{ secrets.SQL_PASSWORD }}
-
-    steps:
-      - name: Execute script
-        run: php connect-sql.php

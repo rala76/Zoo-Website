@@ -1,0 +1,15 @@
+name: SQL Connect
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  SQL Connect:
+    runs-on: ubuntu-latest
+    environment:
+      PASSWORD: ${{ secrets.SQL_PASSWORD }}
+    steps:
+      - run: php connect-sql.php
