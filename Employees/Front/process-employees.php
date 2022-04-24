@@ -158,18 +158,54 @@ else {
 
     // Create select query based on
     if ($_POST["employee-orderBy"] == "Ascending") {
-        $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
-            , [Gender], [Phone_Number], [Department_Name], [Department_ID]
-            , [Hourly_Wage], [Weekly_Hours_Worked]
-            FROM [dbo].[Employee_Data] 
-            ORDER BY '$Sort_By' ASC ";
+        if ($_POST["employee-status"] == "All") {
+            $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data] 
+                ORDER BY '$Sort_By' ASC ";
+        } 
+        else if ($_POST["employee-status"] == "Part Time") {
+            $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data]
+                WHERE [Weekly_Hours_Worked] <= 20
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else {
+            $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data]
+                WHERE [Weekly_Hours_Worked] > 20
+                ORDER BY '$Sort_By' ASC ";
+        }
     }
     else {
-        $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
-            , [Gender], [Phone_Number], [Department_Name], [Department_ID]
-            , [Hourly_Wage], [Weekly_Hours_Worked]
-            FROM [dbo].[Employee_Data] 
-            ORDER BY '$Sort_By' DESC ";
+        if ($_POST["employee-status"] == "All") {
+            $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data] 
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else if ($_POST["employee-status"] == "Part Time") {
+            $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data]
+                WHERE [Weekly_Hours_Worked] <= 20
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else {
+            $sql_6 = "SELECT [Employee_ID], [Fname], [Lname], [Date_Of_Birth]
+                , [Gender], [Phone_Number], [Department_Name], [Department_ID]
+                , [Hourly_Wage], [Weekly_Hours_Worked]
+                FROM [dbo].[Employee_Data]
+                WHERE [Weekly_Hours_Worked] > 20
+                ORDER BY '$Sort_By' DESC ";
+        }
     }
 }
 
