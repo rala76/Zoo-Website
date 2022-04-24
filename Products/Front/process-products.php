@@ -150,14 +150,54 @@ else {
 
     // Create select query based on
     if ($_POST["product-orderBy"] == "Ascending") {
-        $sql_6 = "SELECT *
-            FROM [dbo].[Product_Information] 
-            ORDER BY '$Sort_By' ASC ";
+        if ($_POST["product-category"] == "All") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information]
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else if ($_POST["product-category"] == "Food") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information]
+                WHERE [Category] = 'Food'
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else if ($_POST["product-category"] == "Ticket") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information] 
+                WHERE [Category] = 'Ticket'
+                ORDER BY '$Sort_By' ASC ";
+        }
+        else {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information]
+                WHERE [Category] = 'Souvenir'
+                ORDER BY '$Sort_By' ASC ";
+        }
     }
     else {
-        $sql_6 = "SELECT *
-            FROM [dbo].[Product_Information] 
-            ORDER BY '$Sort_By' DESC ";
+        if ($_POST["product-category"] == "All") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information]
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else if ($_POST["product-category"] == "Food") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information]
+                WHERE [Category] = 'Food'
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else if ($_POST["product-category"] == "Ticket") {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information] 
+                WHERE [Category] = 'Ticket'
+                ORDER BY '$Sort_By' DESC ";
+        }
+        else {
+            $sql_6 = "SELECT *
+                FROM [dbo].[Product_Information]
+                WHERE [Category] = 'Souvenir'
+                ORDER BY '$Sort_By' DESC ";
+        }
     }
 }
 

@@ -36,6 +36,18 @@ include(__DIR__ . "/process-customers.php");
 
             </select><br>
 
+            <label class="input-label">Customer Age:</label><br>
+            <select name="customer-age" class="dropdown-control">
+                <option value="<?php echo isset($_POST['customer-age']) ? $_POST['customer-age'] : '' ?>" hidden>
+                    <?php echo isset($_POST['customer-age']) ? $_POST['customer-age'] : 'Select an Option' ?>
+                </option>
+
+                <option value="All">All</option>
+                <option value="Child">Child</option>
+                <option value="Adult">Adult</option>
+                <option value="Senior">Senior</option>
+            </select><br>
+
             <!-- Dropdown list for Order By -->
             <label class="input-label">Order By:</label><br>
             <select name="Customer-orderBy" class="dropdown-control">

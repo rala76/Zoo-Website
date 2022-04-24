@@ -36,6 +36,18 @@ include(__DIR__."/process-products.php");
                 <option value="Price">Price</option>
             </select><br>
 
+            <label class="input-label">Product Category:</label><br>
+            <select name="product-category" class="dropdown-control">
+                <option value="<?php echo isset($_POST['product-category']) ? $_POST['product-category'] : '' ?>" hidden>
+                    <?php echo isset($_POST['product-category']) ? $_POST['product-category'] : 'Select an Option' ?>
+                </option>
+
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Ticket">Ticket</option>
+                <option value="Souvenir">Souvenir</option>
+            </select><br>
+
             <!-- Dropdown list for Order By -->
             <label class="input-label">Order By:</label><br>
             <select name="product-orderBy" class="dropdown-control" required>
