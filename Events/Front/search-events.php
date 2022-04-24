@@ -1,119 +1,212 @@
+<?php
+// Include default Event page
+include(__DIR__ . "/../Events.php");
+
+// Include process code for forms & tables
+include(__DIR__ . "/process-events.php");
+?>
+
 <!doctype html>
 <html>
-<head>
-    <!-- Include default Event page -->
-    <?php include(__DIR__."/../Events.php"); ?>
 
+<head>
     <title>Search Events</title>
+    <link rel="stylesheet" href="/Styles/popupStyles.css">
+
+    <!-- Include JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="form-base">
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <!-- Sort table results -->
+        <form method="post">
             <!-- Dropdown list for Sort By -->
-            <label class="required-input-label">Sort By:</label><br>
-            <select name="event-sortBy" class="dropdown-control" required>
+            <label class="input-label">Sort By:</label><br>
+            <select name="Event-sortBy" class="dropdown-control">
                 <!-- Default option -->
-                <option value="<?php echo isset($_POST['event-sortBy']) ? $_POST['event-sortBy'] : '' ?>" hidden>
-                    <?php echo isset($_POST['event-sortBy']) ? $_POST['event-sortBy'] : 'Select an Option' ?>
+                <option value="<?php echo isset($_POST['Event-sortBy']) ? $_POST['Event-sortBy'] : '' ?>" hidden>
+                    <?php echo isset($_POST['Event-sortBy']) ? $_POST['Event-sortBy'] : 'Select an Option' ?>
                 </option>
 
                 <option value="Event ID">Event ID</option>
                 <option value="Event Name">Event Name</option>
-                <option value="Event Date">Event Date</option>
-                <option value="Event Time">Event Time</option>
                 <option value="Number of Attendees">Number of Attendees</option>
                 <option value="Weekly Revenue">Weekly Revenue</option>
+                <option value="Event Date">Event Date</option>
+                <option value="Event Time">Event Time</option>
             </select><br>
 
             <!-- Dropdown list for Order By -->
-            <label class="required-input-label">Order By:</label><br>
-            <select name="event-orderBy" class="dropdown-control" required>
+            <label class="input-label">Order By:</label><br>
+            <select name="Event-orderBy" class="dropdown-control">
                 <!-- Default option -->
-                <option value="<?php echo isset($_POST['event-orderBy']) ? $_POST['event-orderBy'] : '' ?>" hidden>
-                    <?php echo isset($_POST['event-orderBy']) ? $_POST['event-orderBy'] : 'Select an Option' ?>
+                <option value="<?php echo isset($_POST['Event-orderBy']) ? $_POST['Event-orderBy'] : '' ?>" hidden>
+                    <?php echo isset($_POST['Event-orderBy']) ? $_POST['Event-orderBy'] : 'Select an Option' ?>
                 </option>
 
                 <option value="Ascending">Ascending</option>
                 <option value="Descending">Descending</option>
             </select><br>
 
-            <button name="event-search-submit" type="submit" class="form-submit">Submit</button>
+            <button name="Event-search-submit" type="submit" class="form-submit">Submit</button>
         </form>
 
-        <?php
-        // Connect to Microsoft Azure SQL Database
-        include(__DIR__."/../../connect-sql.php");
+        <!-- ==================================================================================================== -->
+        <!-- ==================================================================================================== -->
 
-        // Select query based on Sort/Order by
-        if (isset($_POST["event-search-submit"])) {
-            // Get Sort By value based on input
-            if ($_POST["event-sortBy"] == "Event ID") {
-                $Sort_By = "Event_ID";
-            }
-            else if ($_POST["event-sortBy"] == "Event Name") {
-                $Sort_By = "Event_Name";
-            }
-            else if ($_POST["event-sortBy"] == "Event Date") {
-                $Sort_By = "Event_Date";
-            }
-            else if ($_POST["event-sortBy"] == "Event Time") {
-                $Sort_By = "Event_Time";
-            }
-            else if ($_POST["event-sortBy"] == "Number of Attendees") {
-                $Sort_By = "Num_Attendees";
-            }
-            else {
-                $Sort_By = "Weekly_Revenue";
-            }
-            
+        <!-- Break row -->
+        <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
 
-            // Create select query based on
-            if ($_POST["event-orderBy"] == "Ascending") {
-                $sql = "SELECT [Event_ID], [Event_Name], [Event_Date], [Event_Time]
-                    , [Num_Attendees], [Weekly_Revenue]
-                    FROM [dbo].[Events] 
-                    ORDER BY '$Sort_By' ASC ";
-            }
-            else {
-                $sql = "SELECT [Event_ID], [Event_Name], [Event_Date], [Event_Time]
-                    , [Num_Attendees], [Weekly_Revenue]
-                    FROM [dbo].[Events] 
-                    ORDER BY '$Sort_By' DESC ";
-            }
+        <!-- Insert Event -->
+        <!-- Insert Employee -->
+        <form action="#insert-popup" method="post" style="margin-bottom: -10%">
+            <button name='employee-insert-1' id='employee-insert-1' type='submit' class="button button-insert">Insert Event</button>
+        </form>
 
-            $stmt = sqlsrv_query($conn, $sql);
+        <div class='break-row'></div>
+        <!-- ==================================================================================================== -->
+        <!-- ==================================================================================================== -->
 
-            // Break row
-            echo "<div class='break-row'></div>";
+        <!-- Display Event as table -->
+        <div>
+            <label class='form-control'></label><br>
+            <table class='styled-table'>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Event Name</th>
+                    <th>Number of Attendees</th>
+                    <th>Weekly Revenue</th>
+                    <th>Event Date</th>
+                    <th>Event Time</th>
 
-            // Display Event as table
-            echo "<div>";
-            echo "<label class='form-control'></label><br>";
-            echo "<table>";
-                echo "<tr>";
-                    echo "<th>Event ID</th>";
-                    echo "<th>Event Name</th>";
-                    echo "<th>Event Date</th>";
-                    echo "<th>Event Time</th>";
-                    echo "<th>Number of Attendees</th>";
-                    echo "<th>Weekly Revenue</th>";
-                echo "</tr>";
+                    <th colspan="2">Action</th>
+                </tr>
 
-                // Fetch rows from Employee_Data
-                while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["Event_ID"] . "</td>";
-                    echo "<td>" . $row["Event_Name"] . "</td>";
-                    echo "<td>" . $row["Event_Date"]->format('Y-m-d') . "</td>";
-                    echo "<td>" . $row["Event_Time"] . "</td>";
-                    echo "<td>" . $row["Num_Attendees"] . "</td>";
-                    echo "<td>$" . number_format($row["Weekly_Revenue"], 2) . "</td>";
-                    echo "</tr>";
-                }
-            echo "</table>";
-            echo "</div>";
-        }
-        ?>
+                <!-- Fetch rows from Event_Data -->
+                <?php while ($row = sqlsrv_fetch_array($stmt_6, SQLSRV_FETCH_ASSOC)) : ?>
+                    <tr>
+                        <td><?php echo $row["Event_ID"] ?></td>
+                        <td><?php echo $row["Event_Name"] ?></td>
+                        <td><?php echo $row["Num_Attendees"] ?></td>
+                        <td><?php echo $row["Weekly_Revenue"] ?></td>
+                        <td><?php echo $row["Event_Date"]->format('Y/m/d') ?></td>
+                        <td><?php echo $row["Event_Time"] ?></td>
+                        <form action="#edit-popup" method="post">
+                            <td>
+                                <input name="emp-edit-ID-1" type="number" value="<?php echo $row['Event_ID'] ?>" hidden>
+
+                                <button name='Event-edit-1' id='Event-edit-1' type='submit' class="button button-edit">Edit</button>
+                        </form>
+                        </td>
+                        <td>
+                            <form action="" method="post">
+                                <input name="emp-delete-ID" type="number" value="<?php echo $row['Event_ID'] ?>" hidden>
+
+                                <button name='Event-delete' id='Event-delete' type='submit' class="button button-delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+        </div>
+
+        <!-- ==================================================================================================== -->
+        <!-- ==================================================================================================== -->
+
+        <!-- Edit form -->
+        <div id="edit-popup" class="overlay">
+            <div class="popup popup-form">
+                <h2>Edit Event</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content content-form">
+                    <form action="" method="post">
+                        <!-- Hidden input to get Event ID -->
+                        <input name="emp-edit-ID-2" type="number" value="<?php echo $data['Event_ID'] ?>" hidden>
+
+                        <label class="required-input-label">Event Name</label><br>
+                        <input name="Event-Event_Name" type="text" class="form-control" required value="<?php echo isset($data['Event_Name']) ? $data['Event_Name'] : '' ?>">
+                        <br>
+
+                        <label class="required-input-label">Number of Attendees</label><br>
+                        <input name="Event-Num_Attendees" type="text" class="form-control" required value="<?php echo isset($data['Num_Attendees']) ? $data['Num_Attendees'] : '' ?>">
+                        <br>
+
+                        <label class="required-input-label">Weekly Revenue</label><br>
+                        <input name="Event-Weekly_Revenue" type="text" class="form-control" required value="<?php echo isset($data['Weekly_Revenue']) ? $data['Weekly_Revenue'] : '' ?>">
+                        <br>
+
+                        <!-- Dropdown list for Event_Date -->
+                        <label class="required-input-label">Event Date (YYYY-MM-DD)</label><br>
+                        <input name="Event-Event_Date" type="text" class="form-control" required value="<?php echo isset($data['Event-Event_Date']) ? $data['Event-Event_Date']->format('Y-m-d') : '' ?>">">
+
+                        </select><br>
+
+                        <label class="input-label">Event Time (HH:MM:SS)</label><br>
+                        <input name="Event-phone-number" type="time" class="form-control" value="<?php echo isset($data['Event_Time']) ? $data['Event_Time'] : '' ?>">
+                        <br>
+
+
+
+                        <button name="Event-edit-2" type="submit" class="form-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================================================================================== -->
+        <!-- ==================================================================================================== -->
+
+        <!-- Insert form -->
+        <div id="insert-popup" class="overlay">
+            <div class="popup popup-form">
+                <h2>Insert Event</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content content-form">
+                    <form action="" method="post">
+                        <label class="required-input-label">Event Name</label><br>
+                        <input name="Event-Event_Name" type="text" class="form-control" required value="<?php echo isset($_POST['Event-Event_Name']) ? $_POST['Event-Event_Name'] : '' ?>">
+                        <br>
+
+                        <label class="required-input-label">Number of Attendees</label><br>
+                        <input name="Event-Num_Attendees" type="text" class="form-control" required value="<?php echo isset($_POST['Event-Num_Attendees']) ? $_POST['Event-Num_Attendees'] : '' ?>">
+                        <br>
+
+                        <label class="required-input-label">Weekly Revenue (YYYY-MM-DD)</label><br>
+                        <input name="Event-Weekly_Revenue" type="text" class="form-control" required value="<?php echo isset($_POST['Event-Weekly_Revenue']) ? $_POST['Event-Weekly_Revenue'] : '' ?>">
+                        <br>
+
+
+                        <label class="required-input-label">Event Date</label><br>
+                        <input name="Event-Event_Date" type="number" min="1" class="form-control" placeholder="NULL" required value="<?php echo isset($_POST['Event-Event_Date']) ? $_POST['Event-Event_Date']->format('Y/m/d') : '' ?>">
+                        <br>
+
+                        <label class="input-label">Event Time</label><br>
+                        <input name="Event-Event_Time" type="number" min="0" step="0.01" class="form-control" placeholder="0" value="<?php echo isset($_POST['Event-Event_Time']) ? $_POST['Event-Event_Time'] : '' ?>">
+                        <br>
+
+
+
+                        <button name="Event-insert-2" type="submit" class="form-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Popup alert when edit button clicked (TESTING JQuery) -->
+    <!-- <script>
+        $(document).ready(function() {
+            $(document).on('click', '#Event-edit-1', function() {
+                alert("Edit button clicked");
+            });
+        });
+    </script> -->
+
 </body>
+
 </html>
