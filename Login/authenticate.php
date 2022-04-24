@@ -48,7 +48,7 @@ else {
         header('Location: admin-home.php');
     }
     else {
-        header('Location: customer-home.php');
+        header('Location: guest-home.php');
     }
 }
 
