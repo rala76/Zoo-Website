@@ -20,7 +20,7 @@ include(__DIR__."/process-products.php");
         <!-- Sort table results -->
         <form method="post">
             <!-- Dropdown list for Sort By -->
-            <label class="required-input-label">Sort By:</label><br>
+            <label class="input-label">Sort By:</label><br>
             <select name="product-sortBy" class="dropdown-control" required>
                 <!-- Default option -->
                 <option value="<?php echo isset($_POST['product-sortBy']) ? $_POST['product-sortBy'] : '' ?>" hidden>
@@ -37,7 +37,7 @@ include(__DIR__."/process-products.php");
             </select><br>
 
             <!-- Dropdown list for Order By -->
-            <label class="required-input-label">Order By:</label><br>
+            <label class="input-label">Order By:</label><br>
             <select name="product-orderBy" class="dropdown-control" required>
                 <!-- Default option -->
                 <option value="<?php echo isset($_POST['product-orderBy']) ? $_POST['product-orderBy'] : '' ?>" hidden>
