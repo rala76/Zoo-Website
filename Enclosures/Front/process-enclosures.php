@@ -139,3 +139,5 @@ $stmt_6 = sqlsrv_query($conn, $sql_6);
 if ($stmt_6 == false) {
     echo "<script> alert('Failed to load table') </script>";
 }
+
+?>
