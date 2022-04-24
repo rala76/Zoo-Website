@@ -62,9 +62,8 @@ include(__DIR__ . "/process-events.php");
         <div class='break-row'></div>
 
         <!-- Insert Event -->
-        <!-- Insert Employee -->
         <form action="#insert-popup" method="post" style="margin-bottom: -10%">
-            <button name='employee-insert-1' id='employee-insert-1' type='submit' class="button button-insert">Insert Event</button>
+            <button name='event-insert-1' id='event-insert-1' type='submit' class="button button-insert">Insert Event</button>
         </form>
 
         <div class='break-row'></div>
@@ -92,19 +91,20 @@ include(__DIR__ . "/process-events.php");
                         <td><?php echo $row["Event_ID"] ?></td>
                         <td><?php echo $row["Event_Name"] ?></td>
                         <td><?php echo $row["Num_Attendees"] ?></td>
-                        <td><?php echo $row["Weekly_Revenue"] ?></td>
-                        <td><?php echo $row["Event_Date"]->format('Y/m/d') ?></td>
+                        <td>$<?php echo $row["Weekly_Revenue"] ?></td>
+                        <td><?php echo $row["Event_Date"]->format('Y-m-d') ?></td>
                         <td><?php echo $row["Event_Time"] ?></td>
+                        
+                        <td>
                         <form action="#edit-popup" method="post">
-                            <td>
-                                <input name="emp-edit-ID-1" type="number" value="<?php echo $row['Event_ID'] ?>" hidden>
+                                <input name="event-edit-ID-1" type="number" value="<?php echo $row['Event_ID'] ?>" hidden>
 
                                 <button name='Event-edit-1' id='Event-edit-1' type='submit' class="button button-edit">Edit</button>
                         </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input name="emp-delete-ID" type="number" value="<?php echo $row['Event_ID'] ?>" hidden>
+                                <input name="event-delete-ID" type="number" value="<?php echo $row['Event_ID'] ?>" hidden>
 
                                 <button name='Event-delete' id='Event-delete' type='submit' class="button button-delete">Delete</button>
                             </form>
@@ -125,31 +125,31 @@ include(__DIR__ . "/process-events.php");
                 <div class="content content-form">
                     <form action="" method="post">
                         <!-- Hidden input to get Event ID -->
-                        <input name="emp-edit-ID-2" type="number" value="<?php echo $data['Event_ID'] ?>" hidden>
+                        <input name="event-edit-ID-2" type="number" value="<?php echo $data['Event_ID'] ?>" hidden>
 
                         <label class="required-input-label">Event Name</label><br>
-                        <input name="Event-Event_Name" type="text" class="form-control" required value="<?php echo isset($data['Event_Name']) ? $data['Event_Name'] : '' ?>">
+                        <input name="Event_Name" type="text" class="form-control" required 
+                        value="<?php echo isset($data['Event_Name']) ? $data['Event_Name'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Number of Attendees</label><br>
-                        <input name="Event-Num_Attendees" type="text" class="form-control" required value="<?php echo isset($data['Num_Attendees']) ? $data['Num_Attendees'] : '' ?>">
+                        <input name="Event-Num_Attendees" type="number" min="0" class="form-control" required 
+                        value="<?php echo isset($data['Num_Attendees']) ? $data['Num_Attendees'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Weekly Revenue</label><br>
-                        <input name="Event-Weekly_Revenue" type="text" class="form-control" required value="<?php echo isset($data['Weekly_Revenue']) ? $data['Weekly_Revenue'] : '' ?>">
+                        <input name="Event-Weekly_Revenue" type="number" step="0.1" class="form-control" required 
+                        value="<?php echo isset($data['Weekly_Revenue']) ? $data['Weekly_Revenue'] : '' ?>">
                         <br>
 
-                        <!-- Dropdown list for Event_Date -->
                         <label class="required-input-label">Event Date (YYYY-MM-DD)</label><br>
-                        <input name="Event-Event_Date" type="text" class="form-control" required value="<?php echo isset($data['Event-Event_Date']) ? $data['Event-Event_Date']->format('Y-m-d') : '' ?>">">
+                        <input name="Event_Date" type="text" class="form-control" required 
+                        value="<?php echo isset($data['Event_Date']) ? $data['Event_Date']->format('Y-m-d') : '' ?>">
 
-                        </select><br>
-
-                        <label class="input-label">Event Time (HH:MM:SS)</label><br>
-                        <input name="Event-phone-number" type="time" class="form-control" value="<?php echo isset($data['Event_Time']) ? $data['Event_Time'] : '' ?>">
+                        <label class="required-input-label">Event Time (HH:MM:SS)</label><br>
+                        <input name="Event_Time" type="text" class="form-control" required
+                        value="<?php echo isset($data['Event_Time']) ? $data['Event_Time'] : '' ?>">
                         <br>
-
-
 
                         <button name="Event-edit-2" type="submit" class="form-submit">Submit</button>
                     </form>
@@ -168,27 +168,29 @@ include(__DIR__ . "/process-events.php");
                 <div class="content content-form">
                     <form action="" method="post">
                         <label class="required-input-label">Event Name</label><br>
-                        <input name="Event-Event_Name" type="text" class="form-control" required value="<?php echo isset($_POST['Event-Event_Name']) ? $_POST['Event-Event_Name'] : '' ?>">
+                        <input name="Event_Name" type="text" class="form-control" required
+                        value="<?php echo isset($_POST['Event_Name']) ? $_POST['Event_Name'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Number of Attendees</label><br>
-                        <input name="Event-Num_Attendees" type="text" class="form-control" required value="<?php echo isset($_POST['Event-Num_Attendees']) ? $_POST['Event-Num_Attendees'] : '' ?>">
+                        <input name="Event-Num_Attendees" type="number" min="0" class="form-control" required
+                        value="<?php echo isset($_POST['Event-Num_Attendees']) ? $_POST['Event-Num_Attendees'] : '' ?>">
                         <br>
 
-                        <label class="required-input-label">Weekly Revenue (YYYY-MM-DD)</label><br>
-                        <input name="Event-Weekly_Revenue" type="text" class="form-control" required value="<?php echo isset($_POST['Event-Weekly_Revenue']) ? $_POST['Event-Weekly_Revenue'] : '' ?>">
+                        <label class="required-input-label">Weekly Revenue</label><br>
+                        <input name="Event-Weekly_Revenue" type="number" step="0.1" class="form-control" required
+                        value="<?php echo isset($_POST['Event-Weekly_Revenue']) ? $_POST['Event-Weekly_Revenue'] : '' ?>">
                         <br>
 
-
-                        <label class="required-input-label">Event Date</label><br>
-                        <input name="Event-Event_Date" type="number" min="1" class="form-control" placeholder="NULL" required value="<?php echo isset($_POST['Event-Event_Date']) ? $_POST['Event-Event_Date']->format('Y/m/d') : '' ?>">
+                        <label class="required-input-label">Event Date (YYYY-MM-DD)</label><br>
+                        <input name="Event_Date" type="text" class="form-control" required
+                        value="<?php echo isset($_POST['Event_Date']) ? $_POST['Event_Date']->format('Y-m-d') : '' ?>">
                         <br>
 
-                        <label class="input-label">Event Time</label><br>
-                        <input name="Event-Event_Time" type="number" min="0" step="0.01" class="form-control" placeholder="0" value="<?php echo isset($_POST['Event-Event_Time']) ? $_POST['Event-Event_Time'] : '' ?>">
+                        <label class="required-input-label">Event Time (HH:MM:SS)</label><br>
+                        <input name="Event_Time" type="text" class="form-control" required
+                        value="<?php echo isset($_POST['Event_Time']) ? $_POST['Event_Time'] : '' ?>">
                         <br>
-
-
 
                         <button name="Event-insert-2" type="submit" class="form-submit">Submit</button>
                     </form>
@@ -197,16 +199,5 @@ include(__DIR__ . "/process-events.php");
         </div>
 
     </div>
-
-    <!-- Popup alert when edit button clicked (TESTING JQuery) -->
-    <!-- <script>
-        $(document).ready(function() {
-            $(document).on('click', '#Event-edit-1', function() {
-                alert("Edit button clicked");
-            });
-        });
-    </script> -->
-
 </body>
-
 </html>
