@@ -38,6 +38,7 @@ include(__DIR__."/process-employees.php");
 
             <label class="input-label">Employee Status:</label><br>
             <select name="employee-status" class="dropdown-control">
+                <!-- Default option -->
                 <option value="<?php echo isset($_POST['employee-status']) ? $_POST['employee-status'] : '' ?>" hidden>
                     <?php echo isset($_POST['employee-status']) ? $_POST['employee-status'] : 'Select an Option' ?>
                 </option>
