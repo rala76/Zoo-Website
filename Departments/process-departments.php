@@ -1,6 +1,6 @@
 <?php
 // Connect to Microsoft Azure SQL Database
-include(__DIR__."/../../connect-sql.php");
+include(__DIR__."/../connect-sql.php");
 
 // Select query based on Sort/Order by value
 if (!isset($_POST["department-search-submit"])) {

@@ -1,6 +1,6 @@
 <?php
-// Include default Employee page
-include(__DIR__."/../Employee.php");
+
+include(__DIR__."/../Login/tables.php");
 
 // Include process code for forms & tables
 include(__DIR__."/process-employees.php");

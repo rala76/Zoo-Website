@@ -1,6 +1,6 @@
 <?php
-// Include default Animal page
-include(__DIR__ . "/../Animal.php");
+
+include(__DIR__."/../Login/tables.php");
 
 // Include process code for forms & tables
 include(__DIR__ . "/process-animals.php");

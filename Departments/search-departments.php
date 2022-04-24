@@ -1,6 +1,7 @@
 <?php
-// Include default Department page
-include(__DIR__."/../Department.php");
+
+//Include index page (header)
+include(__DIR__."/../Login/admin-home.php");
 
 // Include process code for forms & tables
 include(__DIR__."/process-departments.php");
@@ -16,7 +17,7 @@ include(__DIR__."/process-departments.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<div class="form-base">
+<div class="form-base-2">
         <!-- Sort table results -->
         <form method="post">
             <!-- Dropdown list for Sort By -->

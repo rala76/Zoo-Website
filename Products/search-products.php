@@ -1,6 +1,6 @@
 <?php
-// Include default Product page
-include(__DIR__."/../Product.php");
+
+include(__DIR__."/../Login/tables.php");
 
 // Include process code for forms & tables
 include(__DIR__."/process-products.php");

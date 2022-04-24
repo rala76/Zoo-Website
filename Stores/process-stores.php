@@ -1,6 +1,6 @@
 <?php
 // Connect to Microsoft Azure SQL Database
-include(__DIR__."/../../connect-sql.php");
+include(__DIR__."/../connect-sql.php");
 
 // Insert store based on Insert form
 if (isset($_POST["store-insert-2"])) {

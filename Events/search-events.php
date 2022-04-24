@@ -1,6 +1,6 @@
 <?php
-// Include default Event page
-include(__DIR__ . "/../Events.php");
+
+include(__DIR__."/../Login/tables.php");
 
 // Include process code for forms & tables
 include(__DIR__ . "/process-events.php");
