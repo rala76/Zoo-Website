@@ -58,3 +58,10 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4B12087BC034F27A03812A63455EC46 }}
           package: .
+  
+  sql:
+    steps:
+      - name: Execute script
+        env:
+          PASSWORD: ${{ secrets.SQL_PASSWORD }}
+        run: php connect-sql.php
