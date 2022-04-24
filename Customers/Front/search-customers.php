@@ -92,14 +92,14 @@ include(__DIR__ . "/process-customers.php");
                         <td><?php echo $row["Age"] ?></td>
                         <td>
                             <form action="#edit-popup" method="post">
-                                <input name="emp-edit-ID-1" type="number" value="<?php echo $row['Customer_ID'] ?>" hidden>
+                                <input name="customer-edit-ID-1" type="number" value="<?php echo $row['Customer_ID'] ?>" hidden>
 
                                 <button name='Customer-edit-1' id='Customer-edit-1' type='submit' class="button button-edit">Edit</button>
                             </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input name="emp-delete-ID" type="number" value="<?php echo $row['Customer_ID'] ?>" hidden>
+                                <input name="customer-delete-ID" type="number" value="<?php echo $row['Customer_ID'] ?>" hidden>
 
                                 <button name='Customer-delete' id='Customer-delete' type='submit' class="button button-delete">Delete</button>
                             </form>
@@ -120,7 +120,7 @@ include(__DIR__ . "/process-customers.php");
                 <div class="content content-form">
                     <form action="" method="post">
                         <!-- Hidden input to get Customer ID -->
-                        <input name="emp-edit-ID-2" type="number" value="<?php echo $data['Customer_ID'] ?>" hidden>
+                        <input name="customer-edit-ID-2" type="number" value="<?php echo $data['Customer_ID'] ?>" hidden>
 
                         <label class="required-input-label">First Name</label><br>
                         <input name="Customer-Fname" type="text" class="form-control" required value="<?php echo isset($data['Fname']) ? $data['Fname'] : '' ?>">
@@ -131,10 +131,8 @@ include(__DIR__ . "/process-customers.php");
                         <br>
 
                         <label class="required-input-label">Age</label><br>
-                        <input name="Customer-Age" type="text" class="form-control" required value="<?php echo isset($data['Age']) ? $data['Age'] : '' ?>">
+                        <input name="Customer-Age" type="number" min="1" class="form-control" required value="<?php echo isset($data['Age']) ? $data['Age'] : '' ?>">
                         <br>
-
-
 
                         <button name="Customer-edit-2" type="submit" class="form-submit">Submit</button>
                     </form>
@@ -160,10 +158,9 @@ include(__DIR__ . "/process-customers.php");
                         <input name="Customer-Lname" type="text" class="form-control" required value="<?php echo isset($_POST['Customer-Lname']) ? $_POST['Customer-Lname'] : '' ?>">
                         <br>
 
-                        <label class="required-input-label">Age (YYYY-MM-DD)</label><br>
-                        <input name="Customer-Age" type="text" class="form-control" required value="<?php echo isset($_POST['Customer-Age']) ? $_POST['Customer-Age'] : '' ?>">
+                        <label class="required-input-label">Age</label><br>
+                        <input name="Customer-Age" type="number" min="1" class="form-control" required value="<?php echo isset($_POST['Customer-Age']) ? $_POST['Customer-Age'] : '' ?>">
                         <br>
-
 
                         <button name="Customer-insert-2" type="submit" class="form-submit">Submit</button>
                     </form>

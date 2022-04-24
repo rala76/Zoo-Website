@@ -15,12 +15,9 @@
 <body>
     <div class="sidebar">
         <div>
-
-            <hr class="sidebarLine">
-            </hr>
+            <hr class="sidebarLine"></hr>
             <a href="/Enclosures/Front/search-enclosures.php" class="navText sidebarText">Search Enclosures</a>
-            <hr class="sidebarLine">
-            </hr>
+            <hr class="sidebarLine"></hr>
         </div>
     </div>
 </body>

@@ -7,35 +7,30 @@ if (isset($_POST["Customer-insert-2"])) {
     $Fname = $_POST["Customer-Fname"];
     $Lname = $_POST["Customer-Lname"];
     $Age = $_POST["Customer-Age"];
-    $Customer_ID = $_POST["Customer-Customer_ID"];
-
 
     // Create insert query
     $sql_1 = "INSERT INTO [dbo].[Customer_Data] 
         ([Fname]
         ,[Lname]
-        ,[Age]
-        ,[Customer_ID]
-        )
+        ,[Age])
         VALUES 
-        (?, ?, ?, ?)";
+        (?, ?, ?)";
 
     // Parameters of insert query
-    $params = array(
-        $Fname, $Lname, $Age, $Customer_ID
-    );
+    $params = array($Fname, $Lname, $Age);
 
     $stmt_1 = sqlsrv_query($conn, $sql_1, $params);
     if ($stmt_1 == false) {
         echo "<script> alert('Failed to Insert Customer'); </script>";
-    } else {
+    }
+    else {
         echo "<script> alert('Successfully Inserted Customer'); </script>";
     }
 }
 
 // Get input values for Edit form
 if (isset($_POST["Customer-edit-1"])) {
-    $Customer_ID = $_POST["emp-edit-ID-1"];
+    $Customer_ID = $_POST["customer-edit-ID-1"];
 
     // Info of Customer to be updated
     $sql_2 = "SELECT * FROM [dbo].[Customer_Data] 
@@ -54,19 +49,16 @@ if (isset($_POST["Customer-edit-1"])) {
 
 // Update Customer based on Edit form
 if (isset($_POST["Customer-edit-2"])) {
-    $Customer_ID = $_POST["emp-edit-ID-2"];
+    $Customer_ID = $_POST["customer-edit-ID-2"];
 
     $Fname = $_POST["Customer-Fname"];
     $Lname = $_POST["Customer-Lname"];
     $Age = $_POST["Customer-Age"];
-    $Customer_ID = $_POST["Customer-Customer_ID"];
 
     $sql_3 = "UPDATE [dbo].[Customer_Data] 
         SET [Fname] = '$Fname'
         ,[Lname] = '$Lname'
         ,[Age] = '$Age'
-        ,[Customer_ID] = '$Customer_ID'
-
         WHERE [Customer_ID]='$Customer_ID'";
 
     $stmt_3 = sqlsrv_query($conn, $sql_3);
@@ -87,7 +79,7 @@ if (isset($_POST["Customer-edit-2"])) {
 
 // Delete Customer
 if (isset($_POST["Customer-delete"])) {
-    $Customer_ID = $_POST["emp-delete-ID"];
+    $Customer_ID = $_POST["customer-delete-ID"];
 
     $sql_5 = "DELETE FROM [dbo].[Customer_Data]
         WHERE [Customer_ID]={$Customer_ID}";
@@ -125,7 +117,6 @@ if (!isset($_POST["Customer-search-submit"])) {
     // Create select query based on
     if ($_POST["Customer-orderBy"] == "Ascending") {
         $sql_6 = "SELECT [Customer_ID], [Fname], [Lname], [Age]
-
             FROM [dbo].[Customer_Data] 
             ORDER BY '$Sort_By' ASC ";
     } else {
@@ -139,3 +130,5 @@ $stmt_6 = sqlsrv_query($conn, $sql_6);
 if ($stmt_6 == false) {
     echo "<script> alert('Failed to load table') </script>";
 }
+
+?>

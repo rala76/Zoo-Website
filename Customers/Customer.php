@@ -15,12 +15,9 @@
 <body>
     <div class="sidebar">
         <div>
-
-            <hr class="sidebarLine">
-            </hr>
+            <hr class="sidebarLine"></hr>
             <a href="/Customers/Front/search-customers.php" class="navText sidebarText">Search Customers</a>
-            <hr class="sidebarLine">
-            </hr>
+            <hr class="sidebarLine"></hr>
         </div>
     </div>
 </body>
