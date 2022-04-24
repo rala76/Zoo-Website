@@ -9,7 +9,7 @@ on:
 jobs:
   SQL Connect:
     runs-on: ubuntu-latest
-    environment:
+    env:
       PASSWORD: ${{ secrets.SQL_PASSWORD }}
     steps:
       - run: php connect-sql.php
