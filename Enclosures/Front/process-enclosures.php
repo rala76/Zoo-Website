@@ -6,36 +6,33 @@ include(__DIR__ . "/../../connect-sql.php");
 if (isset($_POST["Enclosure-insert-2"])) {
     $Maintenance_Fees = $_POST["Enclosure-Maintenance_Fees"];
     $Num_Animals = $_POST["Enclosure-Num_Animals"];
-    $Enclosure_ID = $_POST["Enclosure-Enclosure_ID"];
     $Department_ID = $_POST["Enclosure-Department_ID"];
-
 
     // Create insert query
     $sql_1 = "INSERT INTO [dbo].[Enclosure_Data] 
         ([Maintenance_Fees]
         ,[Num_Animals]
-        ,[Enclosure_ID]
-        ,[Department_ID]
-        )
+        ,[Department_ID])
         VALUES 
-        (?, ?, ?, ?)";
+        (?, ?, ?)";
 
     // Parameters of insert query
     $params = array(
-        $Maintenance_Fees, $Num_Animals, $Enclosure_ID, $Enclosure_ID
+        $Maintenance_Fees, $Num_Animals, $Department_ID
     );
 
     $stmt_1 = sqlsrv_query($conn, $sql_1, $params);
     if ($stmt_1 == false) {
         echo "<script> alert('Failed to Insert Enclosure'); </script>";
-    } else {
+    }
+    else {
         echo "<script> alert('Successfully Inserted Enclosure'); </script>";
     }
 }
 
 // Get input values for Edit form
 if (isset($_POST["Enclosure-edit-1"])) {
-    $Enclosure_ID = $_POST["emp-edit-ID-1"];
+    $Enclosure_ID = $_POST["enclosure-edit-ID-1"];
 
     // Info of Enclosure to be updated
     $sql_2 = "SELECT * FROM [dbo].[Enclosure_Data] 
@@ -44,7 +41,8 @@ if (isset($_POST["Enclosure-edit-1"])) {
     $stmt_2 = sqlsrv_query($conn, $sql_2);
     if ($stmt_2 == false) {
         echo "<script> alert('Failed to Find Enclosure'); </script>";
-    } else if (sqlsrv_has_rows($stmt_2) <= 0) {
+    }
+    else if (sqlsrv_has_rows($stmt_2) <= 0) {
         echo "<script> alert('Enclosure Not Found'); </script>";
     }
 
@@ -54,25 +52,23 @@ if (isset($_POST["Enclosure-edit-1"])) {
 
 // Update Enclosure based on Edit form
 if (isset($_POST["Enclosure-edit-2"])) {
-    $Enclosure_ID = $_POST["emp-edit-ID-2"];
+    $Enclosure_ID = $_POST["enclosure-edit-ID-2"];
 
     $Maintenance_Fees = $_POST["Enclosure-Maintenance_Fees"];
     $Num_Animals = $_POST["Enclosure-Num_Animals"];
-    $Enclosure_ID = $_POST["Enclosure-Enclosure_ID"];
-    $Enclosure_ID = $_POST["Enclosure-Department_ID"];
+    $Department_ID = $_POST["Enclosure-Department_ID"];
 
     $sql_3 = "UPDATE [dbo].[Enclosure_Data] 
         SET [Maintenance_Fees] = '$Maintenance_Fees'
         ,[Num_Animals] = '$Num_Animals'
-        ,[Enclosure_ID] = '$Enclosure_ID'
         ,[Department_ID] = '$Department_ID'
-
-        WHERE [Enclosure_ID]='$Enclosure_ID'";
+        WHERE [Enclosure_ID]={$Enclosure_ID}";
 
     $stmt_3 = sqlsrv_query($conn, $sql_3);
     if ($stmt_3 == false || sqlsrv_rows_affected($stmt_3) <= 0) {
         echo "<script> alert('Failed to Update Enclosure'); </script>";
-    } else {
+    }
+    else {
         echo "<script> alert('Successfully Updated Enclosure'); </script>";
     }
 
@@ -87,7 +83,7 @@ if (isset($_POST["Enclosure-edit-2"])) {
 
 // Delete Enclosure
 if (isset($_POST["Enclosure-delete"])) {
-    $Enclosure_ID = $_POST["emp-delete-ID"];
+    $Enclosure_ID = $_POST["enclosure-delete-ID"];
 
     $sql_5 = "DELETE FROM [dbo].[Enclosure_Data]
         WHERE [Enclosure_ID]={$Enclosure_ID}";
@@ -95,9 +91,11 @@ if (isset($_POST["Enclosure-delete"])) {
     $stmt_5 = sqlsrv_query($conn, $sql_5);
     if ($stmt_5 == false) {
         echo "<script> alert('Failed to Delete Enclosure'); </script>";
-    } else if (sqlsrv_rows_affected($stmt_5) <= 0) {
+    }
+    else if (sqlsrv_rows_affected($stmt_5) <= 0) {
         echo "<script> alert('Enclosure Not Found'); </script>";
-    } else {
+    }
+    else {
         echo "<script> alert('Successfully Deleted Enclosure'); </script>";
     }
 }
@@ -112,24 +110,19 @@ if (!isset($_POST["Enclosure-search-submit"])) {
         ORDER BY Enclosure_ID ASC ";
 } else {
     // Get Sort By value based on input
-    if ($_POST["Enclosure-sortBy"] == "Enclosure ID") {
-        $Sort_By = "Enclosure_ID";
-    } else if ($_POST["Enclosure-sortBy"] == "Maintanence Fees") {
-        $Sort_By = "Maintenance_Fees";
-    } else if ($_POST["Enclosure-sortBy"] == "Number of Animals") {
-        $Sort_By = "Num_Animals";
-    } else {
-        $Sort_By = "Department_ID";
-    }
+    if ($_POST["Enclosure-sortBy"] == "Enclosure ID") { $Sort_By = "Enclosure_ID"; }
+    else if ($_POST["Enclosure-sortBy"] == "Maintanence Fees") { $Sort_By = "Maintenance_Fees"; }
+    else if ($_POST["Enclosure-sortBy"] == "Number of Animals") { $Sort_By = "Num_Animals"; }
+    else { $Sort_By = "Department_ID"; }
 
     // Create select query based on
     if ($_POST["Enclosure-orderBy"] == "Ascending") {
-        $sql_6 = "SELECT [Enclosure_ID], [Maintenance_Fees], [Num_Animals], [Department_ID]
-
+        $sql_6 = "SELECT *
             FROM [dbo].[Enclosure_Data] 
             ORDER BY '$Sort_By' ASC ";
-    } else {
-        $sql_6 = "SELECT [Enclosure_ID], [Maintenance_Fees], [Num_Animals], [Department_ID]
+    }
+    else {
+        $sql_6 = "SELECT *
             FROM [dbo].[Enclosure_Data] 
             ORDER BY '$Sort_By' DESC ";
     }

@@ -29,11 +29,10 @@ include(__DIR__ . "/process-enclosures.php");
                     <?php echo isset($_POST['Enclosure-sortBy']) ? $_POST['Enclosure-sortBy'] : 'Select an Option' ?>
                 </option>
 
+                <option value="Enclosure ID">Enclosure ID</option>
                 <option value="Maintenance Fees">Maintenance Fees</option>
                 <option value="Number of Animals">Number of Animals</option>
-                <option value="Enclosure ID">Enclosure ID</option>
                 <option value="Department ID">Department ID</option>
-
             </select><br>
 
             <!-- Dropdown list for Order By -->
@@ -76,9 +75,9 @@ include(__DIR__ . "/process-enclosures.php");
             <label class='form-control'></label><br>
             <table class='styled-table'>
                 <tr>
-                    <th>Maintenance Fees</th>
-                    <th>Number of Animals</th>
                     <th>Enclosure ID</th>
+                    <th>Number of Animals</th>
+                    <th>Maintenance Fees</th>
                     <th>Department ID</th>
 
                     <th colspan="2">Action</th>
@@ -94,14 +93,14 @@ include(__DIR__ . "/process-enclosures.php");
 
                         <td>
                             <form action="#edit-popup" method="post">
-                                <input name="emp-edit-ID-1" type="number" value="<?php echo $row['Enclosure_ID'] ?>" hidden>
+                                <input name="enclosure-edit-ID-1" type="number" value="<?php echo $row['Enclosure_ID'] ?>" hidden>
 
                                 <button name='Enclosure-edit-1' id='Enclosure-edit-1' type='submit' class="button button-edit">Edit</button>
                             </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input name="emp-delete-ID" type="number" value="<?php echo $row['Enclosure_ID'] ?>" hidden>
+                                <input name="enclosure-delete-ID" type="number" value="<?php echo $row['Enclosure_ID'] ?>" hidden>
 
                                 <button name='Enclosure-delete' id='Enclosure-delete' type='submit' class="button button-delete">Delete</button>
                             </form>
@@ -121,22 +120,20 @@ include(__DIR__ . "/process-enclosures.php");
                 <a class="close" href="#">&times;</a>
                 <div class="content content-form">
                     <form action="" method="post">
-                        <!-- Hidden input to get Maintenance Fees -->
-                        <input name="emp-edit-ID-2" type="number" value="<?php echo $data['Enclosure_ID'] ?>" hidden>
+                        <!-- Hidden input to get Enclosure ID -->
+                        <input name="enclosure-edit-ID-2" type="number" value="<?php echo $data['Enclosure_ID'] ?>" hidden>
 
-                        <label class="required-input-label">Number of Animals</label><br>
-                        <input name="Enclosure-Num_Animals" type="text" class="form-control" required value="<?php echo isset($data['Num_Animals']) ? $data['Num_Animals'] : '' ?>">
+                        <label class="required-input-label">Maintenance Fees</label><br>
+                        <input name="Enclosure-Maintenance_Fees" type="number" min="0" class="form-control" required value="<?php echo isset($data['Maintenance_Fees']) ? $data['Maintenance_Fees'] : '' ?>">
                         <br>
 
-                        <label class="required-input-label">Enclosure ID</label><br>
-                        <input name="Enclosure-Maintenance_Fees" type="text" class="form-control" required value="<?php echo isset($data['Maintenance_Fees']) ? $data['Maintenance_Fees'] : '' ?>">
+                        <label class="required-input-label">Number of Animals</label><br>
+                        <input name="Enclosure-Num_Animals" type="number" min="0" class="form-control" required value="<?php echo isset($data['Num_Animals']) ? $data['Num_Animals'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Department ID </label><br>
-                        <input name="Enclosure-Department_ID" type="text" class="form-control" required value="<?php echo isset($data['Department_ID']) ? $data['Department_ID'] : '' ?>">
+                        <input name="Enclosure-Department_ID" type="number" min="1" class="form-control" required value="<?php echo isset($data['Department_ID']) ? $data['Department_ID'] : '' ?>">
                         <br>
-
-
 
                         <button name="Enclosure-edit-2" type="submit" class="form-submit">Submit</button>
                     </form>
@@ -154,19 +151,20 @@ include(__DIR__ . "/process-enclosures.php");
                 <a class="close" href="#">&times;</a>
                 <div class="content content-form">
                     <form action="" method="post">
+                        <label class="required-input-label">Maintenance Fees</label><br>
+                        <input name="Enclosure-Maintenance_Fees" type="number" min="0" class="form-control" required
+                        value="<?php echo isset($_POST['Enclosure-Maintenance_Fees']) ? $_POST['Enclosure-Maintenance_Fees'] : '' ?>">
+                        <br>
+
                         <label class="required-input-label">Number of Animals</label><br>
-                        <input name="Enclosure-Num_Animals" type="text" class="form-control" required value="<?php echo isset($_POST['Enclosure-Num_Animals']) ? $_POST['Enclosure-Num_Animals'] : '' ?>">
+                        <input name="Enclosure-Num_Animals" type="number" min="0" class="form-control" required
+                        value="<?php echo isset($_POST['Enclosure-Num_Animals']) ? $_POST['Enclosure-Num_Animals'] : '' ?>">
                         <br>
 
-                        <label class="required-input-label">Enclosure ID</label><br>
-                        <input name="Enclosure-Maintenance_Fees" type="text" class="form-control" required value="<?php echo isset($_POST['Enclosure-Maintenance_Fees']) ? $_POST['Enclosure-Maintenance_Fees'] : '' ?>">
+                        <label class="required-input-label">Department ID</label><br>
+                        <input name="Enclosure-Department_ID" type="number" min="1" class="form-control" required
+                        value="<?php echo isset($_POST['Enclosure-Department_ID']) ? $_POST['Enclosure-Department_ID'] : '' ?>">
                         <br>
-
-                        <label class="required-input-label">Department ID (YYYY-MM-DD)</label><br>
-                        <input name="Enclosure-date-of-birth" type="text" class="form-control" required value="<?php echo isset($_POST['Enclosure-date-of-birth']) ? $_POST['Enclosure-date-of-birth'] : '' ?>">
-                        <br>
-
-
 
                         <button name="Enclosure-insert-2" type="submit" class="form-submit">Submit</button>
                     </form>
