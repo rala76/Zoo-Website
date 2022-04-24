@@ -183,13 +183,13 @@ include(__DIR__ . "/process-events.php");
                         <br>
 
                         <label class="required-input-label">Event Date (YYYY-MM-DD)</label><br>
-                        <input name="Event_Date" type="text" class="form-control" required
-                        value="<?php echo isset($_POST['Event_Date']) ? $_POST['Event_Date']->format('Y-m-d') : '' ?>">
+                        <input name="event_Date" type="text" class="form-control" required
+                        value="<?php echo isset($_POST['event_Date']) ? $_POST['event_Date']->format('Y-m-d') : '' ?>">
                         <br>
 
                         <label class="required-input-label">Event Time (HH:MM:SS)</label><br>
-                        <input name="Event_Time" type="text" class="form-control" required
-                        value="<?php echo isset($_POST['Event_Time']) ? $_POST['Event_Time'] : '' ?>">
+                        <input name="event_Time" type="text" class="form-control" required
+                        value="<?php echo isset($_POST['event_Time']) ? $_POST['event_Time'] : '' ?>">
                         <br>
 
                         <button name="Event-insert-2" type="submit" class="form-submit">Submit</button>

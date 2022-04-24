@@ -7,8 +7,8 @@ if (isset($_POST["Event-insert-2"])) {
     $Event_Name = $_POST["Event_Name"];
     $Num_Attendees = $_POST["Event-Num_Attendees"];
     $Weekly_Revenue = $_POST["Event-Weekly_Revenue"];
-    $Event_Date = $_POST["Event_Date"];
-    $Event_Time = $_POST["Event_Time"];
+    $Event_Date = $_POST["event_Date"];
+    $Event_Time = $_POST["event_Time"];
 
     // Create insert query
     $sql_1 = "INSERT INTO [dbo].[Events] 
@@ -28,8 +28,22 @@ if (isset($_POST["Event-insert-2"])) {
         , $Event_Time);
 
     $stmt_1 = sqlsrv_query($conn, $sql_1, $params);
+
+    // Check trigger
+    $sql_trigger = "SELECT * FROM [dbo].[Trigger_Outputs]";
+    $stmt_trigger = sqlsrv_query($conn, $sql_trigger);
+
     if ($stmt_1 == false) {
         echo "<script> alert('Failed to Insert Event'); </script>";
+    }
+    else if (sqlsrv_has_rows($stmt_trigger) >= 1) {
+        $row = sqlsrv_fetch_array($stmt_trigger, SQLSRV_FETCH_ASSOC);
+        $msg = $row['Error'];
+        
+        echo "<script> alert('Failed to Insert New Event: {$msg}') </script>";
+
+        $sql_delete_trigger = "DELETE FROM [dbo].[Trigger_Outputs]";
+        $stmt_delete_trigger = sqlsrv_query($conn, $sql_delete_trigger);
     }
     else {
         echo "<script> alert('Successfully Inserted Event'); </script>";
