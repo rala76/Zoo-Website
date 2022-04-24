@@ -8,7 +8,6 @@ include(__DIR__ . "/process-animals.php");
 
 <!doctype html>
 <html>
-
 <head>
     <title>Search Animals</title>
     <link rel="stylesheet" href="/Styles/popupStyles.css">
@@ -16,7 +15,6 @@ include(__DIR__ . "/process-animals.php");
     <!-- Include JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
 <body>
     <div class="form-base">
         <!-- Sort table results -->
@@ -33,7 +31,7 @@ include(__DIR__ . "/process-animals.php");
                 <option value="Name">Name</option>
                 <option value="Species">Species</option>
                 <option value="Date of Birth">Date of Birth</option>
-                <option value="Animal ID">Animal ID</option>
+                <option value="Gender">Gender</option>
                 <option value="Enclosure ID">Enclosure ID</option>
 
             </select><br>
@@ -61,12 +59,15 @@ include(__DIR__ . "/process-animals.php");
         <div class='break-row'></div>
         <div class='break-row'></div>
         <div class='break-row'></div>
+
         <!-- Insert Animal -->
         <form action="#insert-popup" method="post" style="margin-bottom: -10%">
-            <button name='Animal-insert-1' id='Animal-insert' type='submit' class="button button-insert">Insert Animal</button>
+            <button name='Animal-insert-1' id='Animal-insert-1' type='submit' class="button button-insert">Insert Animal</button>
         </form>
 
+        <!-- Break row -->
         <div class='break-row'></div>
+
         <!-- ==================================================================================================== -->
         <!-- ==================================================================================================== -->
 
@@ -80,7 +81,6 @@ include(__DIR__ . "/process-animals.php");
                     <th>Species</th>
                     <th>Date of Birth</th>
                     <th>Gender</th>
-                    <th>Animal ID</th>
                     <th>Enclosure ID</th>
                     <th colspan="2">Action</th>
                 </tr>
@@ -89,22 +89,21 @@ include(__DIR__ . "/process-animals.php");
                 <?php while ($row = sqlsrv_fetch_array($stmt_6, SQLSRV_FETCH_ASSOC)) : ?>
                     <tr>
                         <td><?php echo $row["Animal_ID"] ?></td>
-                        <td><?php echo $row["Name"] ?></td>
+                        <td><?php echo $row["Animal_Name"] ?></td>
                         <td><?php echo $row["Species"] ?></td>
                         <td><?php echo $row["Date_Of_Birth"]->format('Y-m-d') ?></td>
                         <td><?php echo $row["Gender"] ?></td>
-                        <td><?php echo $row["Animal_ID"] ?></td>
-                        <td><?php echo $row["Animal_ID"] ?></td>
+                        <td><?php echo $row["Enclosure_ID"] ?></td>
                         <td>
                             <form action="#edit-popup" method="post">
-                                <input name="emp-edit-ID-1" type="number" value="<?php echo $row['Animal_ID'] ?>" hidden>
+                                <input name="animal-edit-ID-1" type="number" value="<?php echo $row['Animal_ID'] ?>" hidden>
 
                                 <button name='Animal-edit-1' id='Animal-edit-1' type='submit' class="button button-edit">Edit</button>
                             </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input name="emp-delete-ID" type="number" value="<?php echo $row['Animal_ID'] ?>" hidden>
+                                <input name="animal-delete-ID" type="number" value="<?php echo $row['Animal_ID'] ?>" hidden>
 
                                 <button name='Animal-delete' id='Animal-delete' type='submit' class="button button-delete">Delete</button>
                             </form>
@@ -125,18 +124,21 @@ include(__DIR__ . "/process-animals.php");
                 <div class="content content-form">
                     <form action="" method="post">
                         <!-- Hidden input to get Animal ID -->
-                        <input name="emp-edit-ID-2" type="number" value="<?php echo $data['Animal_ID'] ?>" hidden>
+                        <input name="animal-edit-ID-2" type="number" value="<?php echo $data['Animal_ID'] ?>" hidden>
 
                         <label class="required-input-label">Name</label><br>
-                        <input name="Animal-Name" type="text" class="form-control" required value="<?php echo isset($data['Animal_Name']) ? $data['Animal_Name'] : '' ?>">
+                        <input name="Animal-Name" type="text" class="form-control" required 
+                        value="<?php echo isset($data['Animal_Name']) ? $data['Animal_Name'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Species</label><br>
-                        <input name="Animal-Species" type="text" class="form-control" required value="<?php echo isset($data['Species']) ? $data['Species'] : '' ?>">
+                        <input name="Animal-Species" type="text" class="form-control" required 
+                        value="<?php echo isset($data['Species']) ? $data['Species'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Date of Birth (YYYY-MM-DD)</label><br>
-                        <input name="Animal-date-of-birth" type="text" class="form-control" required value="<?php echo isset($data['Date_Of_Birth']) ? $data['Date_Of_Birth']->format('Y-m-d') : '' ?>">
+                        <input name="Animal-date-of-birth" type="text" class="form-control" required 
+                        value="<?php echo isset($data['Date_Of_Birth']) ? $data['Date_Of_Birth']->format('Y-m-d') : '' ?>">
                         <br>
 
                         <!-- Dropdown list for Gender -->
@@ -152,14 +154,14 @@ include(__DIR__ . "/process-animals.php");
                         </select><br>
 
                         <label class="required-input-label">Animal ID</label><br>
-                        <input name="Animal-Animal_ID" type="number" min="1" class="form-control" required value="<?php echo isset($data['Animal_ID']) ? $data['Animal_ID'] : '' ?>">
+                        <input name="Animal-Animal_ID" type="number" min="1" class="form-control" required 
+                        value="<?php echo isset($data['Animal_ID']) ? $data['Animal_ID'] : '' ?>">
                         <br>
 
                         <label class="input-label">Enclosure ID</label><br>
-                        <input name="Animal-Enclosure_ID" type="number" min="0" step="0.01" class="form-control" placeholder="0" value="<?php echo isset($data['Enclosure_ID']) ? $data['Enclosure_ID'] : '' ?>">
+                        <input name="Animal-Enclosure_ID" type="number" min="1" class="form-control" 
+                        value="<?php echo isset($data['Enclosure_ID']) ? $data['Enclosure_ID'] : '' ?>">
                         <br>
-
-
 
                         <button name="Animal-edit-2" type="submit" class="form-submit">Submit</button>
                     </form>
@@ -176,17 +178,20 @@ include(__DIR__ . "/process-animals.php");
                 <h2>Insert Animal</h2>
                 <a class="close" href="#">&times;</a>
                 <div class="content content-form">
-                    <form action="" method="post">
+                    <form method="post">
                         <label class="required-input-label">Name</label><br>
-                        <input name="Animal-Name" type="text" class="form-control" required value="<?php echo isset($_POST['Animal-Name']) ? $_POST['Animal-Name'] : '' ?>">
+                        <input name="Animal-Name" type="text" class="form-control" required 
+                        value="<?php echo isset($_POST['Animal-Name']) ? $_POST['Animal-Name'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Species</label><br>
-                        <input name="Animal-Species" type="text" class="form-control" required value="<?php echo isset($_POST['Animal-Species']) ? $_POST['Animal-Species'] : '' ?>">
+                        <input name="Animal-Species" type="text" class="form-control" required 
+                        value="<?php echo isset($_POST['Animal-Species']) ? $_POST['Animal-Species'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Date of Birth (YYYY-MM-DD)</label><br>
-                        <input name="Animal-date-of-birth" type="text" class="form-control" required value="<?php echo isset($_POST['Animal-date-of-birth']) ? $_POST['Animal-date-of-birth'] : '' ?>">
+                        <input name="Animal-date-of-birth" type="text" class="form-control" required 
+                        value="<?php echo isset($_POST['Animal-date-of-birth']) ? $_POST['Animal-date-of-birth'] : '' ?>">
                         <br>
 
                         <!-- Dropdown list for Gender -->
@@ -201,15 +206,10 @@ include(__DIR__ . "/process-animals.php");
                             <option value="Female">Female</option>
                         </select><br>
 
-                        <label class="required-input-label">Animal ID</label><br>
-                        <input name="Animal-Animal_ID" type="number" min="1" class="form-control" placeholder="NULL" required value="<?php echo isset($_POST['Animal-Animal_ID']) ? $_POST['Animal-Animal_ID'] : '' ?>">
-                        <br>
-
                         <label class="input-label">Enclosure ID</label><br>
-                        <input name="Animal-Enclosure_ID" type="number" min="0" step="0.01" class="form-control" placeholder="0" value="<?php echo isset($_POST['Animal-Enclosure_ID']) ? $_POST['Animal-Enclosure_ID'] : '' ?>">
+                        <input name="Animal-Enclosure_ID" type="number" min="1" class="form-control" 
+                        value="<?php echo isset($_POST['Animal-Enclosure_ID']) ? $_POST['Animal-Enclosure_ID'] : '' ?>">
                         <br>
-
-
 
                         <button name="Animal-insert-2" type="submit" class="form-submit">Submit</button>
                     </form>
@@ -218,16 +218,5 @@ include(__DIR__ . "/process-animals.php");
         </div>
 
     </div>
-
-    <!-- Popup alert when edit button clicked (TESTING JQuery) -->
-    <!-- <script>
-        $(document).ready(function() {
-            $(document).on('click', '#Animal-edit-1', function() {
-                alert("Edit button clicked");
-            });
-        });
-    </script> -->
-
 </body>
-
 </html>
