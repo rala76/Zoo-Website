@@ -173,16 +173,5 @@ include(__DIR__ . "/process-enclosures.php");
         </div>
 
     </div>
-
-    <!-- Popup alert when edit button clicked (TESTING JQuery) -->
-    <!-- <script>
-        $(document).ready(function() {
-            $(document).on('click', '#Enclosure-edit-1', function() {
-                alert("Edit button clicked");
-            });
-        });
-    </script> -->
-
 </body>
-
 </html>
