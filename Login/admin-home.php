@@ -9,14 +9,8 @@
 </head>
 <body>
     <div class="header">
-        <a href="/Employees/Employee.php" class="navText">Employees</a>
-        <a href="/Customers/Customer.php" class="navText">Customers</a>
-        <a href="/Products/Product.php" class="navText">Products</a>
-        <a href="/Stores/Stores.php" class="navText">Stores</a>
-        <a href="/Events/Events.php" class="navText">Events</a>
-        <a href="/Animals/Animal.php" class="navText">Animals</a>
-        <a href="/Enclosures/Enclosure.php" class="navText">Enclosures</a>
-        <a href="/Departments/Department.php" class="navText">Departments</a>
+        <a href="/Login/tables.php" class="navText">Tables</a>
+        <a href="/Departments/search-departments.php" class="navText">Departments</a>
         <a href="/Statistics/statistics.php" class="navText">Statistics</a>
         <a href="/Login/logout.php" style="float:right;margin-right:3vh" class="navText">Logout</a>
     </div>
