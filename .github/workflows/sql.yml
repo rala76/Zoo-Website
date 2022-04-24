@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  SQL Connect:
+  SQL-Pass:
     runs-on: ubuntu-latest
     env:
       PASSWORD: ${{ secrets.SQL_PASSWORD }}
