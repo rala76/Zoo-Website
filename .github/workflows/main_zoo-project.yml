@@ -60,8 +60,10 @@ jobs:
           package: .
   
   sql:
+    runs-on: ubuntu-latest
+    environment:
+      PASSWORD: ${{ secrets.SQL_PASSWORD }}
+
     steps:
       - name: Execute script
-        env:
-          PASSWORD: ${{ secrets.SQL_PASSWORD }}
         run: php connect-sql.php
