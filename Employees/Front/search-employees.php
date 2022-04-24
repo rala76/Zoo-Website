@@ -62,7 +62,7 @@ include(__DIR__."/process-employees.php");
 
         <!-- Insert Employee -->
         <form action="#insert-popup" method="post" style="margin-bottom: -10%">
-            <button name='employee-insert-1' id='employee-delete' type='submit' class="button button-insert">Insert Employee</button>
+            <button name='employee-insert-1' id='employee-insert-1' type='submit' class="button button-insert">Insert Employee</button>
         </form>
 
         <!-- Break row -->
@@ -100,7 +100,7 @@ include(__DIR__."/process-employees.php");
                         <td><?php echo $row["Phone_Number"] ?></td>
                         <td><?php echo $row["Department_Name"] ?></td>
                         <td><?php echo $row["Department_ID"] ?></td>
-                        <td><?php echo number_format($row["Hourly_Wage"], 2) ?></td>
+                        <td>$<?php echo number_format($row["Hourly_Wage"], 2) ?></td>
                         <td><?php echo $row["Weekly_Hours_Worked"] ?></td>
                         <td>
                             <form action="#edit-popup" method="post">

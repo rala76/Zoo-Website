@@ -97,7 +97,7 @@ if (isset($_POST["employee-edit-2"])) {
         ,[Hourly_Wage] = '$Hourly_Wage'
         ,[Weekly_Wage] = '$Weekly_Wage'
         ,[Weekly_Hours_Worked] = '$Weekly_Hours_Worked'
-        WHERE [Employee_ID]='$Employee_ID'";
+        WHERE [Employee_ID]={$Employee_ID}";
     
     $stmt_3 = sqlsrv_query($conn, $sql_3);
     if ($stmt_3 == false || sqlsrv_rows_affected($stmt_3) <= 0) {
