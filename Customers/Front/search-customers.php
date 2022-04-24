@@ -56,11 +56,17 @@ include(__DIR__ . "/process-customers.php");
 
         <!-- Break row -->
         <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
+        <div class='break-row'></div>
 
         <!-- Insert Customer -->
         <form action="#insert-popup" method="post" style="margin-bottom: -10%">
             <button name='Customer-insert-1' id='Customer-delete' type='submit' class="button button-insert">Insert Customer</button>
         </form>
+
+        <!-- Break row -->
+        <div class='break-row'></div>
 
         <!-- ==================================================================================================== -->
         <!-- ==================================================================================================== -->
