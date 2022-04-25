@@ -10,10 +10,18 @@ if (isset($_POST["employee-insert-2"])) {
     $Gender = $_POST["employee-gender"];
     $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
     $Department_Name = $_POST["employee-department-name"];
-    $Department_ID = $_POST["employee-department-id"];
     $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : "0";
-    $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : "0";
     $Weekly_Hours_Worked = !empty($_POST["employee-weekly-hours-worked"]) ? $_POST["employee-weekly-hours-worked"] : "0";
+
+    if ($_POST["employee-department-name"] == "Animal Enclosure") {
+        $Department_ID = 1;
+    }
+    else if ($_POST["employee-department-name"] == "Stores") {
+        $Department_ID = 2;
+    }
+    else {
+        $Department_ID = 3;
+    }
 
     // Create insert query
     $sql_1 = "INSERT INTO [dbo].[Employee_Data] 
@@ -25,10 +33,9 @@ if (isset($_POST["employee-insert-2"])) {
         ,[Department_Name]
         ,[Department_ID]
         ,[Hourly_Wage]
-        ,[Weekly_Wage]
         ,[Weekly_Hours_Worked])
         VALUES 
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     // Parameters of insert query
     $params = array($Fname
@@ -39,7 +46,6 @@ if (isset($_POST["employee-insert-2"])) {
         ,$Department_Name
         ,$Department_ID
         ,$Hourly_Wage
-        ,$Weekly_Wage
         ,$Weekly_Hours_Worked);
     
     $stmt_1 = sqlsrv_query($conn, $sql_1, $params);
@@ -74,18 +80,25 @@ if (isset($_POST["employee-edit-1"])) {
 // Update employee based on Edit form
 if (isset($_POST["employee-edit-2"])) {
     $Employee_ID = $_POST["emp-edit-ID-2"];
-
     $Fname = $_POST["employee-Fname"];
     $Lname = $_POST["employee-Lname"];
     $Date_Of_Birth = $_POST["employee-date-of-birth"];
     $Gender = $_POST["employee-gender"];
     $Phone_Number = !empty($_POST["employee-phone-number"]) ? $_POST["employee-phone-number"] : NULL;
     $Department_Name = $_POST["employee-department-name"];
-    $Department_ID = $_POST["employee-department-id"];
-    $Hourly_Wage = !empty($_POST["employee-hourly-wage"]) ? $_POST["employee-hourly-wage"] : "0";
-    $Weekly_Wage = !empty($_POST["employee-weekly-wage"]) ? $_POST["employee-weekly-wage"] : "0";
-    $Weekly_Hours_Worked = !empty($_POST["employee-weekly-hours-worked"]) ? $_POST["employee-weekly-hours-worked"] : "0";
+    $Hourly_Wage = $_POST["employee-hourly-wage"];
+    $Weekly_Hours_Worked = $_POST["employee-weekly-hours-worked"];
     
+    if ($_POST["employee-department-name"] == "Animal Enclosure") {
+        $Department_ID = 1;
+    }
+    else if ($_POST["employee-department-name"] == "Stores") {
+        $Department_ID = 2;
+    }
+    else {
+        $Department_ID = 3;
+    }
+
     $sql_3 = "UPDATE [dbo].[Employee_Data] 
         SET [Fname] = '$Fname'
         ,[Lname] = '$Lname'
@@ -95,7 +108,6 @@ if (isset($_POST["employee-edit-2"])) {
         ,[Department_Name] = '$Department_Name'
         ,[Department_ID] = '$Department_ID'
         ,[Hourly_Wage] = '$Hourly_Wage'
-        ,[Weekly_Wage] = '$Weekly_Wage'
         ,[Weekly_Hours_Worked] = '$Weekly_Hours_Worked'
         WHERE [Employee_ID]={$Employee_ID}";
     
