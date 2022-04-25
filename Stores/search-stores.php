@@ -32,7 +32,7 @@ include(__DIR__."/process-stores.php");
                 <option value="Category">Category</option>
                 <option value="Department ID">Department ID</option>
                 <option value="Hours Of Operation">Hours Of Operation</option>
-                <option value="Number Of Customers">Number of Customers</option>
+                <option value="Number Of Customers">Number Of Customers</option>
                 <option value="Product ID">Product ID</option>
                 <option value="Weekly Revenue">Weekly Revenue</option>
             </select><br>
@@ -154,7 +154,7 @@ include(__DIR__."/process-stores.php");
                         value="<?php echo isset($data['Hours_Of_Operation']) ? $data['Hours_Of_Operation'] : '' ?>">
                         <br>
 
-                        <label class="input-label">Number of Customers</label><br>
+                        <label class="input-label">Number Of Customers</label><br>
                         <input name="Store-numCustomers" type="text" class="form-control" placeholder="0"
                         value="<?php echo isset($data['Num_Customers']) ? $data['Num_Customers'] : '' ?>">
                         <br>
