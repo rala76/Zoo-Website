@@ -191,19 +191,9 @@ include(__DIR__."/process-employees.php");
                             <option value="Ticket Office">Ticket Office</option>
                         </select><br>
 
-                        <label class="required-input-label">Department ID</label><br>
-                        <input name="employee-department-id" type="number" min="1" class="form-control" placeholder="NULL" required
-                        value="<?php echo isset($data['Department_ID']) ? $data['Department_ID'] : '' ?>">
-                        <br>
-
                         <label class="input-label">Hourly Wage</label><br>
                         <input name="employee-hourly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="0"
                         value="<?php echo isset($data['Hourly_Wage']) ? $data['Hourly_Wage'] : '' ?>">
-                        <br>
-
-                        <label class="input-label">Weekly Wage</label><br>
-                        <input name="employee-weekly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="0"
-                        value="<?php echo isset($data['Weekly_Wage']) ? $data['Weekly_Wage'] : '' ?>">
                         <br>
 
                         <label class="input-label">Weekly Hours Worked</label><br>
@@ -272,19 +262,9 @@ include(__DIR__."/process-employees.php");
                             <option value="Ticket Office">Ticket Office</option>
                         </select><br>
 
-                        <label class="required-input-label">Department ID</label><br>
-                        <input name="employee-department-id" type="number" min="1" class="form-control" placeholder="NULL" required
-                        value="<?php echo isset($_POST['employee-department-id']) ? $_POST['employee-department-id'] : '' ?>">
-                        <br>
-
                         <label class="input-label">Hourly Wage</label><br>
                         <input name="employee-hourly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="0"
                         value="<?php echo isset($_POST['employee-hourly-wage']) ? $_POST['employee-hourly-wage'] : '' ?>">
-                        <br>
-
-                        <label class="input-label">Weekly Wage</label><br>
-                        <input name="employee-weekly-wage" type="number" min="0" step="0.01" class="form-control" placeholder="0"
-                        value="<?php echo isset($_POST['employee-weekly-wage']) ? $_POST['employee-weekly-wage'] : '' ?>">
                         <br>
 
                         <label class="input-label">Weekly Hours Worked</label><br>
