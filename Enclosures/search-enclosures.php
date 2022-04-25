@@ -31,7 +31,6 @@ include(__DIR__ . "/process-enclosures.php");
 
                 <option value="Enclosure ID">Enclosure ID</option>
                 <option value="Maintenance Fees">Maintenance Fees</option>
-                <option value="Number of Animals">Number of Animals</option>
                 <option value="Department ID">Department ID</option>
             </select><br>
 
@@ -76,7 +75,6 @@ include(__DIR__ . "/process-enclosures.php");
             <table class='styled-table'>
                 <tr>
                     <th>Enclosure ID</th>
-                    <th>Number of Animals</th>
                     <th>Maintenance Fees</th>
                     <th>Department ID</th>
 
@@ -87,7 +85,6 @@ include(__DIR__ . "/process-enclosures.php");
                 <?php while ($row = sqlsrv_fetch_array($stmt_6, SQLSRV_FETCH_ASSOC)) : ?>
                     <tr>
                         <td><?php echo $row["Enclosure_ID"] ?></td>
-                        <td><?php echo $row["Num_Animals"] ?></td>
                         <td><?php echo $row["Maintenance_Fees"] ?></td>
                         <td><?php echo $row["Department_ID"] ?></td>
 
@@ -127,10 +124,6 @@ include(__DIR__ . "/process-enclosures.php");
                         <input name="Enclosure-Maintenance_Fees" type="number" min="0" class="form-control" required value="<?php echo isset($data['Maintenance_Fees']) ? $data['Maintenance_Fees'] : '' ?>">
                         <br>
 
-                        <label class="required-input-label">Number of Animals</label><br>
-                        <input name="Enclosure-Num_Animals" type="number" min="0" class="form-control" required value="<?php echo isset($data['Num_Animals']) ? $data['Num_Animals'] : '' ?>">
-                        <br>
-
                         <label class="required-input-label">Department ID </label><br>
                         <input name="Enclosure-Department_ID" type="number" min="1" class="form-control" required value="<?php echo isset($data['Department_ID']) ? $data['Department_ID'] : '' ?>">
                         <br>
@@ -154,11 +147,6 @@ include(__DIR__ . "/process-enclosures.php");
                         <label class="required-input-label">Maintenance Fees</label><br>
                         <input name="Enclosure-Maintenance_Fees" type="number" min="0" class="form-control" required
                         value="<?php echo isset($_POST['Enclosure-Maintenance_Fees']) ? $_POST['Enclosure-Maintenance_Fees'] : '' ?>">
-                        <br>
-
-                        <label class="required-input-label">Number of Animals</label><br>
-                        <input name="Enclosure-Num_Animals" type="number" min="0" class="form-control" required
-                        value="<?php echo isset($_POST['Enclosure-Num_Animals']) ? $_POST['Enclosure-Num_Animals'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Department ID</label><br>
