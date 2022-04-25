@@ -122,7 +122,7 @@ if (!isset($_POST["Animal-search-submit"])) {
 else {
     // Get Sort By value based on input
     if ($_POST["Animal-sortBy"] == "Animal ID") { $Sort_By = "Animal_ID"; }
-    else if ($_POST["Animal-sortBy"] == "Name") { $Sort_By = "Name"; }
+    else if ($_POST["Animal-sortBy"] == "Name") { $Sort_By = "Animal_Name"; }
     else if ($_POST["Animal-sortBy"] == "Species") { $Sort_By = "Species"; }
     else if ($_POST["Animal-sortBy"] == "Date of Birth") { $Sort_By = "Date_Of_Birth"; }
     else if ($_POST["Animal-sortBy"] == "Gender") { $Sort_By = "Gender"; }
