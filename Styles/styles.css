@@ -88,22 +88,6 @@ body {
     justify-content: center;
 }
 
-.form-base-3 {
-    position: relative;
-    top: 10vh;
-    left: 5vw;
-    height: 87vh;
-    width: 95vw;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 25px;
-    row-gap: 10px;
-    align-content: flex-start;
-    justify-content: center;
-}
-
 /* Create a break in flexbox */
 .break-row {
     flex-basis: 100%;
