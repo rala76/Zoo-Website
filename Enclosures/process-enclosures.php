@@ -107,7 +107,7 @@ if (!isset($_POST["Enclosure-search-submit"])) {
 } else {
     // Get Sort By value based on input
     if ($_POST["Enclosure-sortBy"] == "Enclosure ID") { $Sort_By = "Enclosure_ID"; }
-    else if ($_POST["Enclosure-sortBy"] == "Maintanence Fees") { $Sort_By = "Maintenance_Fees"; }
+    else if ($_POST["Enclosure-sortBy"] == "Maintenance Fees") { $Sort_By = "Maintenance_Fees"; }
     else { $Sort_By = "Department_ID"; }
 
     // Create select query based on
