@@ -184,7 +184,7 @@ include(__DIR__ . "/process-events.php");
 
                         <label class="required-input-label">Event Date (YYYY-MM-DD)</label><br>
                         <input name="event_Date" type="text" class="form-control" required
-                        value="<?php echo isset($_POST['event_Date']) ? $_POST['event_Date']->format('Y-m-d') : '' ?>">
+                        value="<?php echo isset($_POST['event_Date']) ? $_POST['event_Date'] : '' ?>">
                         <br>
 
                         <label class="required-input-label">Event Time (HH:MM:SS)</label><br>
