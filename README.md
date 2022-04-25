@@ -37,3 +37,7 @@ When pressed, this header displays similarly to the tables in the rest of the ad
 
 STATISTICS
 When pressed, this header displays a list of statistics derived from the tables in the database. These statistics showcase the total number of employees, customers, products, stores, events, and animals found in the database, and changes according to any database alteration.
+
+
+CUSTOMER PORTAL
+Upon logging in to the customer portal, the user is taken to a home page that features some information about the zoo while showcasing some animal pictures. If the user wants to navigate back to the admin portal, they can simply log out of the customer one.
