@@ -6,8 +6,16 @@ The website can be accessed remotely at the link https://zoo-project.azurewebsit
 DATABASE
 The server is hosted on Azure and uses Microsoft SQL Server as its RDBMS. The server name is cosc3380projectsserver.database.windows.net, and the authentication method is SQL Server Authentication. The database to connect to is Zoo-Project-DB. The username is user1, and the password is T8zooProject3380.
 
-If the user attempts to login with an account that does not exist in the database, then they are automatically redirected to the registration page to register an account. A registered account cannot have the same username, password, or email as another account already existing in the database. If the user attempts to register an account that already exists, then the website will indicate this to them and allow them to navigate back to the login portal.
+LOGIN
+Admin Login:
+Username: admin
+Password: admin1
 
+Customer Login:
+Username: customer
+Password: customer1
+
+If the user attempts to login with an account that does not exist in the database, then they are automatically redirected to the registration page to register an account. A registered account cannot have the same username, password, or email as another account already existing in the database. If the user attempts to register an account that already exists, then the website will indicate this to them and allow them to navigate back to the login portal.
 
 ADMIN PORTAL
 The admin portal displays three header links: Tables, Departments, and Statistics. 
