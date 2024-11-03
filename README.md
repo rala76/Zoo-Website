@@ -1,19 +1,21 @@
 # Zoo-Website
 
-The website can be accessed remotely at the link https://zoo-project.azurewebsites.net/. Please note that because we are on the free Azure plan, there is a limit of 60 minutes of computation time daily before the website’s loading time becomes very slow. If this happens, then the website can be hosted locally by running the index.php file. In case the files in the email are corrupt, the github link to the repository of the project can be found at https://github.com/rala76/Zoo-Website.
+The website can be accessed remotely at the link ~~https://zoo-project.azurewebsites.net/~~ **(Currently Not Available)**. Please note that because we are on the free Azure plan, there is a limit of 60 minutes of computation time daily before the website’s loading time becomes very slow. If this happens, then the website can be hosted locally by running the index.php file. In case the files in the email are corrupt, the github link to the repository of the project can be found at https://github.com/rala76/Zoo-Website.
 
 
 DATABASE
-The server is hosted on Azure and uses Microsoft SQL Server as its RDBMS. The server name is cosc3380projectsserver.database.windows.net, and the authentication method is SQL Server Authentication. The database to connect to is Zoo-Project-DB.
+The server is hosted on Azure and uses Microsoft SQL Server as its RDBMS. The server name is `SERVER_NAME` **(Original Server Name Removed For Security)**, and the authentication method is SQL Server Authentication. The database to connect to is `DATABASE_NAME` **(Original Database Name Removed For Security)**. The database credentials are stored in a hidden 'config.php' file available only to the development team.
 
 LOGIN <br />
 Admin Login: <br />
-Username: admin <br />
-Password: admin1 <br />
+Username: `admin_username` <br />
+Password: `admin_password` <br />
 
 Customer Login: <br />
-Username: customer <br />
-Password: customer1 <br />
+Username: `customer_username` <br />
+Password: `customer_password` <br />
+
+**NOTE: Login details were removed for security purposes.**
 
 If the user attempts to login with an account that does not exist in the database, then they are automatically redirected to the registration page to register an account. A registered account cannot have the same username, password, or email as another account already existing in the database. If the user attempts to register an account that already exists, then the website will indicate this to them and allow them to navigate back to the login portal.
 

@@ -1,8 +1,18 @@
 <?php
 
-// SQL Server Extension Sample Code (SQLSRV)
-$connectionInfo = array("UID" => "user1", "pwd" => "T8zooProject3380", "Database" => "Zoo-Project-DB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:cosc3380projectsserver.database.windows.net,1433";
+// Include the config file
+require 'config.php';
+
+// SQL Server Extension Code (SQLSRV)
+$connectionInfo = array(
+    "UID" => $db_config['UID'], 
+    "pwd" => $db_config['pwd'], 
+    "Database" => $db_config['Database'], 
+    "LoginTimeout" => $db_config['LoginTimeout'], 
+    "Encrypt" => $db_config['Encrypt'], 
+    "TrustServerCertificate" => $db_config['TrustServerCertificate']
+);
+$serverName = $db_config['Server'];
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 // If connection failed
